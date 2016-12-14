@@ -1,0 +1,92 @@
+**********************************************************************
+* 			Scrolling led display			     *
+* 		     File Readme.txt - may 1998			     *
+*		By Mario Prato - Email mprato@iqsnet.it		     *
+**********************************************************************
+
+Into this file you can find informations about a scrolling led display
+that is cnnected to my Z80 board.
+visit the page:
+http://www.geocities.com/SiliconValley/Peaks/3938/z80_mp.htm
+
+or the Thomas Scherrer Z80 page:
+http://www.geocities.com/SiliconValley/Peaks/3938/
+
+Files of the project are:
+
+asm.bat     - BAT file for assembly with TASM.
+source.asm  - the assembly source code
+source.bin  - the Binary file ready for EPROM programming
+disp1.gif   - Sheet of an alternative display module from the RS catalog
+disp2.gif   - Picture of one LED module (front)
+dispcon.gif - Display connections front view.
+drivers.gif - Schematics diagram of drivers circuit
+drivers.bom - bill of material 
+module.gif  - Sheet of a led module that i use (text in italian)
+m5450.pdf   - Data sheet over the M5450 display driver.
+newtop.gif  - New and improved PCB layout, handdrawn fixed to add extra space
+newbot.gif  - New and improved PCB layout, bottom layer
+readme.txt  - This file
+snap1.jpg   - Picture of this project
+snap2.jpg   - Picture of this project
+snap3.jpg   - Picture of this project
+snap4.jpg   - Picture of this project
+
+
+The display is made of 10 pcs. 5 x 7 LED dot matrix displays,
+that give a 50 x 7 led matrix. All the anodes are connected to the
+rows of the matrix. all Anodes from each display are connedted in parallel,
+The 50 cathodes (5 from each display) are connected with two
+National's M5450 display driver with serial control, while anodes driver
+are seven bjts connected to a 3 to 8 decoder.
+
+Thanks to the firmware on the Z80 board, you can upload or download text
+into the backed-up sram with a serial (5V serial) connection, you need to
+add a MAX 232 before you connect it to your PC.
+The serial port is made in "software" so there is no expencive UART required.
+
+
+To upload your text into memory simply write it with notepad and add in
+the end the string #e. This will cause the Cpu to know that this is EOF.
+you can use any serial terminal program, like win95 Hyperterminal and
+the settings are 9600 baud, 8 bits, 1 stop bit, no parity,
+no hardware handshake.
+To enter text, you must connect to ground input pin 1 of Z80 Board
+when applying power. press h for a reminder of commands, c to upload text,
+s to download, r to test.
+In normal use, the input 1 must be open.
+
+Into the text you can add the following effects:
+
+#b - Text blink
+#n - Negative text blink
+#h - halt the scroll
+#e - end of text, start from the top
+
+Playing with assembly code, you can add other effects,
+mail me if you make a cool one!
+Also Mail me if these informations are not so clear.
+As always sorry for my poor English, remember I'm Italian!
+mprato@iqsnet.it
+
+
+
+
+For the leds connections, crossing between k1 and a1 is the upper-left
+corner (front view).
+
+------------------------------- a1
+------------------------------- a2
+------------------------------- a3
+------------------------------- ..
+------------------------------- a7
+ |  |  |  |  |  |  |      |
+ k1 k2 k3 k4 .. .. ..     k50
+
+See the dispcon.gif
+
+
+
+
+
+

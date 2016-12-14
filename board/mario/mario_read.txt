@@ -1,0 +1,89 @@
+__________________________________________________________
+
+    Minimal Z80 Board  -  Mario Prato - December 1997       
+         for any information: E.mail mprato@iqsnet.it                            
+__________________________________________________________
+
+This is my Z80 board :
+
+#	Cpu Z80 at 4MHz (U6)
+#	Ram 32 Kbytes with battery backup (U8)
+#	Rom 8  Kbytes (U7)
+#	Clock generator(U2)
+#	Address Decoder (U5)
+#	8 bits Output Port (U4)
+#	8 bits Input Port (U3)
+#	5V Voltage Regulator (U1)
+
+Power supply:
+
+Power supply of the board can be any voltage between 7 to 25 Volt but better
+is to stay below 15 V.
+Voltage regulator U1 must be mounted on a heat radiator.
+
+Memory map:
+
+System ROM is located from address 0000h to 1FFFh (8K), RAM start from 8000h end
+to FFFFh (32K).
+The only I/O address is 001H from that you can read/write to external ports.
+
+
+	+--------+--------+----------------+
+	|  rom   |  n.u.  |     ram        |
+	|        |        |                |
+	+--------+--------+----------------+
+      0000H    1FFFH    8000H            FFFFH
+
+
+
+IO map:
+
+00h  read  not used  (select signal on U5 pin 5 is free for future use)
+00h  write not used  (select signal on U5 pin 4 is free for future use)
+01h  read  input port
+01h  write output port
+
+
+
+Building the board:
+
+You can mount all the components on a prototype board, but if you have 
+enough experience with PCB, you can use the tracks I give you.
+My PCB is a dual face with no passing through holes, so before the insertion of
+the components, you need to connect the traces of the component side with 
+the copper side.
+
+Bill of components	                      12 GEN 1998 20:28:28     
+
+ BT1                       lithium battery 3.6 Volt 
+ C1,C2                     100uF 25V electrolytic         
+ C3,C4,C5                  100nF polyester         
+ C6                        100pF Ceramic        
+ C7                        1uF 16V electrolytic           
+ D2,D3,D4,D5               1n914 o 1n4148 small signal silicon diode        
+ J1,J2                     strip-line connector 10 pin step 2.54mm (0.1 in)        
+ J3                        connector 2 pin step 5mm (0.2 in)        
+ R1                        10K  1/8W         
+ R3                        330  1/8W         
+ R4,R5                     1200 1/8W         
+ R6                        220K 1/8W         
+ U1                        uA7805 or LM7805 (in TO-220 on heat sink)
+ U2                        74LS04  inverter      
+ U3                        74LS244 buffer      
+ U4                        74LS374 latch      
+ U5                        74LS139 decoder      
+ U6                        Z80A CPU (good is a CMOS version)          
+ U7                        27C64 eprom 8k x 8     
+ U8                        AT28C256 or 62256 ram 32k x 8     
+ Y1                        Quartz crystal 4 MHz         
+
+Very important:
+Capacitors c3,c4,c5 are useful to decouple power supply rail, but due to the 
+small space available on the board they maybe inserted on the copper side or on the I.C. sockets. Refer to the schematics.
+
+If you don't want to use the battery backup feature:
+don't mount R1 and D4. short D5 and D3.
+
+A good idea is to mount a push button over the C7 to manualy activate the CPU RESET.
+
+
