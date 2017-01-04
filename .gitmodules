@@ -1,0 +1,6 @@
+[submodule "src/external/atbinhex"]
+	path = src/external/atbinhex
+	url = https://github.com/Alexey-T/ATBinHex-Lazarus.git
+[submodule "src/external/GitForDelphi"]
+	path = src/external/GitForDelphi
+	url = https://github.com/libgit2/GitForDelphi.git
