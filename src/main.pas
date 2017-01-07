@@ -28,6 +28,7 @@ type
     PopupMenu1: TPopupMenu;
     SelectDirectoryDialog1: TSelectDirectoryDialog;
     Splitter1: TSplitter;
+    Splitter2: TSplitter;
     SynFreePascalSyn1: TSynFreePascalSyn;
     TabSheet1: TTabSheet;
     Timer1: TTimer;
@@ -52,10 +53,14 @@ implementation
 
 {$R *.lfm}
 
+uses
+  icons;
+
 { TForm1 }
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  LoadFromResource(ImageList1);
 end;
 
 procedure TForm1.MenuItem2Click(Sender: TObject);
@@ -100,7 +105,7 @@ begin
     '.pas', '.pp', '.p', '.inc':
     begin
       ts := PageControl1.AddTabSheet;
-      ts.ImageIndex := 2;
+      ts.ImageIndex := ICON_PAS_SOURCE;
       ts.Caption := ExtractFileName(sn.Text);
 
       se := TSynEdit.Create(ts);
@@ -125,8 +130,8 @@ begin
   //now search all files in the project folder
   ProjectTreeView.Items.Clear;
   mainnode := ProjectTreeView.Items.Add(nil, ExtractFileName(FProjectFolder));
-  mainnode.ImageIndex := 4;
-  mainnode.SelectedIndex := 4;
+  mainnode.ImageIndex := ICON_EASY80;
+  mainnode.SelectedIndex := mainnode.ImageIndex;
 
   AllFiles := FindAllFiles(FProjectFolder, '*.asm;*.hex;*.pas;*.pp;*.p;*.inc', False);
   try
@@ -136,9 +141,9 @@ begin
       ext := ExtractFileExt(AllFiles[i]);
 
       case ext of
-        '.asm': node.ImageIndex := 0;
-        '.hex': node.ImageIndex := 1;
-        '.pas', '.pp', '.p', '.inc': node.ImageIndex := 2;
+        '.asm': node.ImageIndex := ICON_ASM_SOURCE;
+        '.hex': node.ImageIndex := ICON_HEX_SOURCE;
+        '.pas', '.pp', '.p', '.inc': node.ImageIndex := ICON_PAS_SOURCE;
       end;
 
       node.SelectedIndex := node.ImageIndex;

@@ -11,6 +11,7 @@ uses
   { you can add units after this };
 
 {$R *.res}
+{$R .\datafiles\icons.rc}
 
 begin
   Application.Title:='easy80-ide';
