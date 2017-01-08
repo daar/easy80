@@ -39,7 +39,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="ide.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -51,6 +51,18 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="resourcestrings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ResourceStrings"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="splashscreen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Splash"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SplashScreen"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

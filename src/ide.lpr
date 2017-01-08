@@ -11,7 +11,8 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms,
   LazOpenGLContext,
-  main 
+  DefaultTranslator, ResourceStrings,
+  main, SplashScreen
   { you can add units after this };
 
 {$R *.res}
@@ -21,6 +22,8 @@ begin
   Application.Title := 'easy80-ide';
   RequireDerivedFormResource := True;
   Application.Initialize;
+
   Application.CreateForm(TMainForm, MainForm);
+
   Application.Run;
 end.

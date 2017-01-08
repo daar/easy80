@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, OpenGLContext, SynEdit, SynHighlighterPas,
-  Forms, Controls, Graphics, DefaultTranslator, ResourceStrings,
+  Forms, Controls, Graphics, ResourceStrings, SplashScreen,
   Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls;
 
 type
@@ -21,6 +21,8 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    AboutMenuItem: TMenuItem;
     PageControl1: TPageControl;
     PageControl2: TPageControl;
     Panel1: TPanel;
@@ -36,6 +38,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
+    procedure AboutMenuItemClick(Sender: TObject);
     procedure OpenGLControl1Click(Sender: TObject);
     procedure ProjectTreeViewDblClick(Sender: TObject);
   private
@@ -60,6 +63,9 @@ uses
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
+  Caption := rsEasy80IDE;
+
+  AboutMenuItemClick(Sender);
   LoadFromResource(ImageList16);
 end;
 
@@ -73,6 +79,15 @@ procedure TMainForm.MenuItem3Click(Sender: TObject);
 begin
   //quit the main app
   Close;
+end;
+
+procedure TMainForm.AboutMenuItemClick(Sender: TObject);
+begin
+  Splash := TSplash.Create(Application);
+  Splash.ShowModal;
+
+  Splash.Close;
+  Splash.Release;
 end;
 
 procedure TMainForm.OpenGLControl1Click(Sender: TObject);

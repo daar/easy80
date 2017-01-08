@@ -1,11 +1,11 @@
 object MainForm: TMainForm
-  Left = 350
-  Height = 455
-  Top = 147
-  Width = 717
+  Left = 308
+  Height = 461
+  Top = 166
+  Width = 722
   Caption = 'Easy 80 IDE'
-  ClientHeight = 435
-  ClientWidth = 717
+  ClientHeight = 441
+  ClientWidth = 722
   Menu = MainMenu
   OnCreate = FormCreate
   Position = poScreenCenter
@@ -13,7 +13,7 @@ object MainForm: TMainForm
   WindowState = wsMaximized
   object ProjectTreeView: TTreeView
     Left = 0
-    Height = 272
+    Height = 278
     Top = 0
     Width = 225
     Align = alLeft
@@ -28,19 +28,19 @@ object MainForm: TMainForm
   end
   object Panel1: TPanel
     Left = 230
-    Height = 272
+    Height = 278
     Top = 0
-    Width = 487
+    Width = 492
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 272
-    ClientWidth = 487
+    ClientHeight = 278
+    ClientWidth = 492
     TabOrder = 1
     object PageControl1: TPageControl
       Left = 0
-      Height = 272
+      Height = 278
       Top = 0
-      Width = 487
+      Width = 492
       Align = alClient
       Images = ImageList16
       TabOrder = 0
@@ -49,18 +49,18 @@ object MainForm: TMainForm
   object Panel2: TPanel
     Left = 0
     Height = 158
-    Top = 277
-    Width = 717
+    Top = 283
+    Width = 722
     Align = alBottom
     BevelOuter = bvNone
     ClientHeight = 158
-    ClientWidth = 717
+    ClientWidth = 722
     TabOrder = 2
     object PageControl2: TPageControl
       Left = 0
       Height = 158
       Top = 0
-      Width = 717
+      Width = 722
       ActivePage = TabSheet1
       Align = alClient
       Images = ImageList16
@@ -69,12 +69,12 @@ object MainForm: TMainForm
       object TabSheet1: TTabSheet
         Caption = 'Messages'
         ClientHeight = 130
-        ClientWidth = 709
+        ClientWidth = 714
         object Memo1: TMemo
           Left = 0
           Height = 130
           Top = 0
-          Width = 709
+          Width = 714
           Align = alClient
           Font.CharSet = ANSI_CHARSET
           Font.Height = -13
@@ -93,14 +93,14 @@ object MainForm: TMainForm
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 272
-    Width = 717
+    Top = 278
+    Width = 722
     Align = alBottom
     ResizeAnchor = akBottom
   end
   object Splitter2: TSplitter
     Left = 225
-    Height = 272
+    Height = 278
     Top = 0
     Width = 5
   end
@@ -139,6 +139,13 @@ object MainForm: TMainForm
       object MenuItem3: TMenuItem
         Caption = '&Quit'
         OnClick = MenuItem3Click
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = '&Help'
+      object AboutMenuItem: TMenuItem
+        Caption = '&About'
+        OnClick = AboutMenuItemClick
       end
     end
   end
