@@ -6,16 +6,16 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, OpenGLContext, SynEdit, SynHighlighterPas,
-  Forms, Controls, Graphics,
+  Forms, Controls, Graphics, DefaultTranslator, ResourceStrings,
   Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls;
 
 type
 
-  { TForm1 }
+  { TMainForm }
 
-  TForm1 = class(TForm)
-    ImageList1: TImageList;
-    MainMenu1: TMainMenu;
+  TMainForm = class(TForm)
+    ImageList16: TImageList;
+    MainMenu: TMainMenu;
     Memo1: TMemo;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
@@ -25,13 +25,13 @@ type
     PageControl2: TPageControl;
     Panel1: TPanel;
     Panel2: TPanel;
-    PopupMenu1: TPopupMenu;
-    SelectDirectoryDialog1: TSelectDirectoryDialog;
+    ProjectPopupMenu: TPopupMenu;
+    SelectDirectoryDialog: TSelectDirectoryDialog;
     Splitter1: TSplitter;
     Splitter2: TSplitter;
-    SynFreePascalSyn1: TSynFreePascalSyn;
+    SynFreePascalSyn: TSynFreePascalSyn;
     TabSheet1: TTabSheet;
-    Timer1: TTimer;
+    Timer: TTimer;
     ProjectTreeView: TTreeView;
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
@@ -47,7 +47,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  MainForm: TMainForm;
 
 implementation
 
@@ -56,30 +56,30 @@ implementation
 uses
   icons;
 
-{ TForm1 }
+{ TMainForm }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TMainForm.FormCreate(Sender: TObject);
 begin
-  LoadFromResource(ImageList1);
+  LoadFromResource(ImageList16);
 end;
 
-procedure TForm1.MenuItem2Click(Sender: TObject);
+procedure TMainForm.MenuItem2Click(Sender: TObject);
 begin
-  if SelectDirectoryDialog1.Execute then
-    SetProjectFolder(SelectDirectoryDialog1.FileName);
+  if SelectDirectoryDialog.Execute then
+    SetProjectFolder(SelectDirectoryDialog.FileName);
 end;
 
-procedure TForm1.MenuItem3Click(Sender: TObject);
+procedure TMainForm.MenuItem3Click(Sender: TObject);
 begin
   //quit the main app
   Close;
 end;
 
-procedure TForm1.OpenGLControl1Click(Sender: TObject);
+procedure TMainForm.OpenGLControl1Click(Sender: TObject);
 begin
 end;
 
-procedure TForm1.ProjectTreeViewDblClick(Sender: TObject);
+procedure TMainForm.ProjectTreeViewDblClick(Sender: TObject);
 var
   sn: TTreeNode;
   ts: TTabSheet;
@@ -96,11 +96,11 @@ begin
   case ext of
     '.asm':
     begin
-      ShowMessage('Not yet supported');
+      ShowMessage(rsNotYetSupported);
     end;
     '.hex':
     begin
-      ShowMessage('Not yet supported');
+      ShowMessage(rsNotYetSupported);
     end;
     '.pas', '.pp', '.p', '.inc':
     begin
@@ -111,13 +111,13 @@ begin
       se := TSynEdit.Create(ts);
       se.Parent := ts;
       se.Align := alClient;
-      se.Highlighter := SynFreePascalSyn1;
+      se.Highlighter := SynFreePascalSyn;
       se.Lines.LoadFromFile(IncludeTrailingPathDelimiter(FProjectFolder) + sn.Text);
     end;
   end;
 end;
 
-procedure TForm1.SetProjectFolder(Folder: string);
+procedure TMainForm.SetProjectFolder(Folder: string);
 var
   AllFiles: TStringList;
   mainnode: TTreeNode;

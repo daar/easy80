@@ -1,0 +1,23 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tmainform.caption
+msgid "Easy 80 IDE"
+msgstr ""
+
+#: tmainform.menuitem1.caption
+msgid "&File"
+msgstr ""
+
+#: tmainform.menuitem2.caption
+msgid "&Open project folder"
+msgstr ""
+
+#: tmainform.menuitem3.caption
+msgid "&Quit"
+msgstr ""
+
+#: tmainform.tabsheet1.caption
+msgid "Messages"
+msgstr ""
+
