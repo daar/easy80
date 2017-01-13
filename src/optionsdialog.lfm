@@ -1,0 +1,136 @@
+object OptionsDlg: TOptionsDlg
+  Left = 327
+  Height = 355
+  Top = 130
+  Width = 605
+  Caption = 'Options'
+  ClientHeight = 355
+  ClientWidth = 605
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poMainFormCenter
+  LCLVersion = '1.7'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 315
+    Width = 593
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.OnClick = CloseButtonClick
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 309
+    Top = 0
+    Width = 232
+    Align = alLeft
+    BevelOuter = bvNone
+    ClientHeight = 309
+    ClientWidth = 232
+    TabOrder = 1
+    object OptionsTreeView: TTreeView
+      Left = 6
+      Height = 274
+      Top = 35
+      Width = 220
+      Align = alClient
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      DefaultItemHeight = 18
+      ExpandSignSize = 16
+      ReadOnly = True
+      TabOrder = 0
+      OnClick = OptionsTreeViewClick
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+      Items.Data = {
+        F9FFFFFF020004000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        0000000700000047656E6572616CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000
+        0000000000000006000000456469746F72FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FF00000000000000000008000000436F6D70696C6572FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF00000000000000000009000000417373656D626C6572
+      }
+    end
+    object OptionsTreeFilterEdit: TTreeFilterEdit
+      Left = 6
+      Height = 23
+      Top = 6
+      Width = 220
+      ButtonWidth = 23
+      NumGlyphs = 1
+      Align = alTop
+      BorderSpacing.Around = 6
+      MaxLength = 0
+      TabOrder = 1
+      FilteredTreeview = OptionsTreeView
+    end
+  end
+  object OptionsPageControl: TPageControl
+    Left = 237
+    Height = 309
+    Top = 0
+    Width = 368
+    ActivePage = GeneralTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 2
+    object GeneralTabSheet: TTabSheet
+      Caption = 'General'
+      ClientHeight = 281
+      ClientWidth = 360
+      object LocaleLabel: TLabel
+        AnchorSideLeft.Control = GeneralTabSheet
+        AnchorSideTop.Control = LocaleComboBox
+        AnchorSideTop.Side = asrCenter
+        Left = 6
+        Height = 15
+        Top = 10
+        Width = 55
+        BorderSpacing.Around = 6
+        Caption = 'Language:'
+        ParentColor = False
+      end
+      object LocaleComboBox: TComboBox
+        AnchorSideLeft.Control = LocaleLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = GeneralTabSheet
+        AnchorSideRight.Control = GeneralTabSheet
+        AnchorSideRight.Side = asrBottom
+        Left = 67
+        Height = 23
+        Top = 6
+        Width = 287
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Around = 6
+        ItemHeight = 15
+        TabOrder = 0
+        Text = 'LocaleComboBox'
+      end
+    end
+    object EditorTabSheet: TTabSheet
+      Caption = 'Editor'
+    end
+    object CompilerTabSheet: TTabSheet
+      Caption = 'Compiler'
+    end
+    object AssemblerTabSheet: TTabSheet
+      Caption = 'Assembler'
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 232
+    Height = 309
+    Top = 0
+    Width = 5
+  end
+end

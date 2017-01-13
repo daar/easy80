@@ -15,6 +15,7 @@ type
   TSplash = class(TForm)
     CompilerVersionLabel: TLabel;
     BuildDateLabel: TLabel;
+    BeCreativeLabel: TLabel;
     HashLabel: TLabel;
     BackgroundImage: TImage;
     Easy80LogoImage: TImage;

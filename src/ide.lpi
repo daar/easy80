@@ -25,21 +25,24 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="atbinhex_package"/>
+        <PackageName Value="LazControls"/>
       </Item1>
       <Item2>
-        <PackageName Value="SynEdit"/>
+        <PackageName Value="atbinhex_package"/>
       </Item2>
       <Item3>
-        <PackageName Value="LazOpenGLContext"/>
+        <PackageName Value="SynEdit"/>
       </Item3>
       <Item4>
-        <PackageName Value="LCL"/>
+        <PackageName Value="LazOpenGLContext"/>
       </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ide.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -60,9 +63,18 @@
         <Filename Value="splashscreen.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Splash"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SplashScreen"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="optionsdialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="OptionsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="OptionsDialog"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -72,7 +84,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="datafiles"/>
+      <OtherUnitFiles Value="datafiles;locale"/>
       <UnitOutputDirectory Value="bin/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

@@ -6,14 +6,16 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, OpenGLContext, SynEdit, SynHighlighterPas,
-  Forms, Controls, Graphics, ResourceStrings, SplashScreen,
-  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls;
+  Forms, Controls, Graphics, ResourceStrings, SplashScreen, OptionsDialog,
+  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, ATBinHex;
 
 type
 
   { TMainForm }
 
   TMainForm = class(TForm)
+    ATBinHex1: TATBinHex;
+    Button1: TButton;
     ImageList16: TImageList;
     MainMenu: TMainMenu;
     Memo1: TMemo;
@@ -23,6 +25,8 @@ type
     MenuItem4: TMenuItem;
     MenuItem5: TMenuItem;
     AboutMenuItem: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
     PageControl1: TPageControl;
     PageControl2: TPageControl;
     Panel1: TPanel;
@@ -35,18 +39,21 @@ type
     TabSheet1: TTabSheet;
     Timer: TTimer;
     ProjectTreeView: TTreeView;
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure AboutMenuItemClick(Sender: TObject);
-    procedure OpenGLControl1Click(Sender: TObject);
+    procedure MenuItem7Click(Sender: TObject);
     procedure ProjectTreeViewDblClick(Sender: TObject);
   private
     FProjectFolder: string;
     { private declarations }
+    procedure Open(hx: TATBinHex; const Filename: string);
     procedure SetProjectFolder(Folder: string);
   public
     { public declarations }
+    fs: TFileStream;
   end;
 
 var
@@ -65,8 +72,26 @@ procedure TMainForm.FormCreate(Sender: TObject);
 begin
   Caption := rsEasy80IDE;
 
-  AboutMenuItemClick(Sender);
   LoadFromResource(ImageList16);
+end;
+
+procedure TMainForm.Open(hx: TATBinHex; const Filename: string);
+begin
+  if Assigned(fs) then
+  begin
+    hx.OpenStream(nil);
+    FreeAndNil(fs);
+  end;
+
+  fs := TFileStream.Create(Filename, fmOpenRead);
+  hx.OpenStream(fs);
+  hx.Redraw;
+end;
+
+procedure TMainForm.Button1Click(Sender: TObject);
+begin
+  ATBinHex1.Open('main.pas', True);
+  ATBinHex1.Redraw(True);
 end;
 
 procedure TMainForm.MenuItem2Click(Sender: TObject);
@@ -90,8 +115,9 @@ begin
   Splash.Release;
 end;
 
-procedure TMainForm.OpenGLControl1Click(Sender: TObject);
+procedure TMainForm.MenuItem7Click(Sender: TObject);
 begin
+  OptionsDlg.ShowModal;
 end;
 
 procedure TMainForm.ProjectTreeViewDblClick(Sender: TObject);
@@ -100,6 +126,7 @@ var
   ts: TTabSheet;
   ext: RawByteString;
   se: TSynEdit;
+  hx: TATBinHex;
 begin
   sn := ProjectTreeView.Selected;
 
@@ -115,7 +142,17 @@ begin
     end;
     '.hex':
     begin
-      ShowMessage(rsNotYetSupported);
+      ts := PageControl1.AddTabSheet;
+      ts.ImageIndex := ICON_HEX_SOURCE;
+      ts.Caption := ExtractFileName(sn.Text);
+
+      hx := TATBinHex.Create(ts);
+      hx.Parent := ts;
+      hx.Align := alClient;
+      hx.TextGutter:= true;
+      hx.TextGutterLinesStep:= 10;
+      hx.Mode:= vbmodeHex;
+      Open(hx, IncludeTrailingPathDelimiter(FProjectFolder) + sn.Text);
     end;
     '.pas', '.pp', '.p', '.inc':
     begin

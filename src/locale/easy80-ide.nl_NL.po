@@ -1,5 +1,16 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8"
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Easy80-IDE\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Darius Blaszyk <dhkblaszyk@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"X-Generator: Poedit 2.0beta1\n"
 
 #: resourcestrings.rschinesezh_cn
 msgid "Chinese (zh_CN)"
@@ -7,7 +18,7 @@ msgstr ""
 
 #: resourcestrings.rsdates
 msgid "Date: %s"
-msgstr ""
+msgstr "Datum: %s"
 
 #: resourcestrings.rsditems0f
 msgid "%d items (%.0f%%)"
@@ -40,7 +51,7 @@ msgstr ""
 
 #: resourcestrings.rsnotyetsupported
 msgid "Not yet supported"
-msgstr ""
+msgstr "Nog niet ondersteund"
 
 #: resourcestrings.rspolishpl_pl
 msgid "Polish (pl_PL)"
@@ -65,59 +76,59 @@ msgstr ""
 
 #: tmainform.caption
 msgid "Easy 80 IDE"
-msgstr ""
+msgstr "Easy 80 IDE"
 
 #: tmainform.menuitem1.caption
 msgid "&File"
-msgstr ""
+msgstr "&Bestand"
 
 #: tmainform.menuitem2.caption
 msgid "&Open project folder"
-msgstr ""
+msgstr "&Open projectmap"
 
 #: tmainform.menuitem3.caption
 msgid "&Quit"
-msgstr ""
+msgstr "&Verlaten"
 
 #: tmainform.menuitem5.caption
 msgid "&Help"
-msgstr ""
+msgstr "&Help"
 
 #: tmainform.menuitem6.caption
 msgid "&Tools"
-msgstr ""
+msgstr "&Hulpmiddelen"
 
 #: tmainform.menuitem7.caption
 msgid "&Options"
-msgstr ""
+msgstr "&Opties"
 
 #: tmainform.tabsheet1.caption
 msgid "Messages"
-msgstr ""
+msgstr "Berichten"
 
 #: toptionsdlg.assemblertabsheet.caption
 msgctxt "toptionsdlg.assemblertabsheet.caption"
 msgid "Assembler"
-msgstr ""
+msgstr "Assembler"
 
 #: toptionsdlg.caption
 msgid "Options"
-msgstr ""
+msgstr "Opties"
 
 #: toptionsdlg.compilertabsheet.caption
 msgctxt "toptionsdlg.compilertabsheet.caption"
 msgid "Compiler"
-msgstr ""
+msgstr "Compiler"
 
 #: toptionsdlg.editortabsheet.caption
 msgctxt "toptionsdlg.editortabsheet.caption"
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: toptionsdlg.generaltabsheet.caption
 msgctxt "toptionsdlg.generaltabsheet.caption"
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: toptionsdlg.localecombobox.text
 msgid "LocaleComboBox"

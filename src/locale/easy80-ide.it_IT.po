@@ -1,5 +1,16 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8"
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Easy80-IDE\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Darius Blaszyk <dhkblaszyk@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
+"X-Generator: Poedit 2.0beta1\n"
 
 #: resourcestrings.rschinesezh_cn
 msgid "Chinese (zh_CN)"
@@ -7,11 +18,11 @@ msgstr ""
 
 #: resourcestrings.rsdates
 msgid "Date: %s"
-msgstr ""
+msgstr "Data: %s"
 
 #: resourcestrings.rsditems0f
 msgid "%d items (%.0f%%)"
-msgstr ""
+msgstr "%d elementi (%.0f%%)"
 
 #: resourcestrings.rsdutchnl_nl
 msgid "Dutch (nl_NL)"
@@ -40,7 +51,7 @@ msgstr ""
 
 #: resourcestrings.rsnotyetsupported
 msgid "Not yet supported"
-msgstr ""
+msgstr "Non è ancora supportato"
 
 #: resourcestrings.rspolishpl_pl
 msgid "Polish (pl_PL)"
@@ -65,7 +76,7 @@ msgstr ""
 
 #: tmainform.caption
 msgid "Easy 80 IDE"
-msgstr ""
+msgstr "Easy 80 IDE"
 
 #: tmainform.menuitem1.caption
 msgid "&File"
@@ -73,11 +84,11 @@ msgstr ""
 
 #: tmainform.menuitem2.caption
 msgid "&Open project folder"
-msgstr ""
+msgstr "&Cartella Apri progetto"
 
 #: tmainform.menuitem3.caption
 msgid "&Quit"
-msgstr ""
+msgstr "&Esci"
 
 #: tmainform.menuitem5.caption
 msgid "&Help"

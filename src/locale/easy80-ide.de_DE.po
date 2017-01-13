@@ -1,5 +1,16 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8"
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Easy80-IDE\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Darius Blaszyk <dhkblaszyk@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 2.0beta1\n"
 
 #: resourcestrings.rschinesezh_cn
 msgid "Chinese (zh_CN)"
@@ -7,11 +18,11 @@ msgstr ""
 
 #: resourcestrings.rsdates
 msgid "Date: %s"
-msgstr ""
+msgstr "Datum: %s"
 
 #: resourcestrings.rsditems0f
 msgid "%d items (%.0f%%)"
-msgstr ""
+msgstr "%d Elemente (%.0f%%)"
 
 #: resourcestrings.rsdutchnl_nl
 msgid "Dutch (nl_NL)"
@@ -20,7 +31,7 @@ msgstr ""
 #: resourcestrings.rseasy80ide
 msgctxt "resourcestrings.rseasy80ide"
 msgid "Easy80-IDE"
-msgstr ""
+msgstr "Easy80-IDE"
 
 #: resourcestrings.rsenglishen_us
 msgid "English (en_US)"
@@ -40,7 +51,7 @@ msgstr ""
 
 #: resourcestrings.rsnotyetsupported
 msgid "Not yet supported"
-msgstr ""
+msgstr "Noch nicht unterstützt"
 
 #: resourcestrings.rspolishpl_pl
 msgid "Polish (pl_PL)"
@@ -65,49 +76,49 @@ msgstr ""
 
 #: tmainform.caption
 msgid "Easy 80 IDE"
-msgstr ""
+msgstr "Easy 80 IDE"
 
 #: tmainform.menuitem1.caption
 msgid "&File"
-msgstr ""
+msgstr "&Datei"
 
 #: tmainform.menuitem2.caption
 msgid "&Open project folder"
-msgstr ""
+msgstr "&Offen projektordner"
 
 #: tmainform.menuitem3.caption
 msgid "&Quit"
-msgstr ""
+msgstr "&Beenden"
 
 #: tmainform.menuitem5.caption
 msgid "&Help"
-msgstr ""
+msgstr "&Hilfe"
 
 #: tmainform.menuitem6.caption
 msgid "&Tools"
-msgstr ""
+msgstr "&Werkzeuge"
 
 #: tmainform.menuitem7.caption
 msgid "&Options"
-msgstr ""
+msgstr "&Optionen"
 
 #: tmainform.tabsheet1.caption
 msgid "Messages"
-msgstr ""
+msgstr "Meldungen"
 
 #: toptionsdlg.assemblertabsheet.caption
 msgctxt "toptionsdlg.assemblertabsheet.caption"
 msgid "Assembler"
-msgstr ""
+msgstr "Assembler"
 
 #: toptionsdlg.caption
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
 #: toptionsdlg.compilertabsheet.caption
 msgctxt "toptionsdlg.compilertabsheet.caption"
 msgid "Compiler"
-msgstr ""
+msgstr "Compiler"
 
 #: toptionsdlg.editortabsheet.caption
 msgctxt "toptionsdlg.editortabsheet.caption"
@@ -117,7 +128,7 @@ msgstr ""
 #: toptionsdlg.generaltabsheet.caption
 msgctxt "toptionsdlg.generaltabsheet.caption"
 msgid "General"
-msgstr ""
+msgstr "Algemein"
 
 #: toptionsdlg.localecombobox.text
 msgid "LocaleComboBox"
@@ -150,9 +161,10 @@ msgid "Welcome to this release of Easy80-IDE. A developer platform for the Z80 b
 msgstr ""
 
 #: tsplash.easy80label.caption
+#, fuzzy
 msgctxt "tsplash.easy80label.caption"
 msgid "Easy80-IDE"
-msgstr ""
+msgstr "Easy80-IDE"
 
 #: tsplash.hashlabel.caption
 msgid "HashLabel"

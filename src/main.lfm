@@ -45,6 +45,38 @@ object MainForm: TMainForm
       Images = ImageList16
       TabOrder = 0
     end
+    object ATBinHex1: TATBinHex
+      Cursor = crIBeam
+      Left = 74
+      Height = 150
+      Top = 79
+      Width = 200
+      BorderStyle = bsSingle
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      ParentColor = False
+      TabOrder = 1
+      FontOEM.Color = clWindowText
+      FontOEM.Height = -12
+      FontOEM.Name = 'Terminal'
+      FontFooter.Color = clBlack
+      FontFooter.Height = -12
+      FontFooter.Name = 'Arial'
+      FontGutter.Color = clBlack
+      FontGutter.Height = -12
+      FontGutter.Name = 'Courier New'
+      Mode = vbmodeHex
+    end
+    object Button1: TButton
+      Left = 25
+      Height = 25
+      Top = 27
+      Width = 75
+      Caption = 'Button1'
+      OnClick = Button1Click
+      TabOrder = 2
+    end
   end
   object Panel2: TPanel
     Left = 0
@@ -139,6 +171,13 @@ object MainForm: TMainForm
       object MenuItem3: TMenuItem
         Caption = '&Quit'
         OnClick = MenuItem3Click
+      end
+    end
+    object MenuItem6: TMenuItem
+      Caption = '&Tools'
+      object MenuItem7: TMenuItem
+        Caption = '&Options'
+        OnClick = MenuItem7Click
       end
     end
     object MenuItem5: TMenuItem

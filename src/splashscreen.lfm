@@ -1958,12 +1958,12 @@ object Splash: TSplash
     AnchorSideTop.Control = VersionLabel
     AnchorSideTop.Side = asrBottom
     Left = 40
-    Height = 74
+    Height = 56
     Top = 160
-    Width = 250
+    Width = 344
     AutoSize = False
     BorderSpacing.Top = 10
-    Caption = 'Welcome to this release of Easy80-IDE. A developing platform for the Z80 based single board computer.'#13#10#13#10'Be creative and share!'
+    Caption = 'Welcome to this release of Easy80-IDE. A developer platform for the Z80 based single board computer.'
     ParentColor = False
     WordWrap = True
     OnClick = BackgroundImageClick
@@ -2124,13 +2124,13 @@ object Splash: TSplash
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
-    Left = 373
+    Left = 377
     Height = 15
-    Top = 252
+    Top = 256
     Width = 115
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 6
-    BorderSpacing.Around = 6
+    BorderSpacing.Around = 2
     Caption = 'CompilerVersionLabel'
     Font.Color = 6579300
     ParentColor = False
@@ -2143,13 +2143,13 @@ object Splash: TSplash
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = HashLabel
-    Left = 409
+    Left = 413
     Height = 15
-    Top = 210
+    Top = 222
     Width = 79
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 6
-    BorderSpacing.Around = 6
+    BorderSpacing.Around = 2
     Caption = 'BuildDateLabel'
     Font.Color = 6579300
     ParentColor = False
@@ -2162,17 +2162,31 @@ object Splash: TSplash
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = CompilerVersionLabel
-    Left = 433
+    Left = 437
     Height = 15
-    Top = 231
+    Top = 239
     Width = 55
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 6
-    BorderSpacing.Around = 6
+    BorderSpacing.Around = 2
     Caption = 'HashLabel'
     Font.Color = 6579300
     ParentColor = False
     ParentFont = False
+    OnClick = BackgroundImageClick
+  end
+  object BeCreativeLabel: TLabel
+    AnchorSideLeft.Control = VersionLabel
+    AnchorSideTop.Control = DescriptionLabel
+    AnchorSideTop.Side = asrBottom
+    Left = 40
+    Height = 15
+    Top = 226
+    Width = 114
+    BorderSpacing.Top = 10
+    Caption = 'Be creative and share!'
+    ParentColor = False
+    WordWrap = True
     OnClick = BackgroundImageClick
   end
 end
