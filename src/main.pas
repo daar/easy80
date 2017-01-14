@@ -202,13 +202,13 @@ begin
     pf^.TreeNode.Text := pf^.FileName;
     SaveEditorFile(EditorsPageControl.TabIndex);
 
-    Msg := Format('Delete old file "%s"?', [ExtractFileName(OldFileName)]);
-    if MessageDlg('Delete old file?', Msg, mtConfirmation , mbYesNo, '') = mrYes then
+    Msg := Format(rsDeleteOldFileS, [ExtractFileName(OldFileName)]);
+    if MessageDlg(rsDeleteOldFile, Msg, mtConfirmation , mbYesNo, '') = mrYes then
     begin
       if not DeleteFile(UTF8ToAnsi(OldFileName)) then
       begin
-        Msg := Format('Cannot delete file: %s.', [SysErrorMessage(GetLastOSError)]);
-        MessageDlg('Error deleting file', Msg, mtError , [mbOK], '');
+        Msg := Format(rsCannotDeleteFileS, [SysErrorMessage(GetLastOSError)]);
+        MessageDlg(rsErrorDeletingFile, Msg, mtError , [mbOK], '');
       end;
     end;
   end;
@@ -238,7 +238,7 @@ begin
 
       pf^.TabSheet := EditorsPageControl.AddTabSheet;
       pf^.TabSheet.ImageIndex := ICON_HEX_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName + ' [readonly]';
+      pf^.TabSheet.Caption := Format(rsReadonly, [pf^.FileName]);
       EditorsPageControl.ActivePage := pf^.TabSheet;
 
       pf^.Editor := TATBinHex.Create(pf^.TabSheet);
