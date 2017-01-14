@@ -65,46 +65,73 @@ msgstr ""
 msgid "System language"
 msgstr ""
 
-#: tmainform.aboutmenuitem.caption
-msgctxt "tmainform.aboutmenuitem.caption"
-msgid "&About"
-msgstr "A &propos ..."
-
-#: tmainform.button1.caption
-msgid "Button1"
-msgstr ""
-
 #: tmainform.caption
 msgid "Easy 80 IDE"
 msgstr "Easy 80 IDE"
 
-#: tmainform.menuitem1.caption
+#: tmainform.messagestabsheet.caption
+#, fuzzy
+msgctxt "tmainform.messagestabsheet.caption"
+msgid "Messages"
+msgstr "Messages"
+
+#: tmainform.miabout.caption
+#, fuzzy
+msgctxt "tmainform.miabout.caption"
+msgid "&About"
+msgstr "A &propos ..."
+
+#: tmainform.miedit.caption
+msgid "&Edit"
+msgstr ""
+
+#: tmainform.mifile.caption
+#, fuzzy
+msgctxt "tmainform.mifile.caption"
 msgid "&File"
 msgstr "&File"
 
-#: tmainform.menuitem2.caption
-msgid "&Open project folder"
-msgstr "&Dossier projet ouvert"
-
-#: tmainform.menuitem3.caption
-msgid "&Quit"
-msgstr "&Quitter"
-
-#: tmainform.menuitem5.caption
+#: tmainform.mihelp.caption
+#, fuzzy
+msgctxt "tmainform.mihelp.caption"
 msgid "&Help"
 msgstr "Ai&de"
 
-#: tmainform.menuitem6.caption
-msgid "&Tools"
-msgstr "&Outils"
+#: tmainform.miopenprojectfolder.caption
+#, fuzzy
+msgctxt "tmainform.miopenprojectfolder.caption"
+msgid "&Open project folder"
+msgstr "&Dossier projet ouvert"
 
-#: tmainform.menuitem7.caption
+#: tmainform.mioptions.caption
+#, fuzzy
+msgctxt "tmainform.mioptions.caption"
 msgid "&Options"
 msgstr "&Options"
 
-#: tmainform.tabsheet1.caption
-msgid "Messages"
-msgstr "Messages"
+#: tmainform.miquit.caption
+#, fuzzy
+msgctxt "tmainform.miquit.caption"
+msgid "&Quit"
+msgstr "&Quitter"
+
+#: tmainform.misave.caption
+msgid "Save"
+msgstr ""
+
+#: tmainform.misaveall.caption
+msgid "Save all"
+msgstr ""
+
+#: tmainform.misaveas.caption
+msgid "Save as ..."
+msgstr ""
+
+#: tmainform.mitools.caption
+#, fuzzy
+msgctxt "tmainform.mitools.caption"
+msgid "&Tools"
+msgstr "&Outils"
 
 #: toptionsdlg.assemblertabsheet.caption
 msgctxt "toptionsdlg.assemblertabsheet.caption"

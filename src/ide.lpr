@@ -20,6 +20,7 @@ uses
 
 var
   LangID: string;
+  ShowSplash: Boolean;
 begin
   Application.Title := 'easy80-ide';
   RequireDerivedFormResource := True;
@@ -28,16 +29,22 @@ begin
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TOptionsDlg, OptionsDlg);
 
+  ShowSplash := not Application.HasOption('no-splash');
+
   //the splash screen
-  Splash := TSplash.Create(Application);
+  if ShowSplash then
+    Splash := TSplash.Create(Application);
 
   LangID := GetLangIDFromLanguage(OptionsDlg.xml.GetValue('/language', rsSystemLanguage));
   if LangID <> 'en_US' then
     SetDefaultLang(LangID, 'locale', True);
 
-  Splash.ShowModal;
-  Splash.Close;
-  Splash.Release;
+  if ShowSplash then
+  begin
+    Splash.ShowModal;
+    Splash.Close;
+    Splash.Release;
+  end;
 
   Application.Run;
 end.

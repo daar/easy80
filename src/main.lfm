@@ -26,7 +26,7 @@ object MainForm: TMainForm
     OnDblClick = ProjectTreeViewDblClick
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
   end
-  object Panel1: TPanel
+  object EditorsPanel: TPanel
     Left = 230
     Height = 278
     Top = 0
@@ -36,7 +36,7 @@ object MainForm: TMainForm
     ClientHeight = 278
     ClientWidth = 492
     TabOrder = 1
-    object PageControl1: TPageControl
+    object EditorsPageControl: TPageControl
       Left = 0
       Height = 278
       Top = 0
@@ -45,40 +45,8 @@ object MainForm: TMainForm
       Images = ImageList16
       TabOrder = 0
     end
-    object ATBinHex1: TATBinHex
-      Cursor = crIBeam
-      Left = 74
-      Height = 150
-      Top = 79
-      Width = 200
-      BorderStyle = bsSingle
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Courier New'
-      ParentColor = False
-      TabOrder = 1
-      FontOEM.Color = clWindowText
-      FontOEM.Height = -12
-      FontOEM.Name = 'Terminal'
-      FontFooter.Color = clBlack
-      FontFooter.Height = -12
-      FontFooter.Name = 'Arial'
-      FontGutter.Color = clBlack
-      FontGutter.Height = -12
-      FontGutter.Name = 'Courier New'
-      Mode = vbmodeHex
-    end
-    object Button1: TButton
-      Left = 25
-      Height = 25
-      Top = 27
-      Width = 75
-      Caption = 'Button1'
-      OnClick = Button1Click
-      TabOrder = 2
-    end
   end
-  object Panel2: TPanel
+  object FeedbackPanel: TPanel
     Left = 0
     Height = 158
     Top = 283
@@ -88,21 +56,21 @@ object MainForm: TMainForm
     ClientHeight = 158
     ClientWidth = 722
     TabOrder = 2
-    object PageControl2: TPageControl
+    object FeedbackPageControl: TPageControl
       Left = 0
       Height = 158
       Top = 0
       Width = 722
-      ActivePage = TabSheet1
+      ActivePage = MessagesTabSheet
       Align = alClient
       Images = ImageList16
       TabIndex = 0
       TabOrder = 0
-      object TabSheet1: TTabSheet
+      object MessagesTabSheet: TTabSheet
         Caption = 'Messages'
         ClientHeight = 130
         ClientWidth = 714
-        object Memo1: TMemo
+        object MessagesMemo: TMemo
           Left = 0
           Height = 130
           Top = 0
@@ -159,37 +127,60 @@ object MainForm: TMainForm
   object MainMenu: TMainMenu
     left = 136
     top = 208
-    object MenuItem1: TMenuItem
+    object miFile: TMenuItem
       Caption = '&File'
-      object MenuItem2: TMenuItem
+      object miOpenProjectFolder: TMenuItem
         Caption = '&Open project folder'
-        OnClick = MenuItem2Click
+        OnClick = miOpenProjectFolderClick
       end
-      object MenuItem4: TMenuItem
+      object miFileSep1: TMenuItem
         Caption = '-'
       end
-      object MenuItem3: TMenuItem
+      object miSave: TMenuItem
+        Caption = 'Save'
+        OnClick = miSaveClick
+      end
+      object miSaveAs: TMenuItem
+        Caption = 'Save as ...'
+        OnClick = miSaveAsClick
+      end
+      object miSaveAll: TMenuItem
+        Caption = 'Save all'
+        OnClick = miSaveAllClick
+      end
+      object miFileSep2: TMenuItem
+        Caption = '-'
+      end
+      object miQuit: TMenuItem
         Caption = '&Quit'
-        OnClick = MenuItem3Click
+        OnClick = miQuitClick
       end
     end
-    object MenuItem6: TMenuItem
+    object miEdit: TMenuItem
+      Caption = '&Edit'
+    end
+    object miTools: TMenuItem
       Caption = '&Tools'
-      object MenuItem7: TMenuItem
+      object miOptions: TMenuItem
         Caption = '&Options'
-        OnClick = MenuItem7Click
+        OnClick = miOptionsClick
       end
     end
-    object MenuItem5: TMenuItem
+    object miHelp: TMenuItem
       Caption = '&Help'
-      object AboutMenuItem: TMenuItem
+      object miAbout: TMenuItem
         Caption = '&About'
-        OnClick = AboutMenuItemClick
+        OnClick = miAboutClick
       end
     end
   end
   object ProjectPopupMenu: TPopupMenu
     left = 136
     top = 264
+  end
+  object SaveDialog: TSaveDialog
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    left = 464
+    top = 208
   end
 end

@@ -23,6 +23,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+        <CommandLineParams Value="--no-splash"/>
       </local>
     </RunParams>
     <RequiredPackages Count="5">
