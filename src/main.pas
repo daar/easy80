@@ -205,7 +205,7 @@ begin
     Msg := Format('Delete old file "%s"?', [ExtractFileName(OldFileName)]);
     if MessageDlg('Delete old file?', Msg, mtConfirmation , mbYesNo, '') = mrYes then
     begin
-      if not DeleteFile(UTF8ToAnsi(OldFileName + 'q')) then
+      if not DeleteFile(UTF8ToAnsi(OldFileName)) then
       begin
         Msg := Format('Cannot delete file: %s.', [SysErrorMessage(GetLastOSError)]);
         MessageDlg('Error deleting file', Msg, mtError , [mbOK], '');
