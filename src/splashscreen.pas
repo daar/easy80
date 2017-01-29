@@ -64,7 +64,8 @@ end;
 
 procedure TSplash.FormCreate(Sender: TObject);
 begin
-  VersionLabel.Caption := Format('Easy80-IDE v%s', [{$i version.inc}]);
+  Caption := Format(rsEasy80IDEVS, [{$i version.inc}]);
+  VersionLabel.Caption := Format(rsEasy80IDEVS, [{$i version.inc}]);
 
   BuildDateLabel.Caption := Format(rsDateS, [GetLocalizedBuildDate]);
   HashLabel.Caption := Format('Hash: %s', [{$i hash.inc}]);

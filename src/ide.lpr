@@ -12,8 +12,7 @@ uses
   Forms,
   LazOpenGLContext, lazcontrols,
   LCLTranslator, ResourceStrings, IDELocale,
-  main, SplashScreen, OptionsDialog
-  { you can add units after this };
+  main, SplashScreen, OptionsDialog, AppSettings;
 
 {$R *.res}
 {$R .\datafiles\icons.rc}
@@ -35,7 +34,8 @@ begin
   if ShowSplash then
     Splash := TSplash.Create(Application);
 
-  LangID := GetLangIDFromLanguage(OptionsDlg.xml.GetValue('/language', rsSystemLanguage));
+  //set the language at startup
+  LangID := GetLangIDFromLanguage(Settings.Language);
   if LangID <> 'en_US' then
     SetDefaultLang(LangID, 'locale', True);
 

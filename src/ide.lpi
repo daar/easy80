@@ -28,22 +28,22 @@
     </RunParams>
     <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="LazControls"/>
+        <PackageName Value="LCL"/>
       </Item1>
       <Item2>
-        <PackageName Value="atbinhex_package"/>
+        <PackageName Value="LazControls"/>
       </Item2>
       <Item3>
         <PackageName Value="SynEdit"/>
       </Item3>
       <Item4>
-        <PackageName Value="LazOpenGLContext"/>
+        <PackageName Value="KControlsLaz"/>
       </Item4>
       <Item5>
-        <PackageName Value="LCL"/>
+        <PackageName Value="LazOpenGLContext"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="5">
+    <Units Count="6">
       <Unit0>
         <Filename Value="ide.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -76,6 +76,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="OptionsDialog"/>
       </Unit4>
+      <Unit5>
+        <Filename Value="appsettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppSettings"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -12,12 +12,24 @@ msgstr ""
 "Language: pl_PL\n"
 "X-Generator: Poedit 2.0beta1\n"
 
+#: resourcestrings.rscannotdeletefiles
+msgid "Cannot delete file: %s."
+msgstr ""
+
 #: resourcestrings.rschinesezh_cn
 msgid "Chinese (zh_CN)"
 msgstr ""
 
 #: resourcestrings.rsdates
 msgid "Date: %s"
+msgstr ""
+
+#: resourcestrings.rsdeleteoldfile
+msgid "Delete old file?"
+msgstr ""
+
+#: resourcestrings.rsdeleteoldfiles
+msgid "Delete old file \"%s\"?"
 msgstr ""
 
 #: resourcestrings.rsditems0f
@@ -28,13 +40,16 @@ msgstr ""
 msgid "Dutch (nl_NL)"
 msgstr ""
 
-#: resourcestrings.rseasy80ide
-msgctxt "resourcestrings.rseasy80ide"
-msgid "Easy80-IDE"
+#: resourcestrings.rseasy80idevs
+msgid "Easy80-IDE v%s"
 msgstr ""
 
 #: resourcestrings.rsenglishen_us
 msgid "English (en_US)"
+msgstr ""
+
+#: resourcestrings.rserrordeletingfile
+msgid "Error deleting file"
 msgstr ""
 
 #: resourcestrings.rsfrenchfr_fr
@@ -49,12 +64,12 @@ msgstr ""
 msgid "Italian (it_IT)"
 msgstr ""
 
-#: resourcestrings.rsnotyetsupported
-msgid "Not yet supported"
-msgstr ""
-
 #: resourcestrings.rspolishpl_pl
 msgid "Polish (pl_PL)"
+msgstr ""
+
+#: resourcestrings.rsreadonly
+msgid "%s [readonly]"
 msgstr ""
 
 #: resourcestrings.rsspanishes_es
@@ -69,6 +84,10 @@ msgstr ""
 msgid "Easy 80 IDE"
 msgstr "Easy 80 IDE"
 
+#: tmainform.menuitem3.caption
+msgid "Move page"
+msgstr ""
+
 #: tmainform.messagestabsheet.caption
 msgctxt "tmainform.messagestabsheet.caption"
 msgid "Messages"
@@ -77,6 +96,14 @@ msgstr ""
 #: tmainform.miabout.caption
 msgctxt "tmainform.miabout.caption"
 msgid "&About"
+msgstr ""
+
+#: tmainform.micloseallother.caption
+msgid "Close all other pages"
+msgstr ""
+
+#: tmainform.miclosepage.caption
+msgid "Close page"
 msgstr ""
 
 #: tmainform.miedit.caption
@@ -92,6 +119,30 @@ msgstr "&Plik"
 #: tmainform.mihelp.caption
 msgctxt "tmainform.mihelp.caption"
 msgid "&Help"
+msgstr ""
+
+#: tmainform.mimoveleft.caption
+msgid "Move page left"
+msgstr ""
+
+#: tmainform.mimoveright.caption
+msgid "Move page right"
+msgstr ""
+
+#: tmainform.mimoverightmost.caption
+msgid "Move page rightmost"
+msgstr ""
+
+#: tmainform.minew.caption
+msgid "New"
+msgstr ""
+
+#: tmainform.minewfile.caption
+msgid "New file"
+msgstr ""
+
+#: tmainform.minewprojectfolder.caption
+msgid "New project folder"
 msgstr ""
 
 #: tmainform.miopenprojectfolder.caption
@@ -112,6 +163,7 @@ msgid "&Quit"
 msgstr "&Zrezygnuj"
 
 #: tmainform.misave.caption
+msgctxt "tmainform.misave.caption"
 msgid "Save"
 msgstr ""
 
@@ -123,9 +175,23 @@ msgstr ""
 msgid "Save as ..."
 msgstr ""
 
+#: tmainform.misaveastab.caption
+msgctxt "tmainform.misaveastab.caption"
+msgid "Save as..."
+msgstr ""
+
+#: tmainform.misavetab.caption
+msgctxt "tmainform.misavetab.caption"
+msgid "Save"
+msgstr ""
+
 #: tmainform.mitools.caption
 msgctxt "tmainform.mitools.caption"
 msgid "&Tools"
+msgstr ""
+
+#: tmainform.momoveleftmost.caption
+msgid "Move page leftmost"
 msgstr ""
 
 #: toptionsdlg.assemblertabsheet.caption
@@ -133,8 +199,60 @@ msgctxt "toptionsdlg.assemblertabsheet.caption"
 msgid "Assembler"
 msgstr ""
 
+#: toptionsdlg.bucolorchange.caption
+msgid "Change..."
+msgstr ""
+
 #: toptionsdlg.caption
 msgid "Options"
+msgstr ""
+
+#: toptionsdlg.cbdropfiles.caption
+msgid "Drop files"
+msgstr ""
+
+#: toptionsdlg.cbfontstylebold.caption
+msgid "Bold"
+msgstr ""
+
+#: toptionsdlg.cbfontstyleitalic.caption
+msgid "Italic"
+msgstr ""
+
+#: toptionsdlg.cbgroupundo.caption
+msgid "Group undo"
+msgstr ""
+
+#: toptionsdlg.cbshowaddress.caption
+msgid "Show address area"
+msgstr ""
+
+#: toptionsdlg.cbshowdigits.caption
+msgid "Show digit area"
+msgstr ""
+
+#: toptionsdlg.cbshowhorzlines.caption
+msgid "Show horizontal lines"
+msgstr ""
+
+#: toptionsdlg.cbshowinactivecaret.caption
+msgid "Show inactive caret"
+msgstr ""
+
+#: toptionsdlg.cbshowseparators.caption
+msgid "Show area separators"
+msgstr ""
+
+#: toptionsdlg.cbshowtext.caption
+msgid "Show text area"
+msgstr ""
+
+#: toptionsdlg.cbshowvertlines.caption
+msgid "Show vertical lines"
+msgstr ""
+
+#: toptionsdlg.cbundoaftersave.caption
+msgid "Undo after save"
 msgstr ""
 
 #: toptionsdlg.compilertabsheet.caption
@@ -142,14 +260,100 @@ msgctxt "toptionsdlg.compilertabsheet.caption"
 msgid "Compiler"
 msgstr ""
 
-#: toptionsdlg.editortabsheet.caption
-msgctxt "toptionsdlg.editortabsheet.caption"
-msgid "Editor"
+#: toptionsdlg.gbappearance.caption
+msgid "Appearance"
+msgstr ""
+
+#: toptionsdlg.gbcolors.caption
+msgid "Color assignment"
+msgstr ""
+
+#: toptionsdlg.gbgeneral.caption
+msgctxt "toptionsdlg.gbgeneral.caption"
+msgid "General"
 msgstr ""
 
 #: toptionsdlg.generaltabsheet.caption
 msgctxt "toptionsdlg.generaltabsheet.caption"
 msgid "General"
+msgstr ""
+
+#: toptionsdlg.hexeditorcolorstabsheet.caption
+msgid "Hex editor colors"
+msgstr ""
+
+#: toptionsdlg.hexeditorfonttabsheet.caption
+msgid "Hex editor font"
+msgstr ""
+
+#: toptionsdlg.hexeditortabsheet.caption
+msgid "Hex editor"
+msgstr ""
+
+#: toptionsdlg.lbaddressprefix.caption
+msgid "Address prefix:"
+msgstr ""
+
+#: toptionsdlg.lbaddresssize.caption
+msgid "Address size:"
+msgstr ""
+
+#: toptionsdlg.lbattributes.caption
+msgid "Color item:"
+msgstr ""
+
+#: toptionsdlg.lbbytes.caption
+msgctxt "toptionsdlg.lbbytes.caption"
+msgid "bytes"
+msgstr ""
+
+#: toptionsdlg.lbbytes2.caption
+msgctxt "toptionsdlg.lbbytes2.caption"
+msgid "bytes"
+msgstr ""
+
+#: toptionsdlg.lbcharspacing.caption
+msgid "Inter-character spacing:"
+msgstr ""
+
+#: toptionsdlg.lbdigitgrouping.caption
+msgid "Digit grouping:"
+msgstr ""
+
+#: toptionsdlg.lbfontname.caption
+msgid "&Font name:"
+msgstr ""
+
+#: toptionsdlg.lbfontsize.caption
+msgid "Font size:"
+msgstr ""
+
+#: toptionsdlg.lbhighfg.caption
+msgid "Current color:"
+msgstr ""
+
+#: toptionsdlg.lblineheightpercent.caption
+msgid "Line height percentage:"
+msgstr ""
+
+#: toptionsdlg.lblinesize.caption
+msgid "Line size:"
+msgstr ""
+
+#: toptionsdlg.lbpercent.caption
+msgid "%"
+msgstr ""
+
+#: toptionsdlg.lbpoints.caption
+msgid "points"
+msgstr ""
+
+#: toptionsdlg.lbsample.caption
+msgid "Sample:"
+msgstr ""
+
+#: toptionsdlg.lbundolimit.caption
+msgid "Undo limit:"
 msgstr ""
 
 #: toptionsdlg.localecombobox.text
@@ -158,6 +362,18 @@ msgstr ""
 
 #: toptionsdlg.localelabel.caption
 msgid "Language:"
+msgstr ""
+
+#: toptionsdlg.pnfontsample.caption
+msgid "AaBbCcXxYyZz"
+msgstr ""
+
+#: toptionsdlg.rgaddressmode.caption
+msgid "Address mode"
+msgstr ""
+
+#: toptionsdlg.rgdisableddrawstyle.caption
+msgid "Draw style when disabled"
 msgstr ""
 
 #: tsplash.becreativelabel.caption

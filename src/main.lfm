@@ -1,13 +1,15 @@
 object MainForm: TMainForm
-  Left = 308
+  Left = 484
   Height = 461
-  Top = 166
+  Top = 179
   Width = 722
   Caption = 'Easy 80 IDE'
   ClientHeight = 441
   ClientWidth = 722
   Menu = MainMenu
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '1.7'
   WindowState = wsMaximized
@@ -43,6 +45,7 @@ object MainForm: TMainForm
       Width = 492
       Align = alClient
       Images = ImageList16
+      PopupMenu = TabsPopupMenu
       TabOrder = 0
     end
   end
@@ -121,7 +124,10 @@ object MainForm: TMainForm
     top = 264
   end
   object SelectDirectoryDialog: TSelectDirectoryDialog
-    left = 376
+    FileName = 'D:\easy80\src_todo\pcb\pcb-port'
+    InitialDir = 'D:\easy80\src_todo\pcb\'
+    Options = [ofCreatePrompt, ofOldStyleDialog, ofEnableSizing, ofViewDetail]
+    left = 568
     top = 208
   end
   object MainMenu: TMainMenu
@@ -134,6 +140,20 @@ object MainForm: TMainForm
         OnClick = miOpenProjectFolderClick
       end
       object miFileSep1: TMenuItem
+        Caption = '-'
+      end
+      object miNew: TMenuItem
+        Caption = 'New'
+        object miNewFile: TMenuItem
+          Caption = 'New file'
+          OnClick = miNewFileClick
+        end
+        object miNewProjectFolder: TMenuItem
+          Caption = 'New project folder'
+          OnClick = miNewProjectFolderClick
+        end
+      end
+      object MenuItem2: TMenuItem
         Caption = '-'
       end
       object miSave: TMenuItem
@@ -180,7 +200,49 @@ object MainForm: TMainForm
   end
   object SaveDialog: TSaveDialog
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    left = 464
-    top = 208
+    left = 568
+    top = 264
+  end
+  object TabsPopupMenu: TPopupMenu
+    left = 136
+    top = 160
+    object miClosePage: TMenuItem
+      Caption = 'Close page'
+      OnClick = miClosePageClick
+    end
+    object miCloseAllOther: TMenuItem
+      Caption = 'Close all other pages'
+      OnClick = miCloseAllOtherClick
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Move page'
+      object miMoveLeft: TMenuItem
+        Caption = 'Move page left'
+        OnClick = miMoveLeftClick
+      end
+      object miMoveRight: TMenuItem
+        Caption = 'Move page right'
+        OnClick = miMoveRightClick
+      end
+      object moMoveLeftMost: TMenuItem
+        Caption = 'Move page leftmost'
+        OnClick = moMoveLeftMostClick
+      end
+      object miMoveRightMost: TMenuItem
+        Caption = 'Move page rightmost'
+        OnClick = miMoveRightMostClick
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = '-'
+    end
+    object miSaveTab: TMenuItem
+      Caption = 'Save'
+      OnClick = miSaveClick
+    end
+    object miSaveAsTab: TMenuItem
+      Caption = 'Save as...'
+      OnClick = miSaveAsClick
+    end
   end
 end
