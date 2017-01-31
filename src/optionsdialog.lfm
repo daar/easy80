@@ -83,9 +83,9 @@ object OptionsDlg: TOptionsDlg
     Height = 369
     Top = 0
     Width = 461
-    ActivePage = HexEditorColorsTabSheet
+    ActivePage = GeneralTabSheet
     Align = alClient
-    TabIndex = 3
+    TabIndex = 0
     TabOrder = 2
     object GeneralTabSheet: TTabSheet
       Caption = 'General'
@@ -118,6 +118,18 @@ object OptionsDlg: TOptionsDlg
         ItemHeight = 15
         TabOrder = 0
         Text = 'LocaleComboBox'
+      end
+      object ReOpenCheckBox: TCheckBox
+        AnchorSideLeft.Control = GeneralTabSheet
+        AnchorSideTop.Control = LocaleComboBox
+        AnchorSideTop.Side = asrBottom
+        Left = 6
+        Height = 19
+        Top = 35
+        Width = 197
+        BorderSpacing.Around = 6
+        Caption = 'Open last project folder at startup'
+        TabOrder = 1
       end
     end
     object HexEditorTabSheet: TTabSheet

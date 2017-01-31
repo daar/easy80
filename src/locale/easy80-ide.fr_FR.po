@@ -100,12 +100,26 @@ msgctxt "tmainform.miabout.caption"
 msgid "&About"
 msgstr "A &propos ..."
 
+#: tmainform.miassemble.caption
+msgctxt "tmainform.miassemble.caption"
+msgid "Assemble"
+msgstr ""
+
 #: tmainform.micloseallother.caption
 msgid "Close all other pages"
 msgstr ""
 
 #: tmainform.miclosepage.caption
 msgid "Close page"
+msgstr ""
+
+#: tmainform.micompile.caption
+msgctxt "tmainform.micompile.caption"
+msgid "Compile"
+msgstr ""
+
+#: tmainform.mideletefile.caption
+msgid "Delete file"
 msgstr ""
 
 #: tmainform.miedit.caption
@@ -159,6 +173,11 @@ msgstr "&Dossier projet ouvert"
 msgctxt "tmainform.mioptions.caption"
 msgid "&Options"
 msgstr "&Options"
+
+#: tmainform.miproject.caption
+msgctxt "tmainform.miproject.caption"
+msgid "Project"
+msgstr ""
 
 #: tmainform.miquit.caption
 #, fuzzy
@@ -371,6 +390,10 @@ msgstr ""
 
 #: toptionsdlg.pnfontsample.caption
 msgid "AaBbCcXxYyZz"
+msgstr ""
+
+#: toptionsdlg.reopencheckbox.caption
+msgid "Open last project folder at startup"
 msgstr ""
 
 #: toptionsdlg.rgaddressmode.caption

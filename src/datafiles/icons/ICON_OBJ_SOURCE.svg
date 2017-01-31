@@ -16,7 +16,7 @@
    id="svg9372"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="ICON_HEX_SOURCE.svg">
+   sodipodi:docname="ICON_OBJ_SOURCE.svg">
   <defs
      id="defs9374">
     <filter
@@ -626,7 +626,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="22.4"
-     inkscape:cx="0.80353908"
+     inkscape:cx="4.0178248"
      inkscape:cy="6.486454"
      inkscape:document-units="px"
      inkscape:current-layer="g10572"
@@ -649,7 +649,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -766,22 +766,22 @@
       </g>
       <rect
          y="1044.1595"
-         x="2.6329622"
-         height="6.1324358"
-         width="10.734076"
+         x="5.1109905"
+         height="6.1324372"
+         width="8.2560472"
          id="rect5308-2-9"
          style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:0;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new" />
       <text
          sodipodi:linespacing="125%"
          id="text5304-9-3"
          y="1049.9613"
-         x="2.1707463"
+         x="4.9939284"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.43408728px;line-height:125%;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:1;fill:#006967;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          xml:space="preserve"><tspan
            y="1049.9613"
-           x="2.1707463"
+           x="4.9939284"
            id="tspan5306-7-4"
-           sodipodi:role="line">HEX</tspan></text>
+           sodipodi:role="line">obj</tspan></text>
     </g>
   </g>
 </svg>

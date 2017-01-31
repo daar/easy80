@@ -53,6 +53,8 @@ type
     FHexUndoAfterSave: boolean;
     FHexUndoLimit: integer;
     FLanguage: string;
+    FLastProjectFolder: string;
+    FReOpenAtStart: boolean;
   public
     constructor Create(const FileName: string); override;
   published
@@ -60,6 +62,8 @@ type
 
     //General
     property Language: string read FLanguage write FLanguage;
+    property ReOpenAtStart: boolean read FReOpenAtStart write FReOpenAtStart;
+    property LastProjectFolder: string read FLastProjectFolder write FLastProjectFolder;
 
     //Hex editor general
     property HexDropFiles: boolean read FHexDropFiles write FHexDropFiles;
@@ -231,6 +235,8 @@ begin
 
   //General
   FLanguage := 'System language';
+  FReOpenAtStart := True;
+  FLastProjectFolder := '';
 
   //Hex editor general
   FHexDropFiles := True;

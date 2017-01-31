@@ -25,6 +25,10 @@ type
   TMainForm = class(TForm)
     ImageList16: TImageList;
     MainMenu: TMainMenu;
+    miDeleteFile: TMenuItem;
+    miProject: TMenuItem;
+    miCompile: TMenuItem;
+    miAssemble: TMenuItem;
     miNew: TMenuItem;
     MenuItem2: TMenuItem;
     miNewFile: TMenuItem;
@@ -70,6 +74,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure miCompileClick(Sender: TObject);
+    procedure miAssembleClick(Sender: TObject);
+    procedure miDeleteFileClick(Sender: TObject);
     procedure miNewFileClick(Sender: TObject);
     procedure miNewProjectFolderClick(Sender: TObject);
     procedure miMoveRightMostClick(Sender: TObject);
@@ -113,18 +120,23 @@ implementation
 {$R *.lfm}
 
 uses
-  icons, AppSettings;
+  icons, AppSettings, ASMZ80, MessageIntf;
 
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
+  Messages.RegisterView(MessagesMemo);
+
   LoadFromResource(ImageList16);
 
   FProjectFiles := TFPList.Create;
 
   //new menu is disabled until a project is opened
   miNew.Enabled := False;
+
+  if Settings.ReOpenAtStart then
+    SetProjectFolder(Settings.LastProjectFolder);
 end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
@@ -138,6 +150,57 @@ end;
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   Caption := Format(rsEasy80IDEVS, [{$i version.inc}]);
+end;
+
+procedure TMainForm.miCompileClick(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.miAssembleClick(Sender: TObject);
+var
+  ts: TTabSheet;
+  pf: pProjectFile;
+  lis: string;
+  obj: RawByteString;
+begin
+  ts := EditorsPageControl.ActivePage;
+
+  //exit if no tabsheet is selected
+  if ts = nil then
+    exit;
+
+  pf := pProjectFile(ts.Tag);
+
+  //exit if file is not ASM
+  if LowerCase(ExtractFileExt(pf^.FileName)) <> '.asm' then
+    exit;
+
+  miSaveAllClick(nil);
+
+  lis := ChangeFileExt(pf^.FullFileName, '.lis');
+  obj := ChangeFileExt(pf^.FullFileName, '.obj');
+  ASMZ80_execute(pf^.FullFileName, lis, obj, True);
+
+  SetProjectFolder(FProjectFolder);
+end;
+
+procedure TMainForm.miDeleteFileClick(Sender: TObject);
+var
+  tn: TTreeNode;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn = nil then
+    exit;
+
+  if MessageDlg('Delete file', 'Are you sure to permanently delete this file?',mtConfirmation, mbYesNo, 0) = mrYes then
+  begin
+    if not DeleteFile(IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text) then
+      MessageDlg('Error deleting file', Format('Could not delete file: %s', [SysErrorMessage(GetLastOSError)]), mtError, [mbClose], 0)
+    else
+      SetProjectFolder(FProjectFolder);
+  end;
 end;
 
 procedure TMainForm.miNewFileClick(Sender: TObject);
@@ -349,11 +412,11 @@ begin
 
       UpdateSynEdit(TSynEdit(pf^.Editor));
     end;
-    '.hex':
+    '.obj':
     begin
       pf := AddProjectFile(FProjectFolder, sn);
 
-      pf^.TabSheet.ImageIndex := ICON_HEX_SOURCE;
+      pf^.TabSheet.ImageIndex := ICON_OBJ_SOURCE;
       pf^.TabSheet.Caption := pf^.FileName;
 
       pf^.Editor := TKHexEditor.Create(pf^.TabSheet);
@@ -390,8 +453,24 @@ var
   mainnode: TTreeNode;
   node: TTreeNode;
   i: Integer;
-  ext: RawByteString;
+  ext: string;
 begin
+  //if folder does not exist then exit
+  if not DirectoryExists(Folder) then
+    exit;
+
+  //if new folder selected
+  if Folder <> FProjectFolder then
+  begin
+    //save the last opened projectfolder to the settings file
+    Settings.LastProjectFolder := Folder;
+    Settings.Save;
+
+    //clear the open projectfile list
+    while FProjectFiles.Count > 0 do
+      CloseProjectFile(0);
+  end;
+
   FProjectFolder := Folder;
 
   //enable new menu, when a project is opened
@@ -403,7 +482,7 @@ begin
   mainnode.ImageIndex := ICON_EASY80;
   mainnode.SelectedIndex := mainnode.ImageIndex;
 
-  AllFiles := FindAllFiles(FProjectFolder, '*.asm;*.hex;*.pas;*.pp;*.p;*.inc', False);
+  AllFiles := FindAllFiles(FProjectFolder, '*.asm;*.obj;*.pas;*.pp;*.p;*.inc', False);
   try
     for i := 0 to AllFiles.Count - 1 do
     begin
@@ -412,7 +491,7 @@ begin
 
       case ext of
         '.asm': node.ImageIndex := ICON_ASM_SOURCE;
-        '.hex': node.ImageIndex := ICON_HEX_SOURCE;
+        '.obj': node.ImageIndex := ICON_OBJ_SOURCE;
         '.pas', '.pp', '.p', '.inc': node.ImageIndex := ICON_PAS_SOURCE;
       end;
 
@@ -421,6 +500,10 @@ begin
 
     //expand all items in project
     mainnode.Expand(True);
+
+    //sort the items
+    ProjectTreeView.SortType := stText;
+    ProjectTreeView.AlphaSort;
   finally
     AllFiles.Free;
   end;
@@ -439,7 +522,8 @@ begin
   pf^.TreeNode := node;
 
   pf^.TabSheet := EditorsPageControl.AddTabSheet;
-  //pf^.TabSheet.PopupMenu := TabsPopupMenu;
+  //link the tabsheet to the projectfile record
+  pf^.TabSheet.Tag := PtrInt(pf);
   EditorsPageControl.ActivePage := pf^.TabSheet;
 
   Result := pf;

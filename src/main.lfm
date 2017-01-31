@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 484
+  Left = 388
   Height = 461
-  Top = 179
+  Top = 204
   Width = 722
   Caption = 'Easy 80 IDE'
   ClientHeight = 441
@@ -24,9 +24,10 @@ object MainForm: TMainForm
     Images = ImageList16
     PopupMenu = ProjectPopupMenu
     ReadOnly = True
+    RowSelect = True
     TabOrder = 0
     OnDblClick = ProjectTreeViewDblClick
-    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
   end
   object EditorsPanel: TPanel
     Left = 230
@@ -179,6 +180,18 @@ object MainForm: TMainForm
     object miEdit: TMenuItem
       Caption = '&Edit'
     end
+    object miProject: TMenuItem
+      Caption = 'Project'
+      object miCompile: TMenuItem
+        Caption = 'Compile'
+        Enabled = False
+        OnClick = miCompileClick
+      end
+      object miAssemble: TMenuItem
+        Caption = 'Assemble'
+        OnClick = miAssembleClick
+      end
+    end
     object miTools: TMenuItem
       Caption = '&Tools'
       object miOptions: TMenuItem
@@ -197,6 +210,10 @@ object MainForm: TMainForm
   object ProjectPopupMenu: TPopupMenu
     left = 136
     top = 264
+    object miDeleteFile: TMenuItem
+      Caption = 'Delete file'
+      OnClick = miDeleteFileClick
+    end
   end
   object SaveDialog: TSaveDialog
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]

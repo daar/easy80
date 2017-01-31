@@ -12,7 +12,7 @@ uses
   Forms,
   LazOpenGLContext, lazcontrols,
   LCLTranslator, ResourceStrings, IDELocale,
-  main, SplashScreen, OptionsDialog, AppSettings;
+  main, SplashScreen, OptionsDialog, AppSettings, MessageIntf;
 
 {$R *.res}
 {$R .\datafiles\icons.rc}

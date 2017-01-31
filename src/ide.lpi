@@ -43,7 +43,7 @@
         <PackageName Value="LazOpenGLContext"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="ide.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -81,6 +81,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppSettings"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="messageintf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MessageIntf"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -90,7 +95,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="datafiles;locale"/>
+      <OtherUnitFiles Value="datafiles;locale;asm"/>
       <UnitOutputDirectory Value="bin/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

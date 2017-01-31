@@ -1,0 +1,20 @@
+I found a Z80 assembler source for Turbo PASCAL 5.5 (DOS), and it looked interesting.
+So I decided to try to downgrade it for Turbo PASCAL 3.0, and that was successful also.
+Unfortunately it could be compiled (as a single source file) only under DOS, because TP
+under CP/M can only load source code files below approx. 40KB, and my file was much bigger.
+So I thought about splitting it into parts and include them.
+Fortunately my questions in a newsgroup were answered from Svend Broholm, he gave me the hint
+with PCRYPT, a very smart tool which was able to shrink the source code (in fact it shrinks
+it by changing all identifier and variable names, and the result look rather cryptic).
+But as a result of this shrinking process, it can be compiled as a single source file even
+with the CP/M version of Turbo PASCAL.
+
+ASMZ80.PAS   - the unshrinked but modified source of that Z80 assembler, compiled under DOS w/o problems.
+ASMZ80.TXT   - this file
+ASMZ80PC.PAS - the shrinked source, looks cryptic (don't think about modifying it manually)
+PCRYPT.COM   - the tool which shrinks the source code (running under DOS to XP, NOT Vista)
+TESTZ80.ASM  - a test source code for the assembler
+ASMZ80.COM   - the CP/M executable
+
+If anybody has luck with extending the functionality of that Assembler, plz send me a notice.
+Peter Dassow (peter.dassow@z80.eu) in January 2009

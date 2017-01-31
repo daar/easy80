@@ -30,6 +30,7 @@ type
     CBUndoAfterSave: TCheckBox;
     CDChange: TColorDialog;
     CBFontName: TComboBox;
+    ReOpenCheckBox: TCheckBox;
     EDAddressPrefix: TEdit;
     EDAddressSize: TSpinEdit;
     EDCharSpacing: TSpinEdit;
@@ -178,6 +179,7 @@ begin
 
   //General
   LocaleComboBox.Text := Settings.Language;
+  ReOpenCheckBox.Checked := Settings.ReOpenAtStart;
 
   //Hex editor general
   CBDropFiles.Checked := Settings.HexDropFiles;
@@ -233,6 +235,7 @@ begin
 
   //General
   Settings.Language := LocaleComboBox.Text;
+  Settings.ReOpenAtStart := ReOpenCheckBox.Checked;
 
   //Hex editor general
   Settings.HexDropFiles := CBDropFiles.Checked;
