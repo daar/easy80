@@ -25,6 +25,9 @@ type
   TMainForm = class(TForm)
     ImageList16: TImageList;
     MainMenu: TMainMenu;
+    miMessagesMemoClearAll: TMenuItem;
+    miMessagesMemoSelectAll: TMenuItem;
+    miMessagesMemoCopy: TMenuItem;
     miDeleteFile: TMenuItem;
     miProject: TMenuItem;
     miCompile: TMenuItem;
@@ -61,6 +64,7 @@ type
     FeedbackPageControl: TPageControl;
     EditorsPanel: TPanel;
     FeedbackPanel: TPanel;
+    MessagesPopupMenu: TPopupMenu;
     TabsPopupMenu: TPopupMenu;
     ProjectPopupMenu: TPopupMenu;
     SaveDialog: TSaveDialog;
@@ -74,6 +78,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure miMessagesMemoClearAllClick(Sender: TObject);
+    procedure miMessagesMemoCopyClick(Sender: TObject);
+    procedure miMessagesMemoSelectAllClick(Sender: TObject);
     procedure miCompileClick(Sender: TObject);
     procedure miAssembleClick(Sender: TObject);
     procedure miDeleteFileClick(Sender: TObject);
@@ -150,6 +157,21 @@ end;
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   Caption := Format(rsEasy80IDEVS, [{$i version.inc}]);
+end;
+
+procedure TMainForm.miMessagesMemoClearAllClick(Sender: TObject);
+begin
+  MessagesMemo.Lines.Clear;
+end;
+
+procedure TMainForm.miMessagesMemoCopyClick(Sender: TObject);
+begin
+  MessagesMemo.CopyToClipboard;
+end;
+
+procedure TMainForm.miMessagesMemoSelectAllClick(Sender: TObject);
+begin
+  MessagesMemo.SelectAll;
 end;
 
 procedure TMainForm.miCompileClick(Sender: TObject);

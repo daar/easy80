@@ -10,6 +10,7 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
+  PopupMode = pmAuto
   Position = poScreenCenter
   LCLVersion = '1.7'
   WindowState = wsMaximized
@@ -75,6 +76,7 @@ object MainForm: TMainForm
           Font.Pitch = fpFixed
           Font.Quality = fqDraft
           ParentFont = False
+          PopupMenu = MessagesPopupMenu
           ReadOnly = True
           ScrollBars = ssAutoBoth
           TabOrder = 0
@@ -249,6 +251,22 @@ object MainForm: TMainForm
     object miSaveAsTab: TMenuItem
       Caption = 'Save as...'
       OnClick = miSaveAsClick
+    end
+  end
+  object MessagesPopupMenu: TPopupMenu
+    left = 140
+    top = 321
+    object miMessagesMemoCopy: TMenuItem
+      Caption = 'Copy'
+      OnClick = miMessagesMemoCopyClick
+    end
+    object miMessagesMemoSelectAll: TMenuItem
+      Caption = 'Select all'
+      OnClick = miMessagesMemoSelectAllClick
+    end
+    object miMessagesMemoClearAll: TMenuItem
+      Caption = 'Clear all'
+      OnClick = miMessagesMemoClearAllClick
     end
   end
 end

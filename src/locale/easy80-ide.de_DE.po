@@ -137,6 +137,18 @@ msgctxt "tmainform.mihelp.caption"
 msgid "&Help"
 msgstr "&Hilfe"
 
+#: tmainform.mimessagesmemoclearall.caption
+msgid "Clear all"
+msgstr ""
+
+#: tmainform.mimessagesmemocopy.caption
+msgid "Copy"
+msgstr ""
+
+#: tmainform.mimessagesmemoselectall.caption
+msgid "Select all"
+msgstr ""
+
 #: tmainform.mimoveleft.caption
 msgid "Move page left"
 msgstr ""
