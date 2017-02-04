@@ -15,7 +15,7 @@ object MainForm: TMainForm
   WindowState = wsMaximized
   object ProjectTreeView: TTreeView
     Left = 0
-    Height = 278
+    Height = 441
     Top = 0
     Width = 225
     Align = alLeft
@@ -31,12 +31,12 @@ object MainForm: TMainForm
   end
   object EditorsPanel: TPanel
     Left = 230
-    Height = 278
+    Height = 441
     Top = 0
     Width = 492
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 278
+    ClientHeight = 441
     ClientWidth = 492
     TabOrder = 1
     object EditorsPageControl: TPageControl
@@ -49,36 +49,25 @@ object MainForm: TMainForm
       PopupMenu = TabsPopupMenu
       TabOrder = 0
     end
-  end
-  object FeedbackPanel: TPanel
-    Left = 0
-    Height = 158
-    Top = 283
-    Width = 722
-    Align = alBottom
-    BevelOuter = bvNone
-    ClientHeight = 158
-    ClientWidth = 722
-    TabOrder = 2
     object FeedbackPageControl: TPageControl
       Left = 0
       Height = 158
-      Top = 0
-      Width = 722
+      Top = 283
+      Width = 492
       ActivePage = MessagesTabSheet
-      Align = alClient
+      Align = alBottom
       Images = ImageList16
       TabIndex = 0
-      TabOrder = 0
+      TabOrder = 1
       object MessagesTabSheet: TTabSheet
         Caption = 'Messages'
         ClientHeight = 130
-        ClientWidth = 714
+        ClientWidth = 484
         object MessagesMemo: TMemo
           Left = 0
           Height = 130
           Top = 0
-          Width = 714
+          Width = 484
           Align = alClient
           Font.CharSet = ANSI_CHARSET
           Font.Height = -13
@@ -92,19 +81,19 @@ object MainForm: TMainForm
         end
       end
     end
-  end
-  object Splitter1: TSplitter
-    Cursor = crVSplit
-    Left = 0
-    Height = 5
-    Top = 278
-    Width = 722
-    Align = alBottom
-    ResizeAnchor = akBottom
+    object Splitter1: TSplitter
+      Cursor = crVSplit
+      Left = 0
+      Height = 5
+      Top = 278
+      Width = 492
+      Align = alBottom
+      ResizeAnchor = akBottom
+    end
   end
   object Splitter2: TSplitter
     Left = 225
-    Height = 278
+    Height = 441
     Top = 0
     Width = 5
   end
