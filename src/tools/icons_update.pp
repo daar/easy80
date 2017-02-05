@@ -7,17 +7,15 @@ uses
   SysUtils;
 
 var
-  i: Integer;
+  i: integer;
   img_files: TStringList;
   rc: TStringList;
   inc: TStringList;
   res: TStringList;
   s, inkscape_path, inkscape_app_path, cmd: string;
 
-{$R *.res}
-
 begin
-  img_files := FindAllFiles('.\icons', '*.svg', False);
+  img_files := FindAllFiles(SetDirSeparators('..\datafiles\icons'), '*.svg', false);
   inkscape_path := 'inkscape';
 
 {$IFDEF WINDOWS}
@@ -41,7 +39,7 @@ begin
   end;
   img_files.Free;
 
-  img_files := FindAllFiles('.\icons', '*.png', False);
+  img_files := FindAllFiles(SetDirSeparators('..\datafiles\icons'), '*.png', false);
   rc := TStringList.Create;
   inc := TStringList.Create;
   res := TStringList.Create;
@@ -54,9 +52,9 @@ begin
       res.Add(Format('  ImageList.AddResourceName(HInstance, ''%s'');', [s]));
     end;
 
-    rc.SaveToFile('icons.rc');
-    inc.SaveToFile('icons.inc');
-    res.SaveToFile('load_res.inc');
+    rc.SaveToFile(SetDirSeparators('..\datafiles\icons.rc'));
+    inc.SaveToFile(SetDirSeparators('..\datafiles\icons.inc'));
+    res.SaveToFile(SetDirSeparators('..\datafiles\load_res.inc'));
   finally
     img_files.Free;
     rc.Free;

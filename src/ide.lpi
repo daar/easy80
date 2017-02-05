@@ -8,7 +8,6 @@
       <Title Value="easy80-ide"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
-      <Icon Value="0"/>
     </General>
     <i18n>
       <EnableI18N Value="True"/>
@@ -26,7 +25,7 @@
         <CommandLineParams Value="--no-splash"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="5">
+    <RequiredPackages Count="4">
       <Item1>
         <PackageName Value="LCL"/>
       </Item1>
@@ -39,9 +38,6 @@
       <Item4>
         <PackageName Value="KControlsLaz"/>
       </Item4>
-      <Item5>
-        <PackageName Value="LazOpenGLContext"/>
-      </Item5>
     </RequiredPackages>
     <Units Count="7">
       <Unit0>

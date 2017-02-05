@@ -10,7 +10,7 @@ uses
 {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms,
-  LazOpenGLContext, lazcontrols,
+  lazcontrols,
   LCLTranslator, ResourceStrings, IDELocale,
   main, SplashScreen, OptionsDialog, AppSettings, MessageIntf;
 
