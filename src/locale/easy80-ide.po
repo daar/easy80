@@ -61,6 +61,11 @@ msgstr ""
 msgid "%s [readonly]"
 msgstr ""
 
+#: resourcestrings.rssettings
+msgctxt "resourcestrings.rssettings"
+msgid "Settings"
+msgstr ""
+
 #: resourcestrings.rsspanishes_es
 msgid "Spanish (es_ES)"
 msgstr ""
@@ -164,11 +169,6 @@ msgctxt "tmainform.miopenprojectfolder.caption"
 msgid "&Open project folder"
 msgstr ""
 
-#: tmainform.mioptions.caption
-msgctxt "tmainform.mioptions.caption"
-msgid "&Options"
-msgstr ""
-
 #: tmainform.miproject.caption
 msgctxt "tmainform.miproject.caption"
 msgid "Project"
@@ -202,6 +202,11 @@ msgctxt "tmainform.misavetab.caption"
 msgid "Save"
 msgstr ""
 
+#: tmainform.misettings.caption
+msgctxt "tmainform.misettings.caption"
+msgid "Settings"
+msgstr ""
+
 #: tmainform.mitools.caption
 msgctxt "tmainform.mitools.caption"
 msgid "&Tools"
@@ -217,6 +222,7 @@ msgid "Assembler"
 msgstr ""
 
 #: toptionsdlg.bucolorchange.caption
+msgctxt "toptionsdlg.bucolorchange.caption"
 msgid "Change..."
 msgstr ""
 
@@ -225,50 +231,62 @@ msgid "Options"
 msgstr ""
 
 #: toptionsdlg.cbdropfiles.caption
+msgctxt "toptionsdlg.cbdropfiles.caption"
 msgid "Drop files"
 msgstr ""
 
 #: toptionsdlg.cbfontstylebold.caption
+msgctxt "toptionsdlg.cbfontstylebold.caption"
 msgid "Bold"
 msgstr ""
 
 #: toptionsdlg.cbfontstyleitalic.caption
+msgctxt "toptionsdlg.cbfontstyleitalic.caption"
 msgid "Italic"
 msgstr ""
 
 #: toptionsdlg.cbgroupundo.caption
+msgctxt "toptionsdlg.cbgroupundo.caption"
 msgid "Group undo"
 msgstr ""
 
 #: toptionsdlg.cbshowaddress.caption
+msgctxt "toptionsdlg.cbshowaddress.caption"
 msgid "Show address area"
 msgstr ""
 
 #: toptionsdlg.cbshowdigits.caption
+msgctxt "toptionsdlg.cbshowdigits.caption"
 msgid "Show digit area"
 msgstr ""
 
 #: toptionsdlg.cbshowhorzlines.caption
+msgctxt "toptionsdlg.cbshowhorzlines.caption"
 msgid "Show horizontal lines"
 msgstr ""
 
 #: toptionsdlg.cbshowinactivecaret.caption
+msgctxt "toptionsdlg.cbshowinactivecaret.caption"
 msgid "Show inactive caret"
 msgstr ""
 
 #: toptionsdlg.cbshowseparators.caption
+msgctxt "toptionsdlg.cbshowseparators.caption"
 msgid "Show area separators"
 msgstr ""
 
 #: toptionsdlg.cbshowtext.caption
+msgctxt "toptionsdlg.cbshowtext.caption"
 msgid "Show text area"
 msgstr ""
 
 #: toptionsdlg.cbshowvertlines.caption
+msgctxt "toptionsdlg.cbshowvertlines.caption"
 msgid "Show vertical lines"
 msgstr ""
 
 #: toptionsdlg.cbundoaftersave.caption
+msgctxt "toptionsdlg.cbundoaftersave.caption"
 msgid "Undo after save"
 msgstr ""
 
@@ -278,10 +296,12 @@ msgid "Compiler"
 msgstr ""
 
 #: toptionsdlg.gbappearance.caption
+msgctxt "toptionsdlg.gbappearance.caption"
 msgid "Appearance"
 msgstr ""
 
 #: toptionsdlg.gbcolors.caption
+msgctxt "toptionsdlg.gbcolors.caption"
 msgid "Color assignment"
 msgstr ""
 
@@ -296,26 +316,32 @@ msgid "General"
 msgstr ""
 
 #: toptionsdlg.hexeditorcolorstabsheet.caption
+msgctxt "toptionsdlg.hexeditorcolorstabsheet.caption"
 msgid "Hex editor colors"
 msgstr ""
 
 #: toptionsdlg.hexeditorfonttabsheet.caption
+msgctxt "toptionsdlg.hexeditorfonttabsheet.caption"
 msgid "Hex editor font"
 msgstr ""
 
 #: toptionsdlg.hexeditortabsheet.caption
+msgctxt "toptionsdlg.hexeditortabsheet.caption"
 msgid "Hex editor"
 msgstr ""
 
 #: toptionsdlg.lbaddressprefix.caption
+msgctxt "toptionsdlg.lbaddressprefix.caption"
 msgid "Address prefix:"
 msgstr ""
 
 #: toptionsdlg.lbaddresssize.caption
+msgctxt "toptionsdlg.lbaddresssize.caption"
 msgid "Address size:"
 msgstr ""
 
 #: toptionsdlg.lbattributes.caption
+msgctxt "toptionsdlg.lbattributes.caption"
 msgid "Color item:"
 msgstr ""
 
@@ -330,70 +356,307 @@ msgid "bytes"
 msgstr ""
 
 #: toptionsdlg.lbcharspacing.caption
+msgctxt "toptionsdlg.lbcharspacing.caption"
 msgid "Inter-character spacing:"
 msgstr ""
 
 #: toptionsdlg.lbdigitgrouping.caption
+msgctxt "toptionsdlg.lbdigitgrouping.caption"
 msgid "Digit grouping:"
 msgstr ""
 
 #: toptionsdlg.lbfontname.caption
+msgctxt "toptionsdlg.lbfontname.caption"
 msgid "&Font name:"
 msgstr ""
 
 #: toptionsdlg.lbfontsize.caption
+msgctxt "toptionsdlg.lbfontsize.caption"
 msgid "Font size:"
 msgstr ""
 
 #: toptionsdlg.lbhighfg.caption
+msgctxt "toptionsdlg.lbhighfg.caption"
 msgid "Current color:"
 msgstr ""
 
 #: toptionsdlg.lblineheightpercent.caption
+msgctxt "toptionsdlg.lblineheightpercent.caption"
 msgid "Line height percentage:"
 msgstr ""
 
 #: toptionsdlg.lblinesize.caption
+msgctxt "toptionsdlg.lblinesize.caption"
 msgid "Line size:"
 msgstr ""
 
 #: toptionsdlg.lbpercent.caption
+msgctxt "toptionsdlg.lbpercent.caption"
 msgid "%"
 msgstr ""
 
 #: toptionsdlg.lbpoints.caption
+msgctxt "toptionsdlg.lbpoints.caption"
 msgid "points"
 msgstr ""
 
 #: toptionsdlg.lbsample.caption
+msgctxt "toptionsdlg.lbsample.caption"
 msgid "Sample:"
 msgstr ""
 
 #: toptionsdlg.lbundolimit.caption
+msgctxt "toptionsdlg.lbundolimit.caption"
 msgid "Undo limit:"
 msgstr ""
 
 #: toptionsdlg.localecombobox.text
+msgctxt "toptionsdlg.localecombobox.text"
 msgid "LocaleComboBox"
 msgstr ""
 
 #: toptionsdlg.localelabel.caption
+msgctxt "toptionsdlg.localelabel.caption"
 msgid "Language:"
 msgstr ""
 
 #: toptionsdlg.pnfontsample.caption
+msgctxt "toptionsdlg.pnfontsample.caption"
 msgid "AaBbCcXxYyZz"
 msgstr ""
 
 #: toptionsdlg.reopencheckbox.caption
+msgctxt "toptionsdlg.reopencheckbox.caption"
 msgid "Open last project folder at startup"
 msgstr ""
 
 #: toptionsdlg.rgaddressmode.caption
+msgctxt "toptionsdlg.rgaddressmode.caption"
 msgid "Address mode"
 msgstr ""
 
 #: toptionsdlg.rgdisableddrawstyle.caption
+msgctxt "toptionsdlg.rgdisableddrawstyle.caption"
+msgid "Draw style when disabled"
+msgstr ""
+
+#: tsettingsframe.assemblertabsheet.caption
+msgctxt "tsettingsframe.assemblertabsheet.caption"
+msgid "Assembler"
+msgstr ""
+
+#: tsettingsframe.bucolorchange.caption
+msgctxt "tsettingsframe.bucolorchange.caption"
+msgid "Change..."
+msgstr ""
+
+#: tsettingsframe.cbdropfiles.caption
+msgctxt "tsettingsframe.cbdropfiles.caption"
+msgid "Drop files"
+msgstr ""
+
+#: tsettingsframe.cbfontstylebold.caption
+msgctxt "tsettingsframe.cbfontstylebold.caption"
+msgid "Bold"
+msgstr ""
+
+#: tsettingsframe.cbfontstyleitalic.caption
+msgctxt "tsettingsframe.cbfontstyleitalic.caption"
+msgid "Italic"
+msgstr ""
+
+#: tsettingsframe.cbgroupundo.caption
+msgctxt "tsettingsframe.cbgroupundo.caption"
+msgid "Group undo"
+msgstr ""
+
+#: tsettingsframe.cbshowaddress.caption
+msgctxt "tsettingsframe.cbshowaddress.caption"
+msgid "Show address area"
+msgstr ""
+
+#: tsettingsframe.cbshowdigits.caption
+msgctxt "tsettingsframe.cbshowdigits.caption"
+msgid "Show digit area"
+msgstr ""
+
+#: tsettingsframe.cbshowhorzlines.caption
+msgctxt "tsettingsframe.cbshowhorzlines.caption"
+msgid "Show horizontal lines"
+msgstr ""
+
+#: tsettingsframe.cbshowinactivecaret.caption
+msgctxt "tsettingsframe.cbshowinactivecaret.caption"
+msgid "Show inactive caret"
+msgstr ""
+
+#: tsettingsframe.cbshowseparators.caption
+msgctxt "tsettingsframe.cbshowseparators.caption"
+msgid "Show area separators"
+msgstr ""
+
+#: tsettingsframe.cbshowtext.caption
+msgctxt "tsettingsframe.cbshowtext.caption"
+msgid "Show text area"
+msgstr ""
+
+#: tsettingsframe.cbshowvertlines.caption
+msgctxt "tsettingsframe.cbshowvertlines.caption"
+msgid "Show vertical lines"
+msgstr ""
+
+#: tsettingsframe.cbundoaftersave.caption
+msgctxt "tsettingsframe.cbundoaftersave.caption"
+msgid "Undo after save"
+msgstr ""
+
+#: tsettingsframe.compilertabsheet.caption
+msgctxt "tsettingsframe.compilertabsheet.caption"
+msgid "Compiler"
+msgstr ""
+
+#: tsettingsframe.gbappearance.caption
+msgctxt "tsettingsframe.gbappearance.caption"
+msgid "Appearance"
+msgstr ""
+
+#: tsettingsframe.gbcolors.caption
+msgctxt "tsettingsframe.gbcolors.caption"
+msgid "Color assignment"
+msgstr ""
+
+#: tsettingsframe.gbgeneral.caption
+msgctxt "tsettingsframe.gbgeneral.caption"
+msgid "General"
+msgstr ""
+
+#: tsettingsframe.generaltabsheet.caption
+msgctxt "tsettingsframe.generaltabsheet.caption"
+msgid "General"
+msgstr ""
+
+#: tsettingsframe.hexeditorcolorstabsheet.caption
+msgctxt "tsettingsframe.hexeditorcolorstabsheet.caption"
+msgid "Hex editor colors"
+msgstr ""
+
+#: tsettingsframe.hexeditorfonttabsheet.caption
+msgctxt "tsettingsframe.hexeditorfonttabsheet.caption"
+msgid "Hex editor font"
+msgstr ""
+
+#: tsettingsframe.hexeditortabsheet.caption
+msgctxt "tsettingsframe.hexeditortabsheet.caption"
+msgid "Hex editor"
+msgstr ""
+
+#: tsettingsframe.lbaddressprefix.caption
+msgctxt "tsettingsframe.lbaddressprefix.caption"
+msgid "Address prefix:"
+msgstr ""
+
+#: tsettingsframe.lbaddresssize.caption
+msgctxt "tsettingsframe.lbaddresssize.caption"
+msgid "Address size:"
+msgstr ""
+
+#: tsettingsframe.lbattributes.caption
+msgctxt "tsettingsframe.lbattributes.caption"
+msgid "Color item:"
+msgstr ""
+
+#: tsettingsframe.lbbytes.caption
+msgctxt "tsettingsframe.lbbytes.caption"
+msgid "bytes"
+msgstr ""
+
+#: tsettingsframe.lbbytes2.caption
+msgctxt "tsettingsframe.lbbytes2.caption"
+msgid "bytes"
+msgstr ""
+
+#: tsettingsframe.lbcharspacing.caption
+msgctxt "tsettingsframe.lbcharspacing.caption"
+msgid "Inter-character spacing:"
+msgstr ""
+
+#: tsettingsframe.lbdigitgrouping.caption
+msgctxt "tsettingsframe.lbdigitgrouping.caption"
+msgid "Digit grouping:"
+msgstr ""
+
+#: tsettingsframe.lbfontname.caption
+msgctxt "tsettingsframe.lbfontname.caption"
+msgid "&Font name:"
+msgstr ""
+
+#: tsettingsframe.lbfontsize.caption
+msgctxt "tsettingsframe.lbfontsize.caption"
+msgid "Font size:"
+msgstr ""
+
+#: tsettingsframe.lbhighfg.caption
+msgctxt "tsettingsframe.lbhighfg.caption"
+msgid "Current color:"
+msgstr ""
+
+#: tsettingsframe.lblineheightpercent.caption
+msgctxt "tsettingsframe.lblineheightpercent.caption"
+msgid "Line height percentage:"
+msgstr ""
+
+#: tsettingsframe.lblinesize.caption
+msgctxt "tsettingsframe.lblinesize.caption"
+msgid "Line size:"
+msgstr ""
+
+#: tsettingsframe.lbpercent.caption
+msgctxt "tsettingsframe.lbpercent.caption"
+msgid "%"
+msgstr ""
+
+#: tsettingsframe.lbpoints.caption
+msgctxt "tsettingsframe.lbpoints.caption"
+msgid "points"
+msgstr ""
+
+#: tsettingsframe.lbsample.caption
+msgctxt "tsettingsframe.lbsample.caption"
+msgid "Sample:"
+msgstr ""
+
+#: tsettingsframe.lbundolimit.caption
+msgctxt "tsettingsframe.lbundolimit.caption"
+msgid "Undo limit:"
+msgstr ""
+
+#: tsettingsframe.localecombobox.text
+msgctxt "tsettingsframe.localecombobox.text"
+msgid "LocaleComboBox"
+msgstr ""
+
+#: tsettingsframe.localelabel.caption
+msgctxt "tsettingsframe.localelabel.caption"
+msgid "Language:"
+msgstr ""
+
+#: tsettingsframe.pnfontsample.caption
+msgctxt "tsettingsframe.pnfontsample.caption"
+msgid "AaBbCcXxYyZz"
+msgstr ""
+
+#: tsettingsframe.reopencheckbox.caption
+msgctxt "tsettingsframe.reopencheckbox.caption"
+msgid "Open last project folder at startup"
+msgstr ""
+
+#: tsettingsframe.rgaddressmode.caption
+msgctxt "tsettingsframe.rgaddressmode.caption"
+msgid "Address mode"
+msgstr ""
+
+#: tsettingsframe.rgdisableddrawstyle.caption
+msgctxt "tsettingsframe.rgdisableddrawstyle.caption"
 msgid "Draw style when disabled"
 msgstr ""
 

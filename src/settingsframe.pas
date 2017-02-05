@@ -1,22 +1,22 @@
-unit OptionsDialog;
+unit SettingsFrame;
 
 {$mode objfpc}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, FileUtil, TreeFilterEdit, Forms, Controls, Graphics,
-  Dialogs, ButtonPanel, ExtCtrls, ComCtrls, StdCtrls, Spin, IDELocale, ResourceStrings,
-  Types, KControls, KHexEditor, KEditCommon;
+  Classes, SysUtils, FileUtil, TreeFilterEdit, Forms, Controls, StdCtrls, ExtCtrls, ComCtrls, Spin, Dialogs, Types,
+  IDELocale, ResourceStrings, KControls, KHexEditor, KEditCommon, Graphics, AppSettings;
 
 type
 
-  { TOptionsDlg }
+  { TSettingsFrame }
 
-  TOptionsDlg = class(TForm)
+  TSettingsFrame = class(TFrame)
+    AssemblerTabSheet: TTabSheet;
     BUColorChange: TButton;
-    ButtonPanel1: TButtonPanel;
     CBDropFiles: TCheckBox;
+    CBFontName: TComboBox;
     CBFontStyleBold: TCheckBox;
     CBFontStyleItalic: TCheckBox;
     CBGroupUndo: TCheckBox;
@@ -29,8 +29,7 @@ type
     CBShowVertLines: TCheckBox;
     CBUndoAfterSave: TCheckBox;
     CDChange: TColorDialog;
-    CBFontName: TComboBox;
-    ReOpenCheckBox: TCheckBox;
+    CompilerTabSheet: TTabSheet;
     EDAddressPrefix: TEdit;
     EDAddressSize: TSpinEdit;
     EDCharSpacing: TSpinEdit;
@@ -39,10 +38,13 @@ type
     EDLineHeightPercent: TSpinEdit;
     EDLineSize: TSpinEdit;
     EDUndoLimit: TSpinEdit;
-    FontDialog1: TFontDialog;
     GBAppearance: TGroupBox;
     GBColors: TGroupBox;
     GBGeneral: TGroupBox;
+    GeneralTabSheet: TTabSheet;
+    HexEditorColorsTabSheet: TTabSheet;
+    HexEditorFontTabSheet: TTabSheet;
+    HexEditorTabSheet: TTabSheet;
     LBAddressPrefix: TLabel;
     LBAddressSize: TLabel;
     LBAttributes: TLabel;
@@ -63,46 +65,35 @@ type
     LocaleComboBox: TComboBox;
     LocaleLabel: TLabel;
     OptionsPageControl: TPageControl;
+    OptionsTreeFilterEdit: TTreeFilterEdit;
+    OptionsTreeView: TTreeView;
     Panel1: TPanel;
     PNFontSample: TPanel;
+    ReOpenCheckBox: TCheckBox;
     RGAddressMode: TRadioGroup;
     RGDisabledDrawStyle: TRadioGroup;
     SHColor: TShape;
     Splitter1: TSplitter;
-    HexEditorTabSheet: TTabSheet;
-    CompilerTabSheet: TTabSheet;
-    AssemblerTabSheet: TTabSheet;
-    GeneralTabSheet: TTabSheet;
-    OptionsTreeFilterEdit: TTreeFilterEdit;
-    OptionsTreeView: TTreeView;
-    HexEditorColorsTabSheet: TTabSheet;
-    HexEditorFontTabSheet: TTabSheet;
     procedure BUColorChangeClick(Sender: TObject);
-    procedure CloseButtonClick(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
-    procedure UpdateFontSample(Sender: TObject);
     procedure LiBColorsClick(Sender: TObject);
-    procedure LiBColorsDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState);
-    procedure OKButtonClick(Sender: TObject);
+    procedure LiBColorsDrawItem(Control: TWinControl; Index: Integer; ARect: TRect; State: TOwnerDrawState);
     procedure OptionsTreeViewClick(Sender: TObject);
   private
     FColors: TKColorArray;
     procedure InitColors(var Colors: TKColorArray);
+    procedure UpdateFontSample(Sender: TObject);
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
   end;
-
-var
-  OptionsDlg: TOptionsDlg;
 
 implementation
 
 {$R *.lfm}
 
-uses
-  LCLTranslator, AppSettings;
+{ TSettingsFrame }
 
-{ TOptionsDlg }
-
-procedure TOptionsDlg.OptionsTreeViewClick(Sender: TObject);
+procedure TSettingsFrame.OptionsTreeViewClick(Sender: TObject);
 var
   node: TTreeNode;
   i: integer;
@@ -121,33 +112,23 @@ begin
   end;
 end;
 
-procedure TOptionsDlg.InitColors(var Colors: TKColorArray);
-var
-  i: TKHexEditorColorIndex;
-begin
-  SetLength(Colors, ciHexEditorColorsMax + 1);
-  for i := 0 to Length(Colors) - 1 do
-    Colors[i] := GetColorSpec(i).Def;
-end;
-
-procedure TOptionsDlg.UpdateFontSample(Sender: TObject);
-begin
-  if CBFontName.Text <> '' then
-  begin
-    PNFontSample.Font.Name := CBFontName.Text;
-    PNFontSample.Font.Size := EDFontSize.Value;
-    PNFontSample.Font.Bold := CBFontStyleBold.Checked;
-    PNFontSample.Font.Italic := CBFontStyleItalic.Checked;
-  end;
-end;
-
-procedure TOptionsDlg.LiBColorsClick(Sender: TObject);
+procedure TSettingsFrame.LiBColorsClick(Sender: TObject);
 begin
   SHColor.Brush.Color := FColors[TKHexEditorColorIndex(LiBColors.ItemIndex)];
 end;
 
-procedure TOptionsDlg.LiBColorsDrawItem(Control: TWinControl;
-  Index: integer; ARect: TRect; State: TOwnerDrawState);
+procedure TSettingsFrame.BUColorChangeClick(Sender: TObject);
+begin
+  CDChange.Color := FColors[TKHexEditorColorIndex(LiBColors.ItemIndex)];
+  if CDChange.Execute then
+  begin
+    FColors[TKHexEditorColorIndex(LiBColors.ItemIndex)] := CDChange.Color;
+    LiBColors.Invalidate;
+    LiBColorsClick(nil);
+  end;
+end;
+
+procedure TSettingsFrame.LiBColorsDrawItem(Control: TWinControl; Index: Integer; ARect: TRect; State: TOwnerDrawState);
 begin
   with (Control as TListBox).Canvas do
   begin
@@ -161,15 +142,32 @@ begin
   end;
 end;
 
-procedure TOptionsDlg.CloseButtonClick(Sender: TObject);
+procedure TSettingsFrame.InitColors(var Colors: TKColorArray);
+var
+  i: TKHexEditorColorIndex;
 begin
-  Close;
+  SetLength(Colors, ciHexEditorColorsMax + 1);
+  for i := 0 to Length(Colors) - 1 do
+    Colors[i] := GetColorSpec(i).Def;
 end;
 
-procedure TOptionsDlg.FormActivate(Sender: TObject);
+procedure TSettingsFrame.UpdateFontSample(Sender: TObject);
+begin
+  if CBFontName.Text <> '' then
+  begin
+    PNFontSample.Font.Name := CBFontName.Text;
+    PNFontSample.Font.Size := EDFontSize.Value;
+    PNFontSample.Font.Bold := CBFontStyleBold.Checked;
+    PNFontSample.Font.Italic := CBFontStyleItalic.Checked;
+  end;
+end;
+
+constructor TSettingsFrame.Create(AOwner: TComponent);
 var
   i: integer;
 begin
+  inherited Create(AOwner);
+
   OptionsPageControl.ShowTabs := false;
 
   OptionsTreeView.Items[0].Selected := true;
@@ -218,18 +216,7 @@ begin
     LiBColors.Items.Add(GetColorSpec(i).Name);
 end;
 
-procedure TOptionsDlg.BUColorChangeClick(Sender: TObject);
-begin
-  CDChange.Color := FColors[TKHexEditorColorIndex(LiBColors.ItemIndex)];
-  if CDChange.Execute then
-  begin
-    FColors[TKHexEditorColorIndex(LiBColors.ItemIndex)] := CDChange.Color;
-    LiBColors.Invalidate;
-    LiBColorsClick(nil);
-  end;
-end;
-
-procedure TOptionsDlg.OKButtonClick(Sender: TObject);
+destructor TSettingsFrame.Destroy;
 begin
   //save all settings
 
@@ -270,6 +257,9 @@ begin
   //Hex editor colors
 
   Settings.Save;
+
+  inherited Destroy;
 end;
 
 end.
+

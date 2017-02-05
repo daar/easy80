@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, SynEdit, SynHighlighterPas,
-  Forms, Controls, Graphics, ResourceStrings, SplashScreen, OptionsDialog,
-  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor;
+  Forms, Controls, Graphics, ResourceStrings, SplashScreen,
+  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor, SettingsFrame;
 
 type
   TProjectFile = record
@@ -57,7 +57,7 @@ type
     miHelp: TMenuItem;
     miAbout: TMenuItem;
     miTools: TMenuItem;
-    miOptions: TMenuItem;
+    miSettings: TMenuItem;
     miSave: TMenuItem;
     miSaveAs: TMenuItem;
     EditorsPageControl: TPageControl;
@@ -96,7 +96,7 @@ type
     procedure miOpenProjectFolderClick(Sender: TObject);
     procedure miQuitClick(Sender: TObject);
     procedure miAboutClick(Sender: TObject);
-    procedure miOptionsClick(Sender: TObject);
+    procedure miSettingsClick(Sender: TObject);
     procedure miSaveClick(Sender: TObject);
     procedure miSaveAsClick(Sender: TObject);
     procedure ProjectTreeViewDblClick(Sender: TObject);
@@ -349,10 +349,27 @@ begin
   Splash.Release;
 end;
 
-procedure TMainForm.miOptionsClick(Sender: TObject);
+procedure TMainForm.miSettingsClick(Sender: TObject);
+var
+  pf: pProjectFile;
+  idx: integer;
 begin
-  if OptionsDlg.ShowModal = mrOK then
-    EnvironmentChanged;
+  //check if settings already is opened in the editor
+  idx := ProjectFileTabIndex(rsSettings);
+  if idx <> -1 then
+  begin
+    EditorsPageControl.PageIndex := idx;
+    exit;
+  end;
+
+  pf := AddProjectFile(FProjectFolder, nil);
+
+  pf^.TabSheet.ImageIndex := ICON_SETTINGS;
+  pf^.TabSheet.Caption := rsSettings;
+
+  pf^.Editor := TSettingsFrame.Create(pf^.TabSheet);
+  TSettingsFrame(pf^.Editor).Parent := pf^.TabSheet;
+  TSettingsFrame(pf^.Editor).Align := alClient;
 end;
 
 procedure TMainForm.miSaveClick(Sender: TObject);
@@ -538,7 +555,11 @@ begin
   New(pf);
   FProjectFiles.Add(pf);
 
-  pf^.FullFileName := IncludeTrailingPathDelimiter(path) + node.Text;
+  if node <> nil then
+    pf^.FullFileName := IncludeTrailingPathDelimiter(path) + node.Text
+  else
+    pf^.FullFileName := '';
+
   pf^.FileName := ExtractFileName(pf^.FullFileName);
   pf^.Dirty := False;
   pf^.TreeNode := node;

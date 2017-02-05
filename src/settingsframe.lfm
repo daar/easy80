@@ -1,51 +1,30 @@
-object OptionsDlg: TOptionsDlg
-  Left = 564
-  Height = 415
-  Top = 238
-  Width = 698
-  Caption = 'Options'
-  ClientHeight = 415
-  ClientWidth = 698
-  OnActivate = FormActivate
-  Position = poMainFormCenter
-  LCLVersion = '1.7'
-  object ButtonPanel1: TButtonPanel
-    Left = 6
-    Height = 34
-    Top = 375
-    Width = 686
-    OKButton.Name = 'OKButton'
-    OKButton.DefaultCaption = True
-    OKButton.OnClick = OKButtonClick
-    HelpButton.Name = 'HelpButton'
-    HelpButton.DefaultCaption = True
-    CloseButton.Name = 'CloseButton'
-    CloseButton.DefaultCaption = True
-    CloseButton.OnClick = CloseButtonClick
-    CancelButton.Name = 'CancelButton'
-    CancelButton.DefaultCaption = True
-    TabOrder = 0
-    ShowButtons = [pbOK, pbCancel]
-  end
+object SettingsFrame: TSettingsFrame
+  Left = 0
+  Height = 344
+  Top = 0
+  Width = 713
+  ClientHeight = 344
+  ClientWidth = 713
+  TabOrder = 0
+  DesignLeft = 182
+  DesignTop = 243
   object Panel1: TPanel
     Left = 0
-    Height = 369
+    Height = 344
     Top = 0
     Width = 232
     Align = alLeft
     BevelOuter = bvNone
-    ClientHeight = 369
+    ClientHeight = 344
     ClientWidth = 232
-    TabOrder = 1
+    TabOrder = 0
     object OptionsTreeView: TTreeView
       Left = 6
-      Height = 334
+      Height = 303
       Top = 35
       Width = 220
       Align = alClient
-      BorderSpacing.Left = 6
-      BorderSpacing.Top = 6
-      BorderSpacing.Right = 6
+      BorderSpacing.Around = 6
       DefaultItemHeight = 18
       ExpandSignSize = 16
       ReadOnly = True
@@ -80,17 +59,17 @@ object OptionsDlg: TOptionsDlg
   end
   object OptionsPageControl: TPageControl
     Left = 237
-    Height = 369
+    Height = 344
     Top = 0
-    Width = 461
-    ActivePage = GeneralTabSheet
+    Width = 476
+    ActivePage = HexEditorColorsTabSheet
     Align = alClient
-    TabIndex = 0
-    TabOrder = 2
+    TabIndex = 3
+    TabOrder = 1
     object GeneralTabSheet: TTabSheet
       Caption = 'General'
-      ClientHeight = 341
-      ClientWidth = 453
+      ClientHeight = 316
+      ClientWidth = 468
       object LocaleLabel: TLabel
         AnchorSideLeft.Control = GeneralTabSheet
         AnchorSideTop.Control = LocaleComboBox
@@ -112,7 +91,7 @@ object OptionsDlg: TOptionsDlg
         Left = 67
         Height = 23
         Top = 6
-        Width = 380
+        Width = 395
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Around = 6
         ItemHeight = 15
@@ -134,8 +113,8 @@ object OptionsDlg: TOptionsDlg
     end
     object HexEditorTabSheet: TTabSheet
       Caption = 'Hex editor'
-      ClientHeight = 341
-      ClientWidth = 453
+      ClientHeight = 316
+      ClientWidth = 468
       object LBUndoLimit: TLabel
         Left = 212
         Height = 15
@@ -433,8 +412,8 @@ object OptionsDlg: TOptionsDlg
     end
     object HexEditorFontTabSheet: TTabSheet
       Caption = 'Hex editor font'
-      ClientHeight = 341
-      ClientWidth = 453
+      ClientHeight = 316
+      ClientWidth = 468
       object LBFontName: TLabel
         Left = 16
         Height = 15
@@ -450,7 +429,6 @@ object OptionsDlg: TOptionsDlg
         Top = 32
         Width = 201
         ItemHeight = 15
-        OnChange = UpdateFontSample
         Style = csDropDownList
         TabOrder = 0
       end
@@ -460,7 +438,6 @@ object OptionsDlg: TOptionsDlg
         Top = 64
         Width = 44
         Caption = 'Bold'
-        OnChange = UpdateFontSample
         TabOrder = 1
       end
       object CBFontStyleItalic: TCheckBox
@@ -469,7 +446,6 @@ object OptionsDlg: TOptionsDlg
         Top = 88
         Width = 45
         Caption = 'Italic'
-        OnChange = UpdateFontSample
         TabOrder = 2
       end
       object PNFontSample: TPanel
@@ -505,15 +481,14 @@ object OptionsDlg: TOptionsDlg
         Height = 23
         Top = 31
         Width = 49
-        OnChange = UpdateFontSample
         TabOrder = 4
         Value = 11
       end
     end
     object HexEditorColorsTabSheet: TTabSheet
       Caption = 'Hex editor colors'
-      ClientHeight = 341
-      ClientWidth = 453
+      ClientHeight = 316
+      ClientWidth = 468
       object LBAttributes: TLabel
         Left = 8
         Height = 15
@@ -577,7 +552,7 @@ object OptionsDlg: TOptionsDlg
   end
   object Splitter1: TSplitter
     Left = 232
-    Height = 369
+    Height = 344
     Top = 0
     Width = 5
   end
@@ -605,18 +580,7 @@ object OptionsDlg: TOptionsDlg
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    left = 48
-    top = 264
-  end
-  object FontDialog1: TFontDialog
-    Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
-    Font.Name = 'Courier New'
-    Font.Pitch = fpFixed
-    Font.Quality = fqDraft
-    MinFontSize = 0
-    MaxFontSize = 0
-    left = 640
-    top = 304
+    left = 76
+    top = 292
   end
 end

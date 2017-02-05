@@ -12,7 +12,7 @@ uses
   Forms,
   lazcontrols,
   LCLTranslator, ResourceStrings, IDELocale,
-  main, SplashScreen, OptionsDialog, AppSettings, MessageIntf;
+  main, SplashScreen, AppSettings, MessageIntf, SettingsFrame;
 
 {$R *.res}
 {$R .\datafiles\icons.rc}
@@ -26,7 +26,6 @@ begin
   Application.Initialize;
 
   Application.CreateForm(TMainForm, MainForm);
-  Application.CreateForm(TOptionsDlg, OptionsDlg);
 
   ShowSplash := not Application.HasOption('no-splash');
 

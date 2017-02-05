@@ -18,6 +18,7 @@ resourcestring
   rsItalianIt_IT = 'Italian (it_IT)';
   rsPolishPl_PL = 'Polish (pl_PL)';
   rsReadonly = '%s [readonly]';
+  rsSettings = 'Settings';
   rsSpanishEs_ES = 'Spanish (es_ES)';
   rsSystemLanguage = 'System language';
 

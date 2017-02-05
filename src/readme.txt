@@ -10,6 +10,7 @@ manually. Until that time the following description needs to be followed;
 
 1. install/compile components
   a. external\kcontrols\packages\kcontrols\kcontrolslaz.lpk
+  b. lazcontroldsgn.lpk         (lazarus supplied package) 
   
 2. build and run tools
   a. tools\hash_update.pp   (this tool will create hash.inc. Needs to be run 

@@ -185,9 +185,9 @@ object MainForm: TMainForm
     end
     object miTools: TMenuItem
       Caption = '&Tools'
-      object miOptions: TMenuItem
-        Caption = '&Options'
-        OnClick = miOptionsClick
+      object miSettings: TMenuItem
+        Caption = 'Settings'
+        OnClick = miSettingsClick
       end
     end
     object miHelp: TMenuItem
