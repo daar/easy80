@@ -3,6 +3,7 @@ unit ResourceStrings;
 interface
 
 resourcestring
+  rsAbout = 'About';
   rsCannotDeleteFileS = 'Cannot delete file: %s.';
   rsChineseZh_CN = 'Chinese (zh_CN)';
   rsDateS = 'Date: %s';

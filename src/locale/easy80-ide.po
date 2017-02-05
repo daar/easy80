@@ -1,6 +1,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: resourcestrings.rsabout
+msgid "About"
+msgstr ""
+
 #: resourcestrings.rscannotdeletefiles
 msgid "Cannot delete file: %s."
 msgstr ""
@@ -667,10 +671,6 @@ msgstr ""
 
 #: tsplash.builddatelabel.caption
 msgid "BuildDateLabel"
-msgstr ""
-
-#: tsplash.caption
-msgid "Splash"
 msgstr ""
 
 #: tsplash.compilerversionlabel.caption

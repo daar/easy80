@@ -144,6 +144,8 @@ begin
 
   if Settings.ReOpenAtStart then
     SetProjectFolder(Settings.LastProjectFolder);
+
+  miAboutClick(nil);
 end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
@@ -341,12 +343,26 @@ begin
 end;
 
 procedure TMainForm.miAboutClick(Sender: TObject);
+var
+  pf: pProjectFile;
+  idx: integer;
 begin
-  Splash := TSplash.Create(Application);
-  Splash.ShowModal;
+  //check if settings already is opened in the editor
+  idx := ProjectFileTabIndex(rsAbout);
+  if idx <> -1 then
+  begin
+    EditorsPageControl.PageIndex := idx;
+    exit;
+  end;
 
-  Splash.Close;
-  Splash.Release;
+  pf := AddProjectFile(FProjectFolder, nil);
+
+  pf^.TabSheet.ImageIndex := ICON_INFO;
+  pf^.TabSheet.Caption := rsAbout;
+
+  pf^.Editor := TSplash.Create(pf^.TabSheet);
+  TSplash(pf^.Editor).Parent := pf^.TabSheet;
+  TSplash(pf^.Editor).Align := alClient;
 end;
 
 procedure TMainForm.miSettingsClick(Sender: TObject);

@@ -64,7 +64,7 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Splash"/>
         <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
+        <ResourceBaseClass Value="Frame"/>
         <UnitName Value="SplashScreen"/>
       </Unit3>
       <Unit4>

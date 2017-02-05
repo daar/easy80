@@ -19,7 +19,6 @@ uses
 
 var
   LangID: string;
-  ShowSplash: Boolean;
 begin
   Application.Title := 'easy80-ide';
   RequireDerivedFormResource := True;
@@ -27,23 +26,10 @@ begin
 
   Application.CreateForm(TMainForm, MainForm);
 
-  ShowSplash := not Application.HasOption('no-splash');
-
-  //the splash screen
-  if ShowSplash then
-    Splash := TSplash.Create(Application);
-
   //set the language at startup
   LangID := GetLangIDFromLanguage(Settings.Language);
   if LangID <> 'en_US' then
     SetDefaultLang(LangID, 'locale', True);
-
-  if ShowSplash then
-  begin
-    Splash.ShowModal;
-    Splash.Close;
-    Splash.Release;
-  end;
 
   Application.Run;
 end.

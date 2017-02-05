@@ -12,22 +12,21 @@ type
 
   { TSplash }
 
-  TSplash = class(TForm)
-    CompilerVersionLabel: TLabel;
-    BuildDateLabel: TLabel;
-    BeCreativeLabel: TLabel;
-    HashLabel: TLabel;
+  TSplash = class(TFrame)
     BackgroundImage: TImage;
-    Easy80LogoImage: TImage;
-    VersionLabel: TLabel;
+    BeCreativeLabel: TLabel;
+    BuildDateLabel: TLabel;
+    CompilerVersionLabel: TLabel;
     DescriptionLabel: TLabel;
     Easy80Label: TLabel;
-    procedure BackgroundImageClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    Easy80LogoImage: TImage;
+    HashLabel: TLabel;
+    ScrollBox1: TScrollBox;
+    VersionLabel: TLabel;
   private
     function GetLocalizedBuildDate: string;
   public
-
+    constructor Create(AOwner: TComponent); override;
   end;
 
 var
@@ -62,19 +61,16 @@ begin
   Result := FormatDateTime('c', Date) + ' ' + FormatDateTime('t', Time);
 end;
 
-procedure TSplash.FormCreate(Sender: TObject);
+constructor TSplash.Create(AOwner: TComponent);
 begin
+  inherited Create(AOwner);
+
   Caption := Format(rsEasy80IDEVS, [{$i version.inc}]);
   VersionLabel.Caption := Format(rsEasy80IDEVS, [{$i version.inc}]);
 
   BuildDateLabel.Caption := Format(rsDateS, [GetLocalizedBuildDate]);
   HashLabel.Caption := Format('Hash: %s', [{$i hash.inc}]);
   CompilerVersionLabel.Caption:= Format('FPC: %s (%s-%s)', [{$i %FPCVERSION%}, {$I %FPCTARGETCPU%}, {$I %FPCTARGETOS%}]);
-end;
-
-procedure TSplash.BackgroundImageClick(Sender: TObject);
-begin
-  Close;
 end;
 
 end.

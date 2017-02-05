@@ -12,6 +12,10 @@ msgstr ""
 "Language: es_ES\n"
 "X-Generator: Poedit 2.0beta1\n"
 
+#: resourcestrings.rsabout
+msgid "About"
+msgstr ""
+
 #: resourcestrings.rscannotdeletefiles
 msgid "Cannot delete file: %s."
 msgstr ""
@@ -678,10 +682,6 @@ msgstr ""
 
 #: tsplash.builddatelabel.caption
 msgid "BuildDateLabel"
-msgstr ""
-
-#: tsplash.caption
-msgid "Splash"
 msgstr ""
 
 #: tsplash.compilerversionlabel.caption
