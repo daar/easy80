@@ -5,7 +5,7 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, OpenGLContext, SynEdit, SynHighlighterPas,
+  Classes, SysUtils, FileUtil, SynEdit, SynHighlighterPas,
   Forms, Controls, Graphics, ResourceStrings, SplashScreen, OptionsDialog,
   Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor;
 
