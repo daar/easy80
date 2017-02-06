@@ -145,6 +145,7 @@ begin
   if Settings.ReOpenAtStart then
     SetProjectFolder(Settings.LastProjectFolder);
 
+  //show about in editor
   miAboutClick(nil);
 end;
 

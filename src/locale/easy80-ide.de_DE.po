@@ -714,6 +714,10 @@ msgstr "Easy80-IDE"
 msgid "HashLabel"
 msgstr ""
 
+#: tsplash.label2.caption
+msgid "This project is hosted on"
+msgstr ""
+
 #: tsplash.versionlabel.caption
 msgid "VersionLabel"
 msgstr ""

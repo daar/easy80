@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  ResourceStrings;
+  ResourceStrings, LCLIntf;
 
 type
 
@@ -21,8 +21,13 @@ type
     Easy80Label: TLabel;
     Easy80LogoImage: TImage;
     HashLabel: TLabel;
+    GitHubImage: TImage;
+    Label2: TLabel;
     ScrollBox1: TScrollBox;
     VersionLabel: TLabel;
+    procedure GitHubImageClick(Sender: TObject);
+    procedure GitHubImageMouseEnter(Sender: TObject);
+    procedure GitHubImageMouseLeave(Sender: TObject);
   private
     function GetLocalizedBuildDate: string;
   public
@@ -37,6 +42,21 @@ implementation
 {$R *.lfm}
 
 { TSplash }
+
+procedure TSplash.GitHubImageClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/daar/easy80');
+end;
+
+procedure TSplash.GitHubImageMouseEnter(Sender: TObject);
+begin
+  GitHubImage.Cursor := crHandPoint;
+end;
+
+procedure TSplash.GitHubImageMouseLeave(Sender: TObject);
+begin
+  GitHubImage.Cursor := crDefault;
+end;
 
 {The compiler generated date string is always of the form y/m/d.
  This function gives it a string respresentation according to the
