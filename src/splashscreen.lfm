@@ -16,10 +16,16 @@ object Splash: TSplash
     Top = 0
     Width = 672
     HorzScrollBar.Page = 500
-    VertScrollBar.Page = 342
+    VertScrollBar.Page = 339
     Align = alClient
     ClientHeight = 427
     ClientWidth = 668
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Consolas'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 0
     object BackgroundImage: TImage
       Left = 0
@@ -1944,9 +1950,9 @@ object Splash: TSplash
       AnchorSideTop.Control = DescriptionLabel
       AnchorSideTop.Side = asrBottom
       Left = 40
-      Height = 15
-      Top = 226
-      Width = 114
+      Height = 14
+      Top = 224
+      Width = 154
       BorderSpacing.Top = 10
       Caption = 'Be creative and share!'
       ParentColor = False
@@ -1956,16 +1962,16 @@ object Splash: TSplash
       AnchorSideTop.Control = Easy80LogoImage
       AnchorSideTop.Side = asrBottom
       Left = 40
-      Height = 26
+      Height = 24
       Top = 114
-      Width = 122
+      Width = 144
       BorderSpacing.Left = 20
       BorderSpacing.Around = 20
       Caption = 'VersionLabel'
       Font.CharSet = ANSI_CHARSET
-      Font.Height = -19
-      Font.Name = 'Open Sans'
-      Font.Pitch = fpVariable
+      Font.Height = -21
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentColor = False
@@ -1977,7 +1983,7 @@ object Splash: TSplash
       AnchorSideTop.Side = asrBottom
       Left = 40
       Height = 56
-      Top = 160
+      Top = 158
       Width = 344
       AutoSize = False
       BorderSpacing.Top = 10
@@ -2115,16 +2121,16 @@ object Splash: TSplash
       AnchorSideTop.Control = Easy80LogoImage
       AnchorSideTop.Side = asrCenter
       Left = 154
-      Height = 47
-      Top = 39
-      Width = 187
+      Height = 41
+      Top = 42
+      Width = 190
       BorderSpacing.Left = 20
       Caption = 'Easy80-IDE'
       Font.CharSet = ANSI_CHARSET
       Font.Color = 11246128
       Font.Height = -35
-      Font.Name = 'Open Sans'
-      Font.Pitch = fpVariable
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentColor = False
@@ -2137,13 +2143,13 @@ object Splash: TSplash
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
       Left = 6
-      Height = 15
-      Top = 321
-      Width = 115
+      Height = 14
+      Top = 319
+      Width = 140
       BorderSpacing.Around = 6
       Caption = 'CompilerVersionLabel'
-      ParentColor = False
-      ParentFont = False
+      Color = clWhite
+      Transparent = False
     end
     object BuildDateLabel: TLabel
       AnchorSideLeft.Control = ScrollBox1
@@ -2152,14 +2158,14 @@ object Splash: TSplash
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = HashLabel
       Left = 6
-      Height = 15
+      Height = 14
       Top = 279
-      Width = 79
+      Width = 98
       BorderSpacing.Right = 6
       BorderSpacing.Around = 6
       Caption = 'BuildDateLabel'
-      ParentColor = False
-      ParentFont = False
+      Color = clWhite
+      Transparent = False
     end
     object HashLabel: TLabel
       AnchorSideLeft.Control = ScrollBox1
@@ -2168,13 +2174,13 @@ object Splash: TSplash
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = CompilerVersionLabel
       Left = 6
-      Height = 15
-      Top = 300
-      Width = 55
+      Height = 14
+      Top = 299
+      Width = 63
       BorderSpacing.Around = 6
       Caption = 'HashLabel'
-      ParentColor = False
-      ParentFont = False
+      Color = clWhite
+      Transparent = False
     end
     object GitHubImage: TImage
       AnchorSideTop.Control = BackgroundImage
@@ -2218,10 +2224,10 @@ object Splash: TSplash
     object Label2: TLabel
       AnchorSideTop.Control = GitHubImage
       AnchorSideRight.Control = GitHubImage
-      Left = 511
-      Height = 15
+      Left = 465
+      Height = 14
       Top = 279
-      Width = 129
+      Width = 175
       Anchors = [akTop, akRight]
       Caption = 'This project is hosted on'
       ParentColor = False

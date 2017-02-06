@@ -29,29 +29,8 @@ type
 
   TAppSettings = class(TCustomSettings)
   private
-    FHexAddressMode: TKHexEditorAddressMode;
-    FHexAddressPrefix: string;
-    FHexAddressSize: integer;
-    FHexCharSpacing: integer;
-    FHexDigitGrouping: integer;
-    FHexDisableDrawStyle: TKEditDisabledDrawStyle;
-    FHexDropFiles: boolean;
-    FHexFontName: string;
-    FHexFontSize: integer;
-    FHexFontStyleBold: boolean;
-    FHexFontStyleItalic: boolean;
-    FHexGroupUndo: boolean;
-    FHexLineHeightPercent: integer;
-    FHexLineSize: integer;
-    FHexShowAddress: boolean;
-    FHexShowDigits: boolean;
-    FHexShowHorzLines: boolean;
-    FHexShowInactiveCaret: boolean;
-    FHexShowSeparators: boolean;
-    FHexShowText: boolean;
-    FHexShowVertLines: boolean;
-    FHexUndoAfterSave: boolean;
-    FHexUndoLimit: integer;
+    FFontName: string;
+    FFontSize: integer;
     FLanguage: string;
     FLastProjectFolder: string;
     FReOpenAtStart: boolean;
@@ -65,33 +44,9 @@ type
     property ReOpenAtStart: boolean read FReOpenAtStart write FReOpenAtStart;
     property LastProjectFolder: string read FLastProjectFolder write FLastProjectFolder;
 
-    //Hex editor general
-    property HexDropFiles: boolean read FHexDropFiles write FHexDropFiles;
-    property HexUndoAfterSave: boolean read FHexUndoAfterSave write FHexUndoAfterSave;
-    property HexGroupUndo: boolean read FHexGroupUndo write FHexGroupUndo;
-
-    property HexShowAddress: boolean read FHexShowAddress write FHexShowAddress;
-    property HexShowDigits: boolean read FHexShowDigits write FHexShowDigits;
-    property HexShowText: boolean read FHexShowText write FHexShowText;
-    property HexShowHorzLines: boolean read FHexShowHorzLines write FHexShowHorzLines;
-    property HexShowVertLines: boolean read FHexShowVertLines write FHexShowVertLines;
-    property HexShowSeparators: boolean read FHexShowSeparators write FHexShowSeparators;
-    property HexShowInactiveCaret: boolean read FHexShowInactiveCaret write FHexShowInactiveCaret;
-
-    property HexAddressPrefix: string read FHexAddressPrefix write FHexAddressPrefix;
-    property HexAddressSize: integer read FHexAddressSize write FHexAddressSize;
-    property HexCharSpacing: integer read FHexCharSpacing write FHexCharSpacing;
-    property HexLineSize: integer read FHexLineSize write FHexLineSize;
-    property HexDigitGrouping: integer read FHexDigitGrouping write FHexDigitGrouping;
-    property HexLineHeightPercent: integer read FHexLineHeightPercent write FHexLineHeightPercent;
-    property HexUndoLimit: integer read FHexUndoLimit write FHexUndoLimit;
-    property HexDisableDrawStyle:TKEditDisabledDrawStyle read FHexDisableDrawStyle write FHexDisableDrawStyle;
-    property HexAddressMode:TKHexEditorAddressMode read FHexAddressMode write FHexAddressMode;
-
-    property HexFontName: string read FHexFontName write FHexFontName;
-    property HexFontStyleBold: boolean read FHexFontStyleBold write FHexFontStyleBold;
-    property HexFontStyleItalic: boolean read FHexFontStyleItalic write FHexFontStyleItalic;
-    property HexFontSize: integer read FHexFontSize write FHexFontSize;
+    //Editor
+    property FontName: string read FFontName write FFontName;
+    property FontSize: integer read FFontSize write FFontSize;
  end;
 
 procedure CloneClass(Src, Dest: TPersistent);
@@ -107,59 +62,22 @@ var
 implementation
 
 uses
-  XMLConf;
+  Graphics, XMLConf;
 
 procedure UpdateSynEdit(var edt: TSynEdit);
 begin
-
+  edt.Font.Name := Settings.FontName;
+  edt.Font.Pitch := fpDefault;
+  edt.Font.Quality := fqDefault;
+  edt.Font.Size := Settings.FontSize;
 end;
 
 procedure UpdateHexEditor(var edt: TKHexEditor);
-var
-  Options: TKEditOptions;
-  DrawStyles: TKHexEditorDrawStyles;
 begin
-  Options := [];
-  if Settings.HexDropFiles then
-    Include(Options, eoDropFiles);
-  if Settings.HexGroupUndo then
-    Include(Options, eoGroupUndo);
-  if Settings.HexUndoAfterSave then
-    Include(Options, eoUndoAfterSave);
-  edt.Options := Options;
-
-  DrawStyles := [];
-  if Settings.HexShowAddress then
-    Include(DrawStyles, edAddress);
-  if Settings.HexShowDigits then
-    Include(DrawStyles, edDigits);
-  if Settings.HexShowText then
-    Include(DrawStyles, edText);
-  if Settings.HexShowHorzLines then
-    Include(DrawStyles, edHorzLines);
-  if Settings.HexShowVertLines then
-    Include(DrawStyles, edVertLines);
-  if Settings.HexShowSeparators then
-    Include(DrawStyles, edSeparators);
-  if Settings.HexShowInactiveCaret then
-    Include(DrawStyles, edInactiveCaret);
-  edt.DrawStyles := DrawStyles;
-
-  edt.AddressPrefix := Settings.HexAddressPrefix;
-  edt.AddressSize := Settings.HexAddressSize;
-  edt.CharSpacing := Settings.HexCharSpacing;
-  edt.LineSize := Settings.HexLineSize;
-  edt.DigitGrouping := Settings.HexDigitGrouping;
-  edt.LineHeightPercent := Settings.HexLineHeightPercent;
-  edt.UndoLimit := Settings.HexUndoLimit;
-
-  edt.AddressMode := Settings.HexAddressMode;
-  edt.DisabledDrawStyle := Settings.HexDisableDrawStyle;
-
-  edt.Font.Size :=  Settings.HexFontSize;
-  edt.Font.Name := Settings.HexFontName;
-  edt.Font.Bold := Settings.HexFontStyleBold;
-  edt.Font.Italic := Settings.HexFontStyleItalic;
+  edt.Font.Name := Settings.FontName;
+  edt.Font.Pitch := fpDefault;
+  edt.Font.Quality := fqDefault;
+  edt.Font.Size := Settings.FontSize;
 end;
 
 //returns the number of properties of a given object
@@ -238,34 +156,17 @@ begin
   FReOpenAtStart := True;
   FLastProjectFolder := '';
 
-  //Hex editor general
-  FHexDropFiles := True;
-  FHexUndoAfterSave := False;
-  FHexGroupUndo := True;
-
-  FHexShowAddress := True;
-  FHexShowDigits := True;
-  FHexShowText := True;
-  FHexShowHorzLines := False;
-  FHexShowVertLines := False;
-  FHexShowSeparators := True;
-  FHexShowInactiveCaret := True;
-
-  FHexAddressPrefix := '0x';
-  FHexAddressSize := 8;
-  FHexCharSpacing := 0;
-  FHexLineSize := 16;
-  FHexDigitGrouping := 2;
-  FHexLineHeightPercent := 130;
-  FHexUndoLimit := 1000;
-
-  FHexDisableDrawStyle := eddBright;
-  FHexAddressMode := eamHex;
-
-  FHexFontName := 'Courier New';
-  FHexFontSize := 10;
-  FHexFontStyleBold := False;
-  FHexFontStyleItalic := False;
+  //Editor
+  {$IFDEF MSWINDOWS}
+  FFontName := 'Consolas';
+  {$ENDIF}
+  {$IFDEF DARWIN}
+  FFontName := 'Menlo';
+  {$ENDIF}
+  {$IFDEF LINUX}
+  FFontName := 'DejaVu Sans Mono';
+  {$ENDIF}
+  FFontSize := 10;
 end;
 
 { TCustomSettings }

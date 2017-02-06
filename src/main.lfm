@@ -6,6 +6,11 @@ object MainForm: TMainForm
   Caption = 'Easy 80 IDE'
   ClientHeight = 441
   ClientWidth = 722
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -13
+  Font.Name = 'Consolas'
+  Font.Pitch = fpFixed
+  Font.Quality = fqDraft
   Menu = MainMenu
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -70,12 +75,6 @@ object MainForm: TMainForm
           Top = 0
           Width = 484
           Align = alClient
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -13
-          Font.Name = 'Courier New'
-          Font.Pitch = fpFixed
-          Font.Quality = fqDraft
-          ParentFont = False
           PopupMenu = MessagesPopupMenu
           ReadOnly = True
           ScrollBars = ssAutoBoth
