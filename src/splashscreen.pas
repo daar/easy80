@@ -5,7 +5,7 @@ unit SplashScreen;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
+  Classes, SysUtils, Forms, Controls, StdCtrls, ExtCtrls,
   ResourceStrings, LCLIntf;
 
 type

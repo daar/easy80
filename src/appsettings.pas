@@ -5,7 +5,7 @@ unit AppSettings;
 interface
 
 uses
-  Typinfo, Classes, SysUtils, SynEdit, khexeditor, kcontrols, keditcommon;
+  Typinfo, Classes, SysUtils, SynEdit, khexeditor;
 
 type
 
@@ -36,6 +36,8 @@ type
     FReOpenAtStart: boolean;
   public
     constructor Create(const FileName: string); override;
+
+    procedure Load; override;
   published
     //all published properties will be written to the settings file
 
@@ -62,7 +64,7 @@ var
 implementation
 
 uses
-  Graphics, XMLConf;
+  Forms, Graphics, XMLConf;
 
 procedure UpdateSynEdit(var edt: TSynEdit);
 begin
@@ -166,7 +168,17 @@ begin
   {$IFDEF LINUX}
   FFontName := 'DejaVu Sans Mono';
   {$ENDIF}
+
   FFontSize := 10;
+end;
+
+procedure TAppSettings.Load;
+begin
+  inherited Load;
+
+  //assign a different font in case the settings font is not available on the system
+  if Screen.Fonts.IndexOf(FontName) = -1 then
+    FontName := 'Courier New';
 end;
 
 { TCustomSettings }
