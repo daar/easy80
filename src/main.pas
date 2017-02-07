@@ -429,22 +429,6 @@ begin
   end;
 end;
 
-procedure LoadFromResource(var HL: TSynFacilSyn; const ResName: string);
-var
-  rs: TResourceStream;
-begin
-  rs := TResourceStream.Create(HInstance, ResName, PChar(RT_RCDATA));
-  try
-    rs.Position := 0;
-    rs.SaveToFile('highlighter.xml');
-    HL.LoadFromFile('highlighter.xml');
-    DeleteFile('highlighter.xml');
-  finally
-    rs.Free;
-  end;
-
-end;
-
 procedure TMainForm.ProjectTreeViewDblClick(Sender: TObject);
 var
   sn: TTreeNode;
@@ -484,7 +468,7 @@ begin
       //highlighter
       pf^.hlt := TSynFacilSyn.Create(self);
       TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
-      LoadFromResource(pf^.hlt, 'HL_Z80ASM');
+      pf^.hlt.LoadFromResourceName(HInstance, 'HL_Z80ASM');
 
       UpdateSynEdit(TSynEdit(pf^.Editor));
     end;
@@ -520,7 +504,7 @@ begin
       //highlighter
       pf^.hlt := TSynFacilSyn.Create(self);
       TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
-      LoadFromResource(pf^.hlt, 'HL_PASCAL');
+      pf^.hlt.LoadFromResourceName(HInstance, 'HL_PASCAL');
 
       UpdateSynEdit(TSynEdit(pf^.Editor));
     end;
