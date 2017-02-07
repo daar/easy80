@@ -16,6 +16,10 @@ msgstr ""
 msgid "About"
 msgstr ""
 
+#: resourcestrings.rsareyousuretopermanen
+msgid "Are you sure to permanently delete this file?"
+msgstr ""
+
 #: resourcestrings.rscannotdeletefiles
 msgid "Cannot delete file: %s."
 msgstr ""
@@ -24,8 +28,17 @@ msgstr ""
 msgid "Chinese (zh_CN)"
 msgstr ""
 
+#: resourcestrings.rscouldnotdeletefiles
+msgid "Could not delete file: %s"
+msgstr ""
+
 #: resourcestrings.rsdates
 msgid "Date: %s"
+msgstr ""
+
+#: resourcestrings.rsdeletefile
+msgctxt "resourcestrings.rsdeletefile"
+msgid "Delete file"
 msgstr ""
 
 #: resourcestrings.rsdeleteoldfile
@@ -126,6 +139,7 @@ msgid "Compile"
 msgstr ""
 
 #: tmainform.mideletefile.caption
+msgctxt "tmainform.mideletefile.caption"
 msgid "Delete file"
 msgstr ""
 
@@ -456,6 +470,10 @@ msgstr ""
 #: toptionsdlg.rgdisableddrawstyle.caption
 msgctxt "toptionsdlg.rgdisableddrawstyle.caption"
 msgid "Draw style when disabled"
+msgstr ""
+
+#: tsettingsframe.asmverbosecheckbox.caption
+msgid "Be verbose"
 msgstr ""
 
 #: tsettingsframe.assemblertabsheet.caption

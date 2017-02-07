@@ -16,6 +16,7 @@ uses
 
 {$R *.res}
 {$R .\datafiles\icons.rc}
+{$R .\datafiles\highlighters.rc}
 
 var
   LangID: string;

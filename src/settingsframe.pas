@@ -15,6 +15,7 @@ type
   TSettingsFrame = class(TFrame)
     AssemblerTabSheet: TTabSheet;
     CDChange: TColorDialog;
+    AsmVerboseCheckBox: TCheckBox;
     CompilerTabSheet: TTabSheet;
     FontSizeSpinEdit: TSpinEdit;
     GeneralTabSheet: TTabSheet;
@@ -76,6 +77,9 @@ begin
   //Editor general
   Settings.FontName := FontNameComboBox.Text;
   Settings.FontSize := FontSizeSpinEdit.Value;
+
+  //assembler
+  Settings.AsmVerbose := AsmVerboseCheckBox.Checked;
 end;
 
 constructor TSettingsFrame.Create(AOwner: TComponent);
@@ -101,6 +105,9 @@ begin
   FontNameComboBox.Items.Assign(Screen.Fonts);
   FontNameComboBox.Text := Settings.FontName;
   FontSizeSpinEdit.Value := Settings.FontSize;
+
+  //Assembler
+  AsmVerboseCheckBox.Checked := Settings.AsmVerbose;
 
   initialize := False;
 end;

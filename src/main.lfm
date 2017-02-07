@@ -103,13 +103,6 @@ object MainForm: TMainForm
     left = 376
     top = 264
   end
-  object SynFreePascalSyn: TSynFreePascalSyn
-    Enabled = False
-    CompilerMode = pcmObjFPC
-    NestedComments = True
-    left = 464
-    top = 264
-  end
   object ImageList16: TImageList
     left = 288
     top = 264

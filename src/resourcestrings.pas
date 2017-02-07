@@ -4,9 +4,12 @@ interface
 
 resourcestring
   rsAbout = 'About';
+  rsAreYouSureToPermanen = 'Are you sure to permanently delete this file?';
   rsCannotDeleteFileS = 'Cannot delete file: %s.';
   rsChineseZh_CN = 'Chinese (zh_CN)';
+  rsCouldNotDeleteFileS = 'Could not delete file: %s';
   rsDateS = 'Date: %s';
+  rsDeleteFile = 'Delete file';
   rsDeleteOldFile = 'Delete old file?';
   rsDeleteOldFileS = 'Delete old file "%s"?';
   rsDItems0f = '%d items (%.0f%%)';

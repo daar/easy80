@@ -64,9 +64,9 @@ object SettingsFrame: TSettingsFrame
     Height = 344
     Top = 0
     Width = 476
-    ActivePage = GeneralTabSheet
+    ActivePage = CompilerTabSheet
     Align = alClient
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 1
     object GeneralTabSheet: TTabSheet
       Caption = 'General'
@@ -183,9 +183,23 @@ object SettingsFrame: TSettingsFrame
     end
     object CompilerTabSheet: TTabSheet
       Caption = 'Compiler'
+      TabVisible = False
     end
     object AssemblerTabSheet: TTabSheet
       Caption = 'Assembler'
+      ClientHeight = 316
+      ClientWidth = 468
+      object AsmVerboseCheckBox: TCheckBox
+        Left = 6
+        Height = 19
+        Top = 6
+        Width = 456
+        Align = alTop
+        BorderSpacing.Around = 6
+        Caption = 'Be verbose'
+        OnChange = OnComponentChange
+        TabOrder = 0
+      end
     end
   end
   object Splitter1: TSplitter

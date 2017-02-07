@@ -95,7 +95,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="datafiles;locale;asm"/>
+      <OtherUnitFiles Value="datafiles;locale;asm;external/SynFacilSyn"/>
       <UnitOutputDirectory Value="bin/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

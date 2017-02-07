@@ -5,7 +5,7 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, SynEdit, SynHighlighterPas,
+  Classes, SysUtils, FileUtil, SynEdit, SynFacilHighlighter, Resource,
   Forms, Controls, ResourceStrings, SplashScreen,
   Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor, SettingsFrame;
 
@@ -17,6 +17,7 @@ type
     FullFileName: string;
     TabSheet: TTabSheet;
     TreeNode: TTreeNode;
+    hlt : TSynFacilSyn;
   end;
   pProjectFile = ^TProjectFile;
 
@@ -71,7 +72,6 @@ type
     SelectDirectoryDialog: TSelectDirectoryDialog;
     Splitter1: TSplitter;
     Splitter2: TSplitter;
-    SynFreePascalSyn: TSynFreePascalSyn;
     MessagesTabSheet: TTabSheet;
     Timer: TTimer;
     ProjectTreeView: TTreeView;
@@ -127,7 +127,7 @@ implementation
 {$R *.lfm}
 
 uses
-  icons, AppSettings, ASMZ80, MessageIntf;
+  icons, AppSettings, ASMZ80, MessageIntf, Graphics;
 
 { TMainForm }
 
@@ -205,7 +205,7 @@ begin
 
   lis := ChangeFileExt(pf^.FullFileName, '.lis');
   obj := ChangeFileExt(pf^.FullFileName, '.obj');
-  ASMZ80_execute(pf^.FullFileName, lis, obj, True);
+  ASMZ80_execute(pf^.FullFileName, lis, obj, Settings.AsmVerbose);
 
   SetProjectFolder(FProjectFolder);
 end;
@@ -219,10 +219,10 @@ begin
   if tn = nil then
     exit;
 
-  if MessageDlg('Delete file', 'Are you sure to permanently delete this file?',mtConfirmation, mbYesNo, 0) = mrYes then
+  if MessageDlg(rsDeleteFile, rsAreYouSureToPermanen, mtConfirmation, mbYesNo, 0) = mrYes then
   begin
     if not DeleteFile(IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text) then
-      MessageDlg('Error deleting file', Format('Could not delete file: %s', [SysErrorMessage(GetLastOSError)]), mtError, [mbClose], 0)
+      MessageDlg(rsErrorDeletingFile, Format(rsCouldNotDeleteFileS, [SysErrorMessage(GetLastOSError)]), mtError, [mbClose], 0)
     else
       SetProjectFolder(FProjectFolder);
   end;
@@ -327,7 +327,7 @@ begin
   idx := EditorsPageControl.TabIndex;
 
   pf := FProjectFiles[idx];
-  pf^.TabSheet.Caption := '* ' + pf^.FileName;
+  pf^.TabSheet.Caption := '*' + pf^.FileName;
   pf^.Dirty := True;
 end;
 
@@ -429,6 +429,22 @@ begin
   end;
 end;
 
+procedure LoadFromResource(var HL: TSynFacilSyn; const ResName: string);
+var
+  rs: TResourceStream;
+begin
+  rs := TResourceStream.Create(HInstance, ResName, PChar(RT_RCDATA));
+  try
+    rs.Position := 0;
+    rs.SaveToFile('highlighter.xml');
+    HL.LoadFromFile('highlighter.xml');
+    DeleteFile('highlighter.xml');
+  finally
+    rs.Free;
+  end;
+
+end;
+
 procedure TMainForm.ProjectTreeViewDblClick(Sender: TObject);
 var
   sn: TTreeNode;
@@ -462,9 +478,13 @@ begin
       TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
       TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
       TSynEdit(pf^.Editor).Align := alClient;
-      TSynEdit(pf^.Editor).Highlighter := SynFreePascalSyn;
       TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
       TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+
+      //highlighter
+      pf^.hlt := TSynFacilSyn.Create(self);
+      TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
+      LoadFromResource(pf^.hlt, 'HL_Z80ASM');
 
       UpdateSynEdit(TSynEdit(pf^.Editor));
     end;
@@ -494,9 +514,13 @@ begin
       TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
       TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
       TSynEdit(pf^.Editor).Align := alClient;
-      TSynEdit(pf^.Editor).Highlighter := SynFreePascalSyn;
       TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
       TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+
+      //highlighter
+      pf^.hlt := TSynFacilSyn.Create(self);
+      TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
+      LoadFromResource(pf^.hlt, 'HL_PASCAL');
 
       UpdateSynEdit(TSynEdit(pf^.Editor));
     end;
@@ -582,6 +606,7 @@ begin
   pf^.TreeNode := node;
 
   pf^.TabSheet := EditorsPageControl.AddTabSheet;
+
   //link the tabsheet to the projectfile record
   pf^.TabSheet.Tag := PtrInt(pf);
   EditorsPageControl.ActivePage := pf^.TabSheet;
@@ -600,7 +625,7 @@ begin
   for i := 0 to EditorsPageControl.PageCount - 1 do
   begin
     //ignore the 'dirty' file indicator
-    edt := StringReplace(EditorsPageControl.Pages[i].Caption, '* ', '', [rfReplaceAll]);
+    edt := StringReplace(EditorsPageControl.Pages[i].Caption, '*', '', [rfReplaceAll]);
 
     if edt = fname then
     begin

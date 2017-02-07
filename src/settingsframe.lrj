@@ -6,5 +6,6 @@
 {"hash":106870234,"name":"tsettingsframe.fontnamelabel.caption","sourcebytes":[38,70,111,110,116,32,110,97,109,101,58],"value":"&Font name:"},
 {"hash":108979930,"name":"tsettingsframe.fontsizelabel.caption","sourcebytes":[70,111,110,116,32,115,105,122,101,58],"value":"Font size:"},
 {"hash":105317986,"name":"tsettingsframe.compilertabsheet.caption","sourcebytes":[67,111,109,112,105,108,101,114],"value":"Compiler"},
-{"hash":163830370,"name":"tsettingsframe.assemblertabsheet.caption","sourcebytes":[65,115,115,101,109,98,108,101,114],"value":"Assembler"}
+{"hash":163830370,"name":"tsettingsframe.assemblertabsheet.caption","sourcebytes":[65,115,115,101,109,98,108,101,114],"value":"Assembler"},
+{"hash":214700517,"name":"tsettingsframe.asmverbosecheckbox.caption","sourcebytes":[66,101,32,118,101,114,98,111,115,101],"value":"Be verbose"}
 ]}

@@ -7,6 +7,21 @@ interface
 uses
   Typinfo, Classes, SysUtils, SynEdit, khexeditor;
 
+const
+{$IFDEF MSWINDOWS}
+  DefaultFontName = 'Consolas';
+{$ELSE}
+  {$IFDEF LINUX}
+    DefaultFontName = 'DejaVu Sans Mono';
+  {$ELSE}
+    {$IFDEF DARWIN}
+      DefaultFontName = 'Menlo';
+    {$ELSE}
+      DefaultFontName = 'Courier New';
+    {$ENDIF}
+  {$ENDIF}
+{$ENDIF}
+
 type
 
   { TCustomSettings }
@@ -29,6 +44,7 @@ type
 
   TAppSettings = class(TCustomSettings)
   private
+    FAsmVerbose: boolean;
     FFontName: string;
     FFontSize: integer;
     FLanguage: string;
@@ -49,6 +65,9 @@ type
     //Editor
     property FontName: string read FFontName write FFontName;
     property FontSize: integer read FFontSize write FFontSize;
+
+    //assembler
+    property AsmVerbose: boolean read FAsmVerbose write FAsmVerbose;
  end;
 
 procedure CloneClass(Src, Dest: TPersistent);
@@ -159,15 +178,10 @@ begin
   FLastProjectFolder := '';
 
   //Editor
-  {$IFDEF MSWINDOWS}
-  FFontName := 'Consolas';
-  {$ENDIF}
-  {$IFDEF DARWIN}
-  FFontName := 'Menlo';
-  {$ENDIF}
-  {$IFDEF LINUX}
-  FFontName := 'DejaVu Sans Mono';
-  {$ENDIF}
+  FFontName := DefaultFontName;
+
+  //Assembler
+  FAsmVerbose := True;
 
   FFontSize := 10;
 end;
@@ -176,9 +190,19 @@ procedure TAppSettings.Load;
 begin
   inherited Load;
 
-  //assign a different font in case the settings font is not available on the system
+  //assign the default font in case the settings font is not available on the system
   if Screen.Fonts.IndexOf(FontName) = -1 then
-    FontName := 'Courier New';
+  begin
+    FontName := DefaultFontName;
+
+    //in case not found on the system then assign fallback font
+    if Screen.Fonts.IndexOf(FontName) = -1 then
+      FontName := 'Courier New';
+
+    //if all fails then assign the first available font in the list
+    if Screen.Fonts.IndexOf(FontName) = -1 then
+      FontName := Screen.Fonts[0];
+  end;
 end;
 
 { TCustomSettings }

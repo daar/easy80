@@ -1,0 +1,2 @@
+HL_Z80ASM RCDATA ".\highlighters\z80asm.xml"
+HL_PASCAL RCDATA ".\highlighters\pascal.xml"

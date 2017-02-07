@@ -1,3 +1,6 @@
 [submodule "src/external/GitForDelphi"]
 	path = src/external/GitForDelphi
 	url = https://github.com/libgit2/GitForDelphi.git
+[submodule "src/external/SynFacilSyn"]
+	path = src/external/SynFacilSyn
+	url = https://github.com/t-edson/SynFacilSyn.git
