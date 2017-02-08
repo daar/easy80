@@ -4,4 +4,4 @@ This repository contains all project files for the easy80 project. This project 
 
 For more information see also: http://easy80blog.wordpress.com
 
-![alt text](https://easy80blog.files.wordpress.com/2017/02/easy80ide2.gif "Easy80-IDE")
+![alt text](https://easy80blog.files.wordpress.com/2017/02/easy80ide3.gif "Easy80-IDE")
