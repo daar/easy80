@@ -3,4 +3,7 @@
 	url = https://github.com/libgit2/GitForDelphi.git
 [submodule "src/external/SynFacilSyn"]
 	path = src/external/SynFacilSyn
-	url = https://github.com/t-edson/SynFacilSyn.git
+	url = https://github.com/daar/SynFacilSyn.git
+[submodule "src/external/z80-pascal"]
+	path = src/external/z80-pascal
+	url = https://github.com/daar/z80-pascal.git

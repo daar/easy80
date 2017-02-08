@@ -7,7 +7,10 @@ interface
 uses
   Classes, SysUtils, FileUtil, SynEdit, SynFacilHighlighter, Resource,
   Forms, Controls, ResourceStrings, SplashScreen,
-  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor, SettingsFrame;
+  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor, SettingsFrame,
+  //The pascal compiler
+  Compiler,
+  Configuration;
 
 type
   TProjectFile = record
@@ -178,8 +181,63 @@ begin
 end;
 
 procedure TMainForm.miCompileClick(Sender: TObject);
+var
+  PascalCompiler: TCompiler;
+  ts: TTabSheet;
+  pf: pProjectFile;
+  time: double;
 begin
+  ts := EditorsPageControl.ActivePage;
 
+  //exit if no tabsheet is selected
+  if ts = nil then
+    exit;
+
+  pf := pProjectFile(ts.Tag);
+
+  //exit if file is not pascal sourcefile
+  if LowerCase(ExtractFileExt(pf^.FileName)) <> '.pas' then
+    exit;
+
+  //save all editor files
+  miSaveAllClick(nil);
+
+  try
+    time := Now;
+
+    Messages.Log('Z80 Pascal compiler (WIP version)');
+    Messages.Log('(c) 2009, 2010 by Guillermo Martínez');
+    Messages.Log('');
+
+    Configuration.InputFileName := pf^.FullFileName;
+    Configuration.OutputFileName := ChangeFileExt(pf^.FullFileName, '.asm');;
+    Configuration.ListsComments := FALSE;
+    Configuration.Verbose := [vblErrors, vblWarnings];
+
+    PascalCompiler := TCompiler.Create;
+    PascalCompiler.FileName := Configuration.InputFileName;
+    PascalCompiler.Compile;
+    Messages.Log('Compilation finished.');
+    PascalCompiler.SaveToFile (Configuration.OutputFileName);
+    Messages.LogFmt('File saved at ''%s''.', [Configuration.OutputFileName]);
+
+    IF vblWarnings in Configuration.Verbose THEN
+    BEGIN
+       Messages.Log('');
+       Messages.LogFmt('%d lines compiled, %.1f sec, %d bytes code', [TSynEdit(pf^.Editor).Lines.Count, (Now - time) * 24 * 3600, Length(TSynEdit(pf^.Editor).Lines.Text)]);
+       //Messages.LogFmt('%d warning(s) issued', [warnCount]);
+       //Messages.LogFmt('%d note(s) issued', [noteCount]);
+       //Messages.LogFmt('%d error(s) issued', [errCount]);
+       Messages.Log('');
+    END;
+  except
+    on Error: Exception do
+      Messages.Log(Error.Message);
+  end;
+  Configuration.Unload;
+
+  //update projectfolder
+  SetProjectFolder(FProjectFolder);
 end;
 
 procedure TMainForm.miAssembleClick(Sender: TObject);
@@ -207,6 +265,7 @@ begin
   obj := ChangeFileExt(pf^.FullFileName, '.obj');
   ASMZ80_execute(pf^.FullFileName, lis, obj, Settings.AsmVerbose);
 
+  //update projectfolder
   SetProjectFolder(FProjectFolder);
 end;
 
@@ -516,7 +575,7 @@ var
   AllFiles: TStringList;
   mainnode: TTreeNode;
   node: TTreeNode;
-  i: Integer;
+  i: integer;
   ext: string;
 begin
   //if folder does not exist then exit

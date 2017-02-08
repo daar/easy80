@@ -167,7 +167,6 @@ object MainForm: TMainForm
       Caption = 'Project'
       object miCompile: TMenuItem
         Caption = 'Compile'
-        Enabled = False
         OnClick = miCompileClick
       end
       object miAssemble: TMenuItem
