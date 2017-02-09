@@ -132,11 +132,18 @@ implementation
 uses
   icons, AppSettings, ASMZ80, MessageIntf, Graphics;
 
+procedure UIVerboseMsg(Level: VERBOSITY_LEVELS; aMessage: STRING);
+begin
+  IF Level IN Configuration.Verbose THEN
+    Messages.Log(aMessage);
+end;
+
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   Messages.RegisterView(MessagesMemo);
+  VerboseMsg := @UIVerboseMsg;
 
   LoadFromResource(ImageList16);
 
