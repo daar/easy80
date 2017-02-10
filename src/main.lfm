@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 388
+  Left = 429
   Height = 461
-  Top = 204
+  Top = 209
   Width = 722
   Caption = 'Easy 80 IDE'
   ClientHeight = 441
@@ -32,7 +32,7 @@ object MainForm: TMainForm
     ReadOnly = True
     RowSelect = True
     TabOrder = 0
-    OnDblClick = ProjectTreeViewDblClick
+    OnDblClick = actOpenInNewWindowExecute
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
   end
   object EditorsPanel: TPanel
@@ -129,12 +129,10 @@ object MainForm: TMainForm
       object miNew: TMenuItem
         Caption = 'New'
         object miNewFile: TMenuItem
-          Caption = 'New file'
-          OnClick = miNewFileClick
+          Action = actNewFile
         end
-        object miNewProjectFolder: TMenuItem
-          Caption = 'New project folder'
-          OnClick = miNewProjectFolderClick
+        object miNewFolder: TMenuItem
+          Action = actNewFolder
         end
       end
       object MenuItem2: TMenuItem
@@ -192,9 +190,67 @@ object MainForm: TMainForm
   object ProjectPopupMenu: TPopupMenu
     left = 136
     top = 264
+    object miProjNewFile: TMenuItem
+      Action = actNewFile
+    end
+    object miProjNewFolder: TMenuItem
+      Action = actNewFolder
+    end
+    object MenuItem7: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem8: TMenuItem
+      Action = actRename
+    end
+    object miDuplicate: TMenuItem
+      Action = actDuplicate
+    end
     object miDeleteFile: TMenuItem
-      Caption = 'Delete file'
-      OnClick = miDeleteFileClick
+      Action = actDelete
+    end
+    object miCopy: TMenuItem
+      Action = actCopy
+      Enabled = False
+    end
+    object miCut: TMenuItem
+      Action = actCut
+      Enabled = False
+    end
+    object miPaste: TMenuItem
+      Action = actPaste
+      Enabled = False
+    end
+    object MenuItem12: TMenuItem
+      Caption = '-'
+    end
+    object miAddProjectFolder: TMenuItem
+      Caption = 'Add Project Folder'
+      Enabled = False
+    end
+    object miRemoveProjectFolder: TMenuItem
+      Caption = 'Remove Project Folder'
+      Enabled = False
+    end
+    object MenuItem16: TMenuItem
+      Caption = '-'
+    end
+    object miCopyFullPath: TMenuItem
+      Action = actCopyFullPath
+    end
+    object miCopyProjectPath: TMenuItem
+      Action = actCopyProjectPath
+    end
+    object miOpenInNewWindow: TMenuItem
+      Action = actOpenInNewWindow
+    end
+    object miSearchInDirectory: TMenuItem
+      Action = actSearchInDirectory
+    end
+    object MenuItem21: TMenuItem
+      Caption = '-'
+    end
+    object miShowInExplorer: TMenuItem
+      Action = actShowInExplorer
     end
   end
   object SaveDialog: TSaveDialog
@@ -258,6 +314,64 @@ object MainForm: TMainForm
     object miMessagesMemoClearAll: TMenuItem
       Caption = 'Clear all'
       OnClick = miMessagesMemoClearAllClick
+    end
+  end
+  object ActionList: TActionList
+    left = 28
+    top = 22
+    object actNewFile: TAction
+      Caption = 'New File'
+      OnExecute = actNewFileExecute
+      ShortCut = 16462
+    end
+    object actNewFolder: TAction
+      Caption = 'New Folder'
+      OnExecute = actNewFolderExecute
+    end
+    object actRename: TAction
+      Caption = 'Rename'
+      OnExecute = actRenameExecute
+    end
+    object actDuplicate: TAction
+      Caption = 'Duplicate'
+      OnExecute = actDuplicateExecute
+    end
+    object actDelete: TAction
+      Caption = 'Delete'
+      OnExecute = actDeleteExecute
+    end
+    object actCopy: TAction
+      Caption = 'Copy'
+      OnExecute = actCopyExecute
+    end
+    object actCut: TAction
+      Caption = 'Cut'
+      OnExecute = actCutExecute
+    end
+    object actPaste: TAction
+      Caption = 'Paste'
+      OnExecute = actPasteExecute
+    end
+    object actCopyFullPath: TAction
+      Caption = 'Copy Full Path'
+      OnExecute = actCopyFullPathExecute
+    end
+    object actCopyProjectPath: TAction
+      Caption = 'Copy Project Path'
+      OnExecute = actCopyProjectPathExecute
+    end
+    object actOpenInNewWindow: TAction
+      Caption = 'Open In New Window'
+      OnExecute = actOpenInNewWindowExecute
+    end
+    object actSearchInDirectory: TAction
+      Caption = 'Search In Directory'
+      Enabled = False
+      OnExecute = actSearchInDirectoryExecute
+    end
+    object actShowInExplorer: TAction
+      Caption = 'Show In Explorer'
+      OnExecute = actShowInExplorerExecute
     end
   end
 end

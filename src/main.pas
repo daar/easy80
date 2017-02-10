@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, SynEdit, SynFacilHighlighter, Resource,
   Forms, Controls, ResourceStrings, SplashScreen,
-  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, khexeditor, SettingsFrame,
+  Dialogs, ComCtrls, ExtCtrls, Menus, StdCtrls, ActnList, khexeditor, SettingsFrame,
   //The pascal compiler
   Compiler,
   Configuration;
@@ -27,82 +27,124 @@ type
   { TMainForm }
 
   TMainForm = class(TForm)
+    actDuplicate: TAction;
+    actShowInExplorer: TAction;
+    actDelete: TAction;
+    actCopy: TAction;
+    actCut: TAction;
+    actPaste: TAction;
+    actCopyFullPath: TAction;
+    actCopyProjectPath: TAction;
+    actOpenInNewWindow: TAction;
+    actSearchInDirectory: TAction;
+    actRename: TAction;
+    actNewFolder: TAction;
+    actNewFile: TAction;
+    ActionList: TActionList;
+    EditorsPageControl: TPageControl;
+    EditorsPanel: TPanel;
+    FeedbackPageControl: TPageControl;
+    FeedbackPanel: TPanel;
     ImageList16: TImageList;
     MainMenu: TMainMenu;
-    miMessagesMemoClearAll: TMenuItem;
-    miMessagesMemoSelectAll: TMenuItem;
-    miMessagesMemoCopy: TMenuItem;
-    miDeleteFile: TMenuItem;
-    miProject: TMenuItem;
-    miCompile: TMenuItem;
-    miAssemble: TMenuItem;
-    miNew: TMenuItem;
+    miProjNewFile: TMenuItem;
+    miCut: TMenuItem;
+    miPaste: TMenuItem;
+    MenuItem12: TMenuItem;
+    miAddProjectFolder: TMenuItem;
+    miRemoveProjectFolder: TMenuItem;
+    miCopyFullPath: TMenuItem;
+    MenuItem16: TMenuItem;
+    miCopyProjectPath: TMenuItem;
+    miOpenInNewWindow: TMenuItem;
+    miSearchInDirectory: TMenuItem;
     MenuItem2: TMenuItem;
-    miNewFile: TMenuItem;
-    miNewProjectFolder: TMenuItem;
-    miClosePage: TMenuItem;
-    miMoveRightMost: TMenuItem;
-    miCloseAllOther: TMenuItem;
+    MenuItem21: TMenuItem;
     MenuItem3: TMenuItem;
-    miSaveTab: TMenuItem;
+    miProjNewFolder: TMenuItem;
     MenuItem5: TMenuItem;
-    miSaveAsTab: TMenuItem;
+    miCopy: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    miDuplicate: TMenuItem;
+    MessagesMemo: TMemo;
+    MessagesPopupMenu: TPopupMenu;
+    MessagesTabSheet: TTabSheet;
+    miAbout: TMenuItem;
+    miAssemble: TMenuItem;
+    miCloseAllOther: TMenuItem;
+    miClosePage: TMenuItem;
+    miCompile: TMenuItem;
+    miDeleteFile: TMenuItem;
+    miEdit: TMenuItem;
+    miFile: TMenuItem;
+    miFileSep1: TMenuItem;
+    miFileSep2: TMenuItem;
+    miHelp: TMenuItem;
+    miMessagesMemoClearAll: TMenuItem;
+    miMessagesMemoCopy: TMenuItem;
+    miMessagesMemoSelectAll: TMenuItem;
     miMoveLeft: TMenuItem;
     miMoveRight: TMenuItem;
-    moMoveLeftMost: TMenuItem;
-    MessagesMemo: TMemo;
-    miFile: TMenuItem;
-    miEdit: TMenuItem;
-    miSaveAll: TMenuItem;
-    miFileSep2: TMenuItem;
+    miMoveRightMost: TMenuItem;
+    miNew: TMenuItem;
+    miNewFile: TMenuItem;
+    miNewFolder: TMenuItem;
     miOpenProjectFolder: TMenuItem;
+    miProject: TMenuItem;
     miQuit: TMenuItem;
-    miFileSep1: TMenuItem;
-    miHelp: TMenuItem;
-    miAbout: TMenuItem;
-    miTools: TMenuItem;
-    miSettings: TMenuItem;
     miSave: TMenuItem;
+    miSaveAll: TMenuItem;
     miSaveAs: TMenuItem;
-    EditorsPageControl: TPageControl;
-    FeedbackPageControl: TPageControl;
-    EditorsPanel: TPanel;
-    FeedbackPanel: TPanel;
-    MessagesPopupMenu: TPopupMenu;
-    TabsPopupMenu: TPopupMenu;
+    miSaveAsTab: TMenuItem;
+    miSaveTab: TMenuItem;
+    miSettings: TMenuItem;
+    miShowInExplorer: TMenuItem;
+    miTools: TMenuItem;
+    moMoveLeftMost: TMenuItem;
     ProjectPopupMenu: TPopupMenu;
+    ProjectTreeView: TTreeView;
     SaveDialog: TSaveDialog;
     SelectDirectoryDialog: TSelectDirectoryDialog;
     Splitter1: TSplitter;
     Splitter2: TSplitter;
-    MessagesTabSheet: TTabSheet;
+    TabsPopupMenu: TPopupMenu;
     Timer: TTimer;
-    ProjectTreeView: TTreeView;
+
+    procedure actCopyExecute(Sender: TObject);
+    procedure actCopyFullPathExecute(Sender: TObject);
+    procedure actCopyProjectPathExecute(Sender: TObject);
+    procedure actCutExecute(Sender: TObject);
+    procedure actDeleteExecute(Sender: TObject);
+    procedure actDuplicateExecute(Sender: TObject);
+    procedure actNewFileExecute(Sender: TObject);
+    procedure actNewFolderExecute(Sender: TObject);
+    procedure actOpenInNewWindowExecute(Sender: TObject);
+    procedure actPasteExecute(Sender: TObject);
+    procedure actRenameExecute(Sender: TObject);
+    procedure actSearchInDirectoryExecute(Sender: TObject);
+    procedure actShowInExplorerExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure miAboutClick(Sender: TObject);
+    procedure miAssembleClick(Sender: TObject);
+    procedure miCloseAllOtherClick(Sender: TObject);
+    procedure miClosePageClick(Sender: TObject);
+    procedure miCompileClick(Sender: TObject);
     procedure miMessagesMemoClearAllClick(Sender: TObject);
     procedure miMessagesMemoCopyClick(Sender: TObject);
     procedure miMessagesMemoSelectAllClick(Sender: TObject);
-    procedure miCompileClick(Sender: TObject);
-    procedure miAssembleClick(Sender: TObject);
-    procedure miDeleteFileClick(Sender: TObject);
-    procedure miNewFileClick(Sender: TObject);
-    procedure miNewProjectFolderClick(Sender: TObject);
-    procedure miMoveRightMostClick(Sender: TObject);
-    procedure miClosePageClick(Sender: TObject);
-    procedure miCloseAllOtherClick(Sender: TObject);
     procedure miMoveLeftClick(Sender: TObject);
     procedure miMoveRightClick(Sender: TObject);
-    procedure moMoveLeftMostClick(Sender: TObject);
-    procedure miSaveAllClick(Sender: TObject);
+    procedure miMoveRightMostClick(Sender: TObject);
     procedure miOpenProjectFolderClick(Sender: TObject);
     procedure miQuitClick(Sender: TObject);
-    procedure miAboutClick(Sender: TObject);
-    procedure miSettingsClick(Sender: TObject);
-    procedure miSaveClick(Sender: TObject);
+    procedure miSaveAllClick(Sender: TObject);
     procedure miSaveAsClick(Sender: TObject);
-    procedure ProjectTreeViewDblClick(Sender: TObject);
+    procedure miSaveClick(Sender: TObject);
+    procedure miSettingsClick(Sender: TObject);
+    procedure moMoveLeftMostClick(Sender: TObject);
   private
     FProjectFolder: string;
 
@@ -130,7 +172,7 @@ implementation
 {$R *.lfm}
 
 uses
-  icons, AppSettings, ASMZ80, MessageIntf, Graphics;
+  icons, AppSettings, ASMZ80, MessageIntf, Graphics, Process, Clipbrd;
 
 procedure UIVerboseMsg(Level: VERBOSITY_LEVELS; aMessage: STRING);
 begin
@@ -157,6 +199,281 @@ begin
 
   //show about in editor
   miAboutClick(nil);
+end;
+
+procedure TMainForm.actNewFileExecute(Sender: TObject);
+var
+  sl: TStrings;
+begin
+  if SaveDialog.Execute then
+  begin
+    sl := TStringList.Create;
+    sl.SaveToFile(SaveDialog.FileName);
+    SetProjectFolder(FProjectFolder);
+    sl.Free;
+  end;
+end;
+
+procedure TMainForm.actDeleteExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn = nil then
+    exit;
+
+  if MessageDlg(rsDeleteFile, rsAreYouSureToPermanen, mtConfirmation, mbYesNo, 0) = mrYes then
+  begin
+    if not DeleteFile(IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text) then
+      Messages.LogFmt(rsCouldNotDeleteFileS, [SysErrorMessage(GetLastOSError)])
+    else
+      SetProjectFolder(FProjectFolder);
+  end;
+end;
+
+procedure TMainForm.actDuplicateExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+  src, dest: string;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn <> nil then
+  begin
+    if tn.Parent <> nil then
+    begin
+      src := IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text;
+
+      dest := tn.Text;
+      InputQuery(rsDestinationFilename, rsPleaseEnterTheDestin, dest);
+      dest := IncludeTrailingPathDelimiter(FProjectFolder) + dest;
+
+      if src = dest then
+        exit;
+
+      if not CopyFile(src, dest, True, False) then
+      begin
+        Messages.LogFmt(rsErrorCouldNotDulicat, [SysErrorMessage(GetLastOSError)]);
+      end
+      else
+        SetProjectFolder(FProjectFolder);
+    end;
+  end;
+end;
+
+procedure TMainForm.actCopyExecute(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.actCopyFullPathExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn <> nil then
+  begin
+    if tn.Parent <> nil then
+      Clipboard.AsText := IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text;
+  end;
+end;
+
+procedure TMainForm.actCopyProjectPathExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn <> nil then
+  begin
+    if tn.Parent <> nil then
+      Clipboard.AsText := IncludeTrailingPathDelimiter(FProjectFolder);
+  end;
+end;
+
+procedure TMainForm.actCutExecute(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.actNewFolderExecute(Sender: TObject);
+var
+  path: string;
+begin
+  InputQuery('Create new folder', 'Enter the path for the new folder', path);
+
+  if path <> '' then
+  begin
+    path := IncludeTrailingPathDelimiter(FProjectFolder) + path;
+    if not ForceDirectories(path) then
+      Messages.LogFmt('error: could not create directory', [SysErrorMessage(GetLastOSError)])
+    else
+      SetProjectFolder(FProjectFolder);
+  end;
+end;
+
+procedure TMainForm.actOpenInNewWindowExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+  ext: string;
+  pf: pProjectFile;
+  idx: integer;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn = nil then
+    exit;
+
+  //check if projectfile already is opened in the editor
+  idx := ProjectFileTabIndex(tn.Text);
+  if idx <> -1 then
+  begin
+    EditorsPageControl.PageIndex := idx;
+    exit;
+  end;
+
+  ext := LowerCase(ExtractFileExt(tn.Text));
+
+  case ext of
+    '.asm':
+    begin
+      pf := AddProjectFile(FProjectFolder, tn);
+
+      pf^.TabSheet.ImageIndex := ICON_ASM_SOURCE;
+      pf^.TabSheet.Caption := pf^.FileName;
+
+      TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
+      TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
+      TSynEdit(pf^.Editor).Align := alClient;
+      TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
+      TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+
+      //highlighter
+      pf^.hlt := TSynFacilSyn.Create(self);
+      TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
+      pf^.hlt.LoadFromResourceName(HInstance, 'HL_Z80ASM');
+
+      UpdateSynEdit(TSynEdit(pf^.Editor));
+    end;
+    '.obj':
+    begin
+      pf := AddProjectFile(FProjectFolder, tn);
+
+      pf^.TabSheet.ImageIndex := ICON_OBJ_SOURCE;
+      pf^.TabSheet.Caption := pf^.FileName;
+
+      pf^.Editor := TKHexEditor.Create(pf^.TabSheet);
+      TKHexEditor(pf^.Editor).Parent := pf^.TabSheet;
+      TKHexEditor(pf^.Editor).Align := alClient;
+      TKHexEditor(pf^.Editor).Font.Style := [];
+      TKHexEditor(pf^.Editor).LoadFromFile(pf^.FullFileName);
+      TKHexEditor(pf^.Editor).OnChange := @OnEditorChange;
+
+      UpdateHexEditor(TKHexEditor(pf^.Editor));
+    end;
+    '.pas', '.pp', '.p', '.inc':
+    begin
+      pf := AddProjectFile(FProjectFolder, tn);
+
+      pf^.TabSheet.ImageIndex := ICON_PAS_SOURCE;
+      pf^.TabSheet.Caption := pf^.FileName;
+
+      TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
+      TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
+      TSynEdit(pf^.Editor).Align := alClient;
+      TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
+      TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+
+      //highlighter
+      pf^.hlt := TSynFacilSyn.Create(self);
+      TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
+      pf^.hlt.LoadFromResourceName(HInstance, 'HL_PASCAL');
+
+      UpdateSynEdit(TSynEdit(pf^.Editor));
+    end;
+  end;
+end;
+
+procedure TMainForm.actPasteExecute(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.actRenameExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+  src, dest: string;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn <> nil then
+  begin
+    if tn.Parent <> nil then
+    begin
+      src := IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text;
+
+      dest := tn.Text;
+      InputQuery(rsNewFilename, rsPleaseEnterTheNewFil, dest);
+      dest := IncludeTrailingPathDelimiter(FProjectFolder) + dest;
+
+      if src = dest then
+        exit;
+
+      if not RenameFile(src, dest) then
+      begin
+        Messages.LogFmt(rsErrorCouldNotRenameF, [SysErrorMessage(GetLastOSError)]);
+      end
+      else
+        SetProjectFolder(FProjectFolder);
+    end;
+  end;
+end;
+
+procedure TMainForm.actSearchInDirectoryExecute(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.actShowInExplorerExecute(Sender: TObject);
+var
+  tn: TTreeNode;
+  s: string;
+  exec: string;
+  arg: string;
+begin
+  tn := ProjectTreeView.Selected;
+
+  if tn <> nil then
+  begin
+    {$IFDEF MSWINDOWS}
+    exec := 'explorer';
+
+    if tn.Parent = nil then
+      arg := FProjectFolder
+    else
+      arg := Format('/select,%s%s', [IncludeTrailingPathDelimiter(FProjectFolder), tn.Text]);
+    {$ENDIF}
+    {$IFDEF LINUX}
+    exec := 'gnome-open';
+
+    if tn.Parent = nil then
+      arg := FProjectFolder
+    else
+      arg := Format('%s%s', [IncludeTrailingPathDelimiter(FProjectFolder), tn.Text]);
+    {$ENDIF}
+    {$IFDEF DARWIN}
+    exec := 'open';
+
+    if tn.Parent = nil then
+      arg := FProjectFolder
+    else
+      arg := Format('%s%s', [IncludeTrailingPathDelimiter(FProjectFolder), tn.Text]);
+    {$ENDIF}
+
+    RunCommand(exec, [arg], s);
+  end;
 end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
@@ -228,15 +545,15 @@ begin
     PascalCompiler.SaveToFile (Configuration.OutputFileName);
     Messages.LogFmt('File saved at ''%s''.', [Configuration.OutputFileName]);
 
-    IF vblWarnings in Configuration.Verbose THEN
-    BEGIN
+    if vblWarnings in Configuration.Verbose then
+    begin
        Messages.Log('');
        Messages.LogFmt('%d lines compiled, %.1f sec, %d bytes code', [TSynEdit(pf^.Editor).Lines.Count, (Now - time) * 24 * 3600, Length(TSynEdit(pf^.Editor).Lines.Text)]);
        //Messages.LogFmt('%d warning(s) issued', [warnCount]);
        //Messages.LogFmt('%d note(s) issued', [noteCount]);
        //Messages.LogFmt('%d error(s) issued', [errCount]);
        Messages.Log('');
-    END;
+    end;
   except
     on Error: Exception do
       Messages.Log(Error.Message);
@@ -274,43 +591,6 @@ begin
 
   //update projectfolder
   SetProjectFolder(FProjectFolder);
-end;
-
-procedure TMainForm.miDeleteFileClick(Sender: TObject);
-var
-  tn: TTreeNode;
-begin
-  tn := ProjectTreeView.Selected;
-
-  if tn = nil then
-    exit;
-
-  if MessageDlg(rsDeleteFile, rsAreYouSureToPermanen, mtConfirmation, mbYesNo, 0) = mrYes then
-  begin
-    if not DeleteFile(IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text) then
-      MessageDlg(rsErrorDeletingFile, Format(rsCouldNotDeleteFileS, [SysErrorMessage(GetLastOSError)]), mtError, [mbClose], 0)
-    else
-      SetProjectFolder(FProjectFolder);
-  end;
-end;
-
-procedure TMainForm.miNewFileClick(Sender: TObject);
-var
-  sl: TStrings;
-begin
-  if SaveDialog.Execute then
-  begin
-    sl := TStringList.Create;
-    sl.SaveToFile(SaveDialog.FileName);
-    SetProjectFolder(FProjectFolder);
-    sl.Free;
-  end;
-end;
-
-procedure TMainForm.miNewProjectFolderClick(Sender: TObject);
-begin
-  if SelectDirectoryDialog.Execute then
-    SetProjectFolder(SelectDirectoryDialog.FileName);
 end;
 
 procedure TMainForm.miMoveRightMostClick(Sender: TObject);
@@ -487,92 +767,7 @@ begin
     if MessageDlg(rsDeleteOldFile, Msg, mtConfirmation , mbYesNo, '') = mrYes then
     begin
       if not DeleteFile(UTF8ToAnsi(OldFileName)) then
-      begin
-        Msg := Format(rsCannotDeleteFileS, [SysErrorMessage(GetLastOSError)]);
-        MessageDlg(rsErrorDeletingFile, Msg, mtError , [mbOK], '');
-      end;
-    end;
-  end;
-end;
-
-procedure TMainForm.ProjectTreeViewDblClick(Sender: TObject);
-var
-  sn: TTreeNode;
-  ext: string;
-  pf: pProjectFile;
-  idx: integer;
-begin
-  sn := ProjectTreeView.Selected;
-
-  if sn = nil then
-    exit;
-
-  //check if projectfile already is opened in the editor
-  idx := ProjectFileTabIndex(sn.Text);
-  if idx <> -1 then
-  begin
-    EditorsPageControl.PageIndex := idx;
-    exit;
-  end;
-
-  ext := LowerCase(ExtractFileExt(sn.Text));
-
-  case ext of
-    '.asm':
-    begin
-      pf := AddProjectFile(FProjectFolder, sn);
-
-      pf^.TabSheet.ImageIndex := ICON_ASM_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName;
-
-      TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
-      TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
-      TSynEdit(pf^.Editor).Align := alClient;
-      TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
-      TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
-
-      //highlighter
-      pf^.hlt := TSynFacilSyn.Create(self);
-      TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
-      pf^.hlt.LoadFromResourceName(HInstance, 'HL_Z80ASM');
-
-      UpdateSynEdit(TSynEdit(pf^.Editor));
-    end;
-    '.obj':
-    begin
-      pf := AddProjectFile(FProjectFolder, sn);
-
-      pf^.TabSheet.ImageIndex := ICON_OBJ_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName;
-
-      pf^.Editor := TKHexEditor.Create(pf^.TabSheet);
-      TKHexEditor(pf^.Editor).Parent := pf^.TabSheet;
-      TKHexEditor(pf^.Editor).Align := alClient;
-      TKHexEditor(pf^.Editor).Font.Style := [];
-      TKHexEditor(pf^.Editor).LoadFromFile(pf^.FullFileName);
-      TKHexEditor(pf^.Editor).OnChange := @OnEditorChange;
-
-      UpdateHexEditor(TKHexEditor(pf^.Editor));
-    end;
-    '.pas', '.pp', '.p', '.inc':
-    begin
-      pf := AddProjectFile(FProjectFolder, sn);
-
-      pf^.TabSheet.ImageIndex := ICON_PAS_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName;
-
-      TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
-      TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
-      TSynEdit(pf^.Editor).Align := alClient;
-      TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
-      TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
-
-      //highlighter
-      pf^.hlt := TSynFacilSyn.Create(self);
-      TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
-      pf^.hlt.LoadFromResourceName(HInstance, 'HL_PASCAL');
-
-      UpdateSynEdit(TSynEdit(pf^.Editor));
+        Messages.LogFmt(rsCannotDeleteFileS, [SysErrorMessage(GetLastOSError)]);
     end;
   end;
 end;

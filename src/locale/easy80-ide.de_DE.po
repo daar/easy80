@@ -49,6 +49,10 @@ msgstr ""
 msgid "Delete old file \"%s\"?"
 msgstr ""
 
+#: resourcestrings.rsdestinationfilename
+msgid "Destination filename"
+msgstr ""
+
 #: resourcestrings.rsditems0f
 msgid "%d items (%.0f%%)"
 msgstr "%d Elemente (%.0f%%)"
@@ -65,6 +69,14 @@ msgstr ""
 msgid "English (en_US)"
 msgstr ""
 
+#: resourcestrings.rserrorcouldnotdulicat
+msgid "error: could not dulicate file (%s)"
+msgstr ""
+
+#: resourcestrings.rserrorcouldnotrenamef
+msgid "error: could not rename file (%s)"
+msgstr ""
+
 #: resourcestrings.rserrordeletingfile
 msgid "Error deleting file"
 msgstr ""
@@ -79,6 +91,18 @@ msgstr ""
 
 #: resourcestrings.rsitalianit_it
 msgid "Italian (it_IT)"
+msgstr ""
+
+#: resourcestrings.rsnewfilename
+msgid "New filename"
+msgstr ""
+
+#: resourcestrings.rspleaseenterthedestin
+msgid "Please enter the destination filename"
+msgstr ""
+
+#: resourcestrings.rspleaseenterthenewfil
+msgid "Please enter the new filename"
 msgstr ""
 
 #: resourcestrings.rspolishpl_pl
@@ -102,6 +126,69 @@ msgstr ""
 msgid "System language"
 msgstr ""
 
+#: tmainform.actcopy.caption
+msgctxt "tmainform.actcopy.caption"
+msgid "Copy"
+msgstr ""
+
+#: tmainform.actcopyfullpath.caption
+msgctxt "tmainform.actcopyfullpath.caption"
+msgid "Copy Full Path"
+msgstr ""
+
+#: tmainform.actcopyprojectpath.caption
+msgctxt "tmainform.actcopyprojectpath.caption"
+msgid "Copy Project Path"
+msgstr ""
+
+#: tmainform.actcut.caption
+msgctxt "tmainform.actcut.caption"
+msgid "Cut"
+msgstr ""
+
+#: tmainform.actdelete.caption
+msgctxt "tmainform.actdelete.caption"
+msgid "Delete"
+msgstr ""
+
+#: tmainform.actduplicate.caption
+msgctxt "tmainform.actduplicate.caption"
+msgid "Duplicate"
+msgstr ""
+
+#: tmainform.actnewfile.caption
+msgctxt "tmainform.actnewfile.caption"
+msgid "New File"
+msgstr ""
+
+#: tmainform.actnewfolder.caption
+msgctxt "tmainform.actnewfolder.caption"
+msgid "New Folder"
+msgstr ""
+
+#: tmainform.actopeninnewwindow.caption
+msgctxt "tmainform.actopeninnewwindow.caption"
+msgid "Open In New Window"
+msgstr ""
+
+#: tmainform.actpaste.caption
+msgctxt "tmainform.actpaste.caption"
+msgid "Paste"
+msgstr ""
+
+#: tmainform.actrename.caption
+msgctxt "tmainform.actrename.caption"
+msgid "Rename"
+msgstr ""
+
+#: tmainform.actsearchindirectory.caption
+msgid "Search In Directory"
+msgstr ""
+
+#: tmainform.actshowinexplorer.caption
+msgid "Show In Explorer"
+msgstr ""
+
 #: tmainform.caption
 msgid "Easy 80 IDE"
 msgstr "Easy 80 IDE"
@@ -121,6 +208,11 @@ msgctxt "tmainform.miabout.caption"
 msgid "&About"
 msgstr ""
 
+#: tmainform.miaddprojectfolder.caption
+msgctxt "tmainform.miaddprojectfolder.caption"
+msgid "Add Project Folder"
+msgstr ""
+
 #: tmainform.miassemble.caption
 msgctxt "tmainform.miassemble.caption"
 msgid "Assemble"
@@ -137,11 +229,6 @@ msgstr ""
 #: tmainform.micompile.caption
 msgctxt "tmainform.micompile.caption"
 msgid "Compile"
-msgstr ""
-
-#: tmainform.mideletefile.caption
-msgctxt "tmainform.mideletefile.caption"
-msgid "Delete file"
 msgstr ""
 
 #: tmainform.miedit.caption
@@ -165,6 +252,7 @@ msgid "Clear all"
 msgstr ""
 
 #: tmainform.mimessagesmemocopy.caption
+msgctxt "tmainform.mimessagesmemocopy.caption"
 msgid "Copy"
 msgstr ""
 
@@ -188,14 +276,6 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: tmainform.minewfile.caption
-msgid "New file"
-msgstr ""
-
-#: tmainform.minewprojectfolder.caption
-msgid "New project folder"
-msgstr ""
-
 #: tmainform.miopenprojectfolder.caption
 #, fuzzy
 msgctxt "tmainform.miopenprojectfolder.caption"
@@ -212,6 +292,11 @@ msgstr ""
 msgctxt "tmainform.miquit.caption"
 msgid "&Quit"
 msgstr "&Beenden"
+
+#: tmainform.miremoveprojectfolder.caption
+msgctxt "tmainform.miremoveprojectfolder.caption"
+msgid "Remove Project Folder"
+msgstr ""
 
 #: tmainform.misave.caption
 msgctxt "tmainform.misave.caption"
