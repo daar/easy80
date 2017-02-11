@@ -8,6 +8,7 @@ resourcestring
   rsCannotDeleteFileS = 'Cannot delete file: %s.';
   rsChineseZh_CN = 'Chinese (zh_CN)';
   rsCouldNotDeleteFileS = 'Could not delete file: %s';
+  rsCreateNewFolder = 'Create new folder';
   rsDateS = 'Date: %s';
   rsDeleteFile = 'Delete file';
   rsDeleteOldFile = 'Delete old file?';
@@ -17,9 +18,10 @@ resourcestring
   rsDutchNl_NL = 'Dutch (nl_NL)';
   rsEasy80IDEVS = 'Easy80-IDE v%s';
   rsEnglishEn_US = 'English (en_US)';
+  rsEnterThePathForTheNe = 'Enter the path for the new folder';
+  rsErrorCouldNotCreateD = 'error: could not create directory (%s)';
   rsErrorCouldNotDulicat = 'error: could not dulicate file (%s)';
   rsErrorCouldNotRenameF = 'error: could not rename file (%s)';
-  rsErrorDeletingFile = 'Error deleting file';
   rsFrenchFr_FR = 'French (fr_FR)';
   rsGermanDe_DE = 'German (de_DE)';
   rsItalianIt_IT = 'Italian (it_IT)';

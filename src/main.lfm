@@ -301,7 +301,7 @@ object MainForm: TMainForm
     end
   end
   object MessagesPopupMenu: TPopupMenu
-    left = 140
+    left = 136
     top = 321
     object miMessagesMemoCopy: TMenuItem
       Caption = 'Copy'

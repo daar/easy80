@@ -32,6 +32,10 @@ msgstr ""
 msgid "Could not delete file: %s"
 msgstr ""
 
+#: resourcestrings.rscreatenewfolder
+msgid "Create new folder"
+msgstr ""
+
 #: resourcestrings.rsdates
 msgid "Date: %s"
 msgstr ""
@@ -69,16 +73,20 @@ msgstr ""
 msgid "English (en_US)"
 msgstr ""
 
+#: resourcestrings.rsenterthepathforthene
+msgid "Enter the path for the new folder"
+msgstr ""
+
+#: resourcestrings.rserrorcouldnotcreated
+msgid "error: could not create directory (%s)"
+msgstr ""
+
 #: resourcestrings.rserrorcouldnotdulicat
 msgid "error: could not dulicate file (%s)"
 msgstr ""
 
 #: resourcestrings.rserrorcouldnotrenamef
 msgid "error: could not rename file (%s)"
-msgstr ""
-
-#: resourcestrings.rserrordeletingfile
-msgid "Error deleting file"
 msgstr ""
 
 #: resourcestrings.rsfrenchfr_fr

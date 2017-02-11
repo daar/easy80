@@ -156,7 +156,7 @@ type
     procedure SetProjectFolder(Folder: string);
 
     //projectfile related functions
-    function AddProjectFile(const path: string; node: TTreeNode): pProjectFile;
+    function AddProjectFile(const path: string; var node: TTreeNode): pProjectFile;
     function ProjectFileTabIndex(const FileName: string): integer;
   public
     { public declarations }
@@ -217,6 +217,7 @@ end;
 procedure TMainForm.actDeleteExecute(Sender: TObject);
 var
   tn: TTreeNode;
+  pf: pProjectFile;
 begin
   tn := ProjectTreeView.Selected;
 
@@ -228,7 +229,14 @@ begin
     if not DeleteFile(IncludeTrailingPathDelimiter(FProjectFolder) + tn.Text) then
       Messages.LogFmt(rsCouldNotDeleteFileS, [SysErrorMessage(GetLastOSError)])
     else
+    begin
+      //close file in editor
+      pf := pProjectFile(tn.Data);
+      pf^.TabSheet.Free;
+
+      //rebuild project tree view
       SetProjectFolder(FProjectFolder);
+    end;
   end;
 end;
 
@@ -302,13 +310,13 @@ procedure TMainForm.actNewFolderExecute(Sender: TObject);
 var
   path: string;
 begin
-  InputQuery('Create new folder', 'Enter the path for the new folder', path);
+  InputQuery(rsCreateNewFolder, rsEnterThePathForTheNe, path);
 
   if path <> '' then
   begin
     path := IncludeTrailingPathDelimiter(FProjectFolder) + path;
     if not ForceDirectories(path) then
-      Messages.LogFmt('error: could not create directory', [SysErrorMessage(GetLastOSError)])
+      Messages.LogFmt(rsErrorCouldNotCreateD, [SysErrorMessage(GetLastOSError)])
     else
       SetProjectFolder(FProjectFolder);
   end;
@@ -320,10 +328,22 @@ var
   ext: string;
   pf: pProjectFile;
   idx: integer;
+
+  procedure CreateSynEditHighlighter;
+  begin
+    TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
+    TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
+    TSynEdit(pf^.Editor).Align := alClient;
+    TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
+    TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+  end;
+
 begin
   tn := ProjectTreeView.Selected;
 
   if tn = nil then
+    exit;
+  if tn.Parent = nil then
     exit;
 
   //check if projectfile already is opened in the editor
@@ -336,19 +356,15 @@ begin
 
   ext := LowerCase(ExtractFileExt(tn.Text));
 
+  pf := AddProjectFile(FProjectFolder, tn);
+
   case ext of
     '.asm':
     begin
-      pf := AddProjectFile(FProjectFolder, tn);
-
       pf^.TabSheet.ImageIndex := ICON_ASM_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName;
 
-      TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
-      TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
-      TSynEdit(pf^.Editor).Align := alClient;
-      TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
-      TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+      //create the editor
+      CreateSynEditHighlighter;
 
       //highlighter
       pf^.hlt := TSynFacilSyn.Create(self);
@@ -359,11 +375,9 @@ begin
     end;
     '.obj':
     begin
-      pf := AddProjectFile(FProjectFolder, tn);
-
       pf^.TabSheet.ImageIndex := ICON_OBJ_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName;
 
+      //create the editor
       pf^.Editor := TKHexEditor.Create(pf^.TabSheet);
       TKHexEditor(pf^.Editor).Parent := pf^.TabSheet;
       TKHexEditor(pf^.Editor).Align := alClient;
@@ -375,21 +389,26 @@ begin
     end;
     '.pas', '.pp', '.p', '.inc':
     begin
-      pf := AddProjectFile(FProjectFolder, tn);
-
       pf^.TabSheet.ImageIndex := ICON_PAS_SOURCE;
-      pf^.TabSheet.Caption := pf^.FileName;
 
-      TSynEdit(pf^.Editor) := TSynEdit.Create(pf^.TabSheet);
-      TSynEdit(pf^.Editor).Parent := pf^.TabSheet;
-      TSynEdit(pf^.Editor).Align := alClient;
-      TSynEdit(pf^.Editor).Lines.LoadFromFile(pf^.FullFileName);
-      TSynEdit(pf^.Editor).OnChange := @OnEditorChange;
+      //create the editor
+      CreateSynEditHighlighter;
 
       //highlighter
       pf^.hlt := TSynFacilSyn.Create(self);
       TSynEdit(pf^.Editor).Highlighter := pf^.hlt;
       pf^.hlt.LoadFromResourceName(HInstance, 'HL_PASCAL');
+
+      UpdateSynEdit(TSynEdit(pf^.Editor));
+    end;
+  else
+    begin
+      //for all other files open the SynEdit editor without highlighter
+
+      pf^.TabSheet.ImageIndex := ICON_FILE;
+
+      //create the editor
+      CreateSynEditHighlighter;
 
       UpdateSynEdit(TSynEdit(pf^.Editor));
     end;
@@ -693,6 +712,7 @@ procedure TMainForm.miAboutClick(Sender: TObject);
 var
   pf: pProjectFile;
   idx: integer;
+  node: TTreeNode = nil;
 begin
   //check if settings already is opened in the editor
   idx := ProjectFileTabIndex(rsAbout);
@@ -702,7 +722,7 @@ begin
     exit;
   end;
 
-  pf := AddProjectFile(FProjectFolder, nil);
+  pf := AddProjectFile(FProjectFolder, node);
 
   pf^.TabSheet.ImageIndex := ICON_INFO;
   pf^.TabSheet.Caption := rsAbout;
@@ -716,6 +736,7 @@ procedure TMainForm.miSettingsClick(Sender: TObject);
 var
   pf: pProjectFile;
   idx: integer;
+  node: TTreeNode = nil;
 begin
   //check if settings already is opened in the editor
   idx := ProjectFileTabIndex(rsSettings);
@@ -725,7 +746,7 @@ begin
     exit;
   end;
 
-  pf := AddProjectFile(FProjectFolder, nil);
+  pf := AddProjectFile(FProjectFolder, node);
 
   pf^.TabSheet.ImageIndex := ICON_SETTINGS;
   pf^.TabSheet.Caption := rsSettings;
@@ -807,7 +828,7 @@ begin
   mainnode.ImageIndex := ICON_EASY80;
   mainnode.SelectedIndex := mainnode.ImageIndex;
 
-  AllFiles := FindAllFiles(FProjectFolder, '*.asm;*.obj;*.pas;*.pp;*.p;*.inc', False);
+  AllFiles := FindAllFiles(FProjectFolder, '*', False);
   try
     for i := 0 to AllFiles.Count - 1 do
     begin
@@ -818,6 +839,8 @@ begin
         '.asm': node.ImageIndex := ICON_ASM_SOURCE;
         '.obj': node.ImageIndex := ICON_OBJ_SOURCE;
         '.pas', '.pp', '.p', '.inc': node.ImageIndex := ICON_PAS_SOURCE;
+      else
+        node.ImageIndex := ICON_FILE;
       end;
 
       node.SelectedIndex := node.ImageIndex;
@@ -834,7 +857,7 @@ begin
   end;
 end;
 
-function TMainForm.AddProjectFile(const path: string; node: TTreeNode): pProjectFile;
+function TMainForm.AddProjectFile(const path: string; var node: TTreeNode): pProjectFile;
 var
   pf: pProjectFile;
 begin
@@ -842,7 +865,12 @@ begin
   FProjectFiles.Add(pf);
 
   if node <> nil then
-    pf^.FullFileName := IncludeTrailingPathDelimiter(path) + node.Text
+  begin
+    pf^.FullFileName := IncludeTrailingPathDelimiter(path) + node.Text;
+
+    //link the projectfile to the treenode
+    node.Data := pf;
+  end
   else
     pf^.FullFileName := '';
 
@@ -851,6 +879,7 @@ begin
   pf^.TreeNode := node;
 
   pf^.TabSheet := EditorsPageControl.AddTabSheet;
+  pf^.TabSheet.Caption := pf^.FileName;
 
   //link the tabsheet to the projectfile record
   pf^.TabSheet.Tag := PtrInt(pf);
