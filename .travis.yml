@@ -42,8 +42,8 @@ install:
   - ./.travis.install.py
 
 script:
-  - lazbuild $LAZ_OPT my_lazarus_tests.lpi               # Build my_lazarus_test project
-  - $LAZ_ENV ./bin/my_lazarus_tests --all --format=plain # Run my_lazarus_test testsuite
+  - lazbuild $LAZ_OPT ./src/tools/icons_update.lpi       # Build icons_update project
+  - $LAZ_ENV ./src/tools/icons_update                    # Run icons_update
 
 notifications:
   email:
