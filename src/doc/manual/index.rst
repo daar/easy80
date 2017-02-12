@@ -12,6 +12,16 @@ Contents:
    :maxdepth: 2
 
    about
+   project_explorer
+   file_editor
+   library_manager
+   emulator
+   compiler
+   assembler
+   disassembler
+   debugger
+   monitor
+   visual_programming
 
 
 Indices and tables
@@ -20,4 +30,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
