@@ -1,5 +1,7 @@
 program hash_update;
 
+{$H+}
+
 uses
   Classes,
   Process,
