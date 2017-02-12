@@ -44,7 +44,7 @@ install:
 script:
   - lazbuild $LAZ_OPT ./src/tools/icons_update.lpi       # Build icons_update project
   #- $LAZ_ENV ./src/tools/icons_update                    # Run icons_update
-  - fpc ./src/tools/hash_update.lpi                      # Build icons_update project
+  - fpc ./src/tools/hash_update.pp                       # Build icons_update project
 
 notifications:
   email:
