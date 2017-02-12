@@ -1,4 +1,4 @@
-![WinXP+](src/datafiles/images/windows.png) ![MacOSX](src/datafiles/images/mac.png) ![Linux and Other](src/datafiles/images/linux.png)
+![Windows](src/datafiles/images/windows.png) ![MacOSX](src/datafiles/images/mac.png) ![Linux and Other](src/datafiles/images/linux.png) [![Build Status](https://travis-ci.org/daar/z80-pascal.svg?branch=master)](https://travis-ci.org/daar/z80-pascal)
 
 ## Easy80
 
