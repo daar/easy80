@@ -101,7 +101,7 @@ def install_lazarus_version(ver,rel,env):
 
     if osn == 'wine':
         # Set wine Path (persistently) to include Lazarus binary directory
-        if os.system('wine cmd /C reg add HKEY_CURRENT_USER\\\\Environment /v PATH /t REG_SZ /d "%PATH%\\;c:\\\\lazarus"') != 0:
+        if os.system('wine cmd /C reg add HKEY_CURRENT_USER\\\\Environment /v PATH /t REG_SZ /d "%PATH%\\;c:\\\\lazarus;c:\\\\lazarus\\fpc\\2.6.4\\bin\\i386-win32;c:\\\\lazarus\\fpc\\2.6.4\\bin\\x86_64-win64"') != 0:
             return False
 
         # Redirect listed executables so they execute in wine
