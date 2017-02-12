@@ -30,6 +30,62 @@ LIBS:contrib
 LIBS:valves
 LIBS:Zilog
 LIBS:shardy
+LIBS:74xgxx
+LIBS:ac-dc
+LIBS:actel
+LIBS:allegro
+LIBS:Altera
+LIBS:analog_devices
+LIBS:battery_management
+LIBS:bbd
+LIBS:brooktre
+LIBS:cmos_ieee
+LIBS:dc-dc
+LIBS:diode
+LIBS:elec-unifil
+LIBS:ESD_Protection
+LIBS:ftdi
+LIBS:gennum
+LIBS:graphic
+LIBS:hc11
+LIBS:ir
+LIBS:Lattice
+LIBS:logo
+LIBS:maxim
+LIBS:mechanical
+LIBS:microchip_dspic33dsc
+LIBS:microchip_pic10mcu
+LIBS:microchip_pic12mcu
+LIBS:microchip_pic16mcu
+LIBS:microchip_pic18mcu
+LIBS:microchip_pic32mcu
+LIBS:motor_drivers
+LIBS:motors
+LIBS:msp430
+LIBS:nordicsemi
+LIBS:nxp_armmcu
+LIBS:onsemi
+LIBS:Oscillators
+LIBS:Power_Management
+LIBS:powerint
+LIBS:pspice
+LIBS:references
+LIBS:relays
+LIBS:rfcom
+LIBS:sensors
+LIBS:silabs
+LIBS:stm8
+LIBS:stm32
+LIBS:supertex
+LIBS:switches
+LIBS:transf
+LIBS:ttl_ieee
+LIBS:video
+LIBS:wiznet
+LIBS:Worldsemi
+LIBS:Xicor
+LIBS:zetex
+LIBS:proto1-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -171,7 +227,7 @@ U 1 1 58429899
 P 1700 7100
 F 0 "R5" V 1780 7100 50  0000 C CNN
 F 1 "1200" V 1700 7100 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 1630 7100 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1630 7100 50  0001 C CNN
 F 3 "" H 1700 7100 50  0000 C CNN
 	1    1700 7100
 	0    1    1    0   
@@ -182,7 +238,7 @@ U 1 1 584298D6
 P 2850 7100
 F 0 "R4" V 2930 7100 50  0000 C CNN
 F 1 "1200" V 2850 7100 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 2780 7100 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2780 7100 50  0001 C CNN
 F 3 "" H 2850 7100 50  0000 C CNN
 	1    2850 7100
 	0    1    1    0   
@@ -193,7 +249,7 @@ U 1 1 5842992F
 P 4550 6950
 F 0 "R3" V 4630 6950 50  0000 C CNN
 F 1 "330" V 4550 6950 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 4480 6950 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4480 6950 50  0001 C CNN
 F 3 "" H 4550 6950 50  0000 C CNN
 	1    4550 6950
 	-1   0    0    1   
@@ -204,7 +260,7 @@ U 1 1 58429C00
 P 1050 7000
 F 0 "C6" H 1075 7100 50  0000 L CNN
 F 1 "100pF" H 1075 6900 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 1088 6850 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D3.0mm_W2.0mm_P2.50mm" H 1088 6850 50  0001 C CNN
 F 3 "" H 1050 7000 50  0000 C CNN
 	1    1050 7000
 	-1   0    0    1   
@@ -215,7 +271,7 @@ U 1 1 5842A0FF
 P 6250 5950
 F 0 "C2" H 6275 6050 50  0000 L CNN
 F 1 "10uF" H 6275 5850 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 6250 5950 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 6250 5950 50  0001 C CNN
 F 3 "" H 6250 5950 50  0000 C CNN
 	1    6250 5950
 	-1   0    0    -1  
@@ -226,7 +282,7 @@ U 1 1 5842A162
 P 5000 5950
 F 0 "C1" H 5025 6050 50  0000 L CNN
 F 1 "100uF" H 5025 5850 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 5000 5950 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 5000 5950 50  0001 C CNN
 F 3 "" H 5000 5950 50  0000 C CNN
 	1    5000 5950
 	-1   0    0    -1  
@@ -699,7 +755,7 @@ U 1 1 5843A3C6
 P 5850 4150
 F 0 "J2" H 5850 4700 50  0000 C CNN
 F 1 "CONN_01X10" V 5950 4150 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x10" H 5850 4150 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x10_Pitch2.54mm" H 5850 4150 50  0001 C CNN
 F 3 "" H 5850 4150 50  0000 C CNN
 	1    5850 4150
 	-1   0    0    -1  
@@ -732,7 +788,7 @@ U 1 1 5843B2FB
 P 10950 4150
 F 0 "J1" H 10950 4700 50  0000 C CNN
 F 1 "CONN_01X10" V 11050 4150 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x10" H 10950 4150 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x10_Pitch2.54mm" H 10950 4150 50  0001 C CNN
 F 3 "" H 10950 4150 50  0000 C CNN
 	1    10950 4150
 	1    0    0    -1  
@@ -918,7 +974,7 @@ U 1 1 5852DA4A
 P 6600 5900
 F 0 "D1" H 6600 6000 50  0000 C CNN
 F 1 "LED" H 6600 5800 50  0000 C CNN
-F 2 "LEDs:LED-5MM" H 6600 5900 50  0001 C CNN
+F 2 "LEDs:LED_D5.0mm" H 6600 5900 50  0001 C CNN
 F 3 "" H 6600 5900 50  0000 C CNN
 	1    6600 5900
 	0    -1   -1   0   
@@ -1249,11 +1305,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 6200 5000 6100
 Connection ~ 5600 6200
-Wire Wire Line
-	4500 5700 4500 5800
 Connection ~ 5000 5700
-Wire Wire Line
-	4500 6200 4500 6100
 Connection ~ 5000 6200
 Wire Wire Line
 	4900 2700 5300 2700
@@ -1305,7 +1357,7 @@ U 1 1 5852E3AF
 P 6600 6350
 F 0 "R1" V 6680 6350 50  0000 C CNN
 F 1 "330" V 6600 6350 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 6530 6350 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6530 6350 50  0001 C CNN
 F 3 "" H 6600 6350 50  0000 C CNN
 	1    6600 6350
 	1    0    0    -1  
@@ -1322,7 +1374,7 @@ F 3 "" H 6600 6600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6600 6100 6600 6200
+	6600 6050 6600 6200
 Wire Wire Line
 	6600 6500 6600 6600
 Connection ~ 6600 5700
@@ -1342,7 +1394,7 @@ U 1 1 58534470
 P 1450 1100
 F 0 "R6" V 1530 1100 50  0000 C CNN
 F 1 "10K" V 1450 1100 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 1380 1100 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1380 1100 50  0001 C CNN
 F 3 "" H 1450 1100 50  0000 C CNN
 	1    1450 1100
 	0    1    1    0   
@@ -1353,7 +1405,7 @@ U 1 1 585344E7
 P 1450 850
 F 0 "R2" V 1530 850 50  0000 C CNN
 F 1 "10K" V 1450 850 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 1380 850 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1380 850 50  0001 C CNN
 F 3 "" H 1450 850 50  0000 C CNN
 	1    1450 850 
 	0    1    1    0   
@@ -1364,21 +1416,10 @@ U 1 1 585349CE
 P 1700 1350
 F 0 "C3" H 1725 1450 50  0000 L CNN
 F 1 "10uF" H 1725 1250 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Disc_D3_P2.5" H 1700 1350 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 1700 1350 50  0001 C CNN
 F 3 "" H 1700 1350 50  0000 C CNN
 	1    1700 1350
 	-1   0    0    -1  
-$EndComp
-$Comp
-L SW_PUSH SW1
-U 1 1 58534C72
-P 950 1100
-F 0 "SW1" H 1100 1210 50  0000 C CNN
-F 1 "SW_PUSH" H 950 1020 50  0000 C CNN
-F 2 "Buttons_Switches_ThroughHole:SW_PUSH_6mm" H 950 1100 50  0001 C CNN
-F 3 "" H 950 1100 50  0000 C CNN
-	1    950  1100
-	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR017
@@ -1407,7 +1448,7 @@ Wire Wire Line
 Wire Wire Line
 	1000 850  1300 850 
 Wire Wire Line
-	1250 1100 1300 1100
+	1150 1100 1300 1100
 Wire Wire Line
 	1600 850  2100 850 
 Wire Wire Line
@@ -1418,4 +1459,23 @@ Wire Wire Line
 Connection ~ 1700 1100
 Wire Wire Line
 	1700 1550 1700 1500
+$Comp
+L SW_Push SW1
+U 1 1 588B911D
+P 950 1100
+F 0 "SW1" H 1000 1200 50  0000 L CNN
+F 1 "SW_Push" H 950 1040 50  0000 C CNN
+F 2 "Buttons_Switches_ThroughHole:SW_PUSH_6mm" H 950 1300 50  0001 C CNN
+F 3 "" H 950 1300 50  0000 C CNN
+	1    950  1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	650  1100 750  1100
+Wire Wire Line
+	6600 5750 6600 5700
+Wire Wire Line
+	4500 6150 4500 6200
+Wire Wire Line
+	4500 5700 4500 5750
 $EndSCHEMATC
