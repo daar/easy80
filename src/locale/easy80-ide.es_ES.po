@@ -1,201 +1,196 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Project-Id-Version: Easy80-IDE\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Darius Blaszyk <dhkblaszyk@gmail.com>\n"
-"Language-Team: \n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
-"X-Generator: Poedit 2.0beta1\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: easy80-ide\n"
+"Language: es\n"
 
 #: resourcestrings.rsabout
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
 #: resourcestrings.rsareyousuretopermanen
 msgid "Are you sure to permanently delete this file?"
-msgstr ""
+msgstr "¿Estás seguro de eliminar definitivamente este archivo?"
 
 #: resourcestrings.rscannotdeletefiles
 msgid "Cannot delete file: %s."
-msgstr ""
+msgstr "No se puede eliminar el archivo:% s."
 
 #: resourcestrings.rschinesezh_cn
 msgid "Chinese (zh_CN)"
-msgstr ""
+msgstr "Chino (zh_CN)"
 
 #: resourcestrings.rscouldnotdeletefiles
 msgid "Could not delete file: %s"
-msgstr ""
+msgstr "No se pudo eliminar el archivo:% s"
 
 #: resourcestrings.rscreatenewfolder
 msgid "Create new folder"
-msgstr ""
+msgstr "Crear nueva carpeta"
 
 #: resourcestrings.rsdates
 msgid "Date: %s"
-msgstr ""
+msgstr "Fechas"
 
 #: resourcestrings.rsdeletefile
 msgctxt "resourcestrings.rsdeletefile"
 msgid "Delete file"
-msgstr ""
+msgstr "Borrar archivo"
 
 #: resourcestrings.rsdeleteoldfile
 msgid "Delete old file?"
-msgstr ""
+msgstr "Eliminar archivo viejo?"
 
 #: resourcestrings.rsdeleteoldfiles
 msgid "Delete old file \"%s\"?"
-msgstr ""
+msgstr "Eliminar el archivo anterior \"% s\"?"
 
 #: resourcestrings.rsdestinationfilename
 msgid "Destination filename"
-msgstr ""
+msgstr "Nombre de archivo"
 
 #: resourcestrings.rsditems0f
 msgid "%d items (%.0f%%)"
-msgstr ""
+msgstr "% d elementos (% .0f %%)"
 
 #: resourcestrings.rsdutchnl_nl
 msgid "Dutch (nl_NL)"
-msgstr ""
+msgstr "Holandés (nl_NL)"
 
 #: resourcestrings.rseasy80idevs
 msgid "Easy80-IDE v%s"
-msgstr ""
+msgstr "Easy80-IDE v% s"
 
 #: resourcestrings.rsenglishen_us
 msgid "English (en_US)"
-msgstr ""
+msgstr "Inglés (en_US)"
 
 #: resourcestrings.rsenterthepathforthene
 msgid "Enter the path for the new folder"
-msgstr ""
+msgstr "Ingrese la ruta para la nueva carpeta"
 
 #: resourcestrings.rserrorcouldnotcreated
 msgid "error: could not create directory (%s)"
-msgstr ""
+msgstr "error: no se pudo crear el directorio (% s)"
 
 #: resourcestrings.rserrorcouldnotdulicat
 msgid "error: could not dulicate file (%s)"
-msgstr ""
+msgstr "error: no se pudo borrar el archivo (% s)"
 
 #: resourcestrings.rserrorcouldnotrenamef
 msgid "error: could not rename file (%s)"
-msgstr ""
+msgstr "error: no se pudo cambiar el nombre del archivo (% s)"
 
 #: resourcestrings.rsfrenchfr_fr
 msgid "French (fr_FR)"
-msgstr ""
+msgstr "Francés (fr_FR)"
 
 #: resourcestrings.rsgermande_de
 msgid "German (de_DE)"
-msgstr ""
+msgstr "Alemán (de_DE)"
 
 #: resourcestrings.rsitalianit_it
 msgid "Italian (it_IT)"
-msgstr ""
+msgstr "Italiano (it_IT)"
 
 #: resourcestrings.rsnewfilename
 msgid "New filename"
-msgstr ""
+msgstr "Nuevo nombre de archivo"
 
 #: resourcestrings.rspleaseenterthedestin
 msgid "Please enter the destination filename"
-msgstr ""
+msgstr "Por favor ingrese el nombre de archivo de destino"
 
 #: resourcestrings.rspleaseenterthenewfil
 msgid "Please enter the new filename"
-msgstr ""
+msgstr "Por favor ingrese el nuevo nombre de archivo"
 
 #: resourcestrings.rspolishpl_pl
 msgid "Polish (pl_PL)"
-msgstr ""
+msgstr "Polaco (pl_PL)"
 
 #: resourcestrings.rsreadonly
 msgid "%s [readonly]"
-msgstr ""
+msgstr "% s [solo lectura]"
 
 #: resourcestrings.rssettings
 msgctxt "resourcestrings.rssettings"
 msgid "Settings"
-msgstr ""
+msgstr "Configuraciones"
 
 #: resourcestrings.rsspanishes_es
 msgid "Spanish (es_ES)"
-msgstr ""
+msgstr "Español (es_ES)"
 
 #: resourcestrings.rssystemlanguage
 msgid "System language"
-msgstr ""
+msgstr "Lenguaje del sistema"
 
 #: tmainform.actcopy.caption
 msgctxt "tmainform.actcopy.caption"
 msgid "Copy"
-msgstr ""
+msgstr "Dupdo"
 
 #: tmainform.actcopyfullpath.caption
 msgctxt "tmainform.actcopyfullpath.caption"
 msgid "Copy Full Path"
-msgstr ""
+msgstr "Copiar ruta completa"
 
 #: tmainform.actcopyprojectpath.caption
 msgctxt "tmainform.actcopyprojectpath.caption"
 msgid "Copy Project Path"
-msgstr ""
+msgstr "Copiar ruta del proyecto"
 
 #: tmainform.actcut.caption
 msgctxt "tmainform.actcut.caption"
 msgid "Cut"
-msgstr ""
+msgstr "Cortar"
 
 #: tmainform.actdelete.caption
 msgctxt "tmainform.actdelete.caption"
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #: tmainform.actduplicate.caption
 msgctxt "tmainform.actduplicate.caption"
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: tmainform.actnewfile.caption
 msgctxt "tmainform.actnewfile.caption"
 msgid "New File"
-msgstr ""
+msgstr "Archivo nuevo"
 
 #: tmainform.actnewfolder.caption
 msgctxt "tmainform.actnewfolder.caption"
 msgid "New Folder"
-msgstr ""
+msgstr "Nueva carpeta"
 
 #: tmainform.actopeninnewwindow.caption
 msgctxt "tmainform.actopeninnewwindow.caption"
 msgid "Open In New Window"
-msgstr ""
+msgstr "Abrir en Nueva ventana"
 
 #: tmainform.actpaste.caption
 msgctxt "tmainform.actpaste.caption"
 msgid "Paste"
-msgstr ""
+msgstr "Pegar"
 
 #: tmainform.actrename.caption
 msgctxt "tmainform.actrename.caption"
 msgid "Rename"
-msgstr ""
+msgstr "Rebautizar"
 
 #: tmainform.actsearchindirectory.caption
 msgid "Search In Directory"
-msgstr ""
+msgstr "Buscar en el directorio"
 
 #: tmainform.actshowinexplorer.caption
 msgid "Show In Explorer"
-msgstr ""
+msgstr "Mostrar en Explorador"
 
 #: tmainform.caption
 msgid "Easy 80 IDE"
@@ -204,480 +199,480 @@ msgstr "Easy 80 IDE"
 #: tmainform.menuitem12.caption
 msgctxt "tmainform.menuitem12.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.menuitem16.caption
 msgctxt "tmainform.menuitem16.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.menuitem2.caption
 msgctxt "tmainform.menuitem2.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.menuitem21.caption
 msgctxt "tmainform.menuitem21.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.menuitem3.caption
 msgid "Move page"
-msgstr ""
+msgstr "Mover página"
 
 #: tmainform.menuitem5.caption
 msgctxt "tmainform.menuitem5.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.menuitem7.caption
 msgctxt "tmainform.menuitem7.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.messagestabsheet.caption
 msgctxt "tmainform.messagestabsheet.caption"
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: tmainform.miabout.caption
 msgctxt "tmainform.miabout.caption"
 msgid "&About"
-msgstr ""
+msgstr "&Acerca de"
 
 #: tmainform.miaddprojectfolder.caption
 msgctxt "tmainform.miaddprojectfolder.caption"
 msgid "Add Project Folder"
-msgstr ""
+msgstr "Agregar carpeta de proyecto"
 
 #: tmainform.miassemble.caption
 msgctxt "tmainform.miassemble.caption"
 msgid "Assemble"
-msgstr ""
+msgstr "Armar"
 
 #: tmainform.micloseallother.caption
 msgid "Close all other pages"
-msgstr ""
+msgstr "Cierre todas las demás páginas"
 
 #: tmainform.miclosepage.caption
 msgid "Close page"
-msgstr ""
+msgstr "Cerrar página"
 
 #: tmainform.micompile.caption
 msgctxt "tmainform.micompile.caption"
 msgid "Compile"
-msgstr ""
+msgstr "Compilar"
 
 #: tmainform.miedit.caption
 msgid "&Edit"
-msgstr ""
+msgstr "&Editar"
 
 #: tmainform.mifile.caption
 msgctxt "tmainform.mifile.caption"
 msgid "&File"
-msgstr ""
+msgstr "&Archivo"
 
 #: tmainform.mifilesep1.caption
 msgctxt "tmainform.mifilesep1.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.mifilesep2.caption
 msgctxt "tmainform.mifilesep2.caption"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: tmainform.mihelp.caption
 msgctxt "tmainform.mihelp.caption"
 msgid "&Help"
-msgstr ""
+msgstr "&Ayuda"
 
 #: tmainform.mimessagesmemoclearall.caption
 msgid "Clear all"
-msgstr ""
+msgstr "Limpiar todo"
 
 #: tmainform.mimessagesmemocopy.caption
 msgctxt "tmainform.mimessagesmemocopy.caption"
 msgid "Copy"
-msgstr ""
+msgstr "Dupdo"
 
 #: tmainform.mimessagesmemoselectall.caption
 msgid "Select all"
-msgstr ""
+msgstr "Seleccionar todo"
 
 #: tmainform.mimoveleft.caption
 msgid "Move page left"
-msgstr ""
+msgstr "Mover página izquierda"
 
 #: tmainform.mimoveright.caption
 msgid "Move page right"
-msgstr ""
+msgstr "Mover la página derecha"
 
 #: tmainform.mimoverightmost.caption
 msgid "Move page rightmost"
-msgstr ""
+msgstr "Mover la página a la derecha"
 
 #: tmainform.minew.caption
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: tmainform.miopenprojectfolder.caption
 msgctxt "tmainform.miopenprojectfolder.caption"
 msgid "&Open project folder"
-msgstr ""
+msgstr "& Abra la carpeta del proyecto"
 
 #: tmainform.miproject.caption
 msgctxt "tmainform.miproject.caption"
 msgid "Project"
-msgstr ""
+msgstr "Proyecto"
 
 #: tmainform.miquit.caption
 msgctxt "tmainform.miquit.caption"
 msgid "&Quit"
-msgstr ""
+msgstr "&Dejar"
 
 #: tmainform.miremoveprojectfolder.caption
 msgctxt "tmainform.miremoveprojectfolder.caption"
 msgid "Remove Project Folder"
-msgstr ""
+msgstr "Eliminar la carpeta del proyecto"
 
 #: tmainform.misave.caption
 msgctxt "tmainform.misave.caption"
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: tmainform.misaveall.caption
 msgid "Save all"
-msgstr ""
+msgstr "Salvar a todos"
 
 #: tmainform.misaveas.caption
 msgid "Save as ..."
-msgstr ""
+msgstr "Guardar como ..."
 
 #: tmainform.misaveastab.caption
 msgctxt "tmainform.misaveastab.caption"
 msgid "Save as..."
-msgstr ""
+msgstr "Guardar como..."
 
 #: tmainform.misavetab.caption
 msgctxt "tmainform.misavetab.caption"
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: tmainform.misettings.caption
 msgctxt "tmainform.misettings.caption"
 msgid "Settings"
-msgstr ""
+msgstr "Configuraciones"
 
 #: tmainform.mitools.caption
 msgctxt "tmainform.mitools.caption"
 msgid "&Tools"
-msgstr ""
+msgstr "&Herramientas"
 
 #: tmainform.momoveleftmost.caption
 msgid "Move page leftmost"
-msgstr ""
+msgstr "Mover la página de la izquierda"
 
 #: toptionsdlg.assemblertabsheet.caption
 msgctxt "toptionsdlg.assemblertabsheet.caption"
 msgid "Assembler"
-msgstr ""
+msgstr "Ensamblador"
 
 #: toptionsdlg.bucolorchange.caption
 msgctxt "toptionsdlg.bucolorchange.caption"
 msgid "Change..."
-msgstr ""
+msgstr "Cambio..."
 
 #: toptionsdlg.caption
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #: toptionsdlg.cbdropfiles.caption
 msgctxt "toptionsdlg.cbdropfiles.caption"
 msgid "Drop files"
-msgstr ""
+msgstr "Suelta archivos"
 
 #: toptionsdlg.cbfontstylebold.caption
 msgctxt "toptionsdlg.cbfontstylebold.caption"
 msgid "Bold"
-msgstr ""
+msgstr "Negrita"
 
 #: toptionsdlg.cbfontstyleitalic.caption
 msgctxt "toptionsdlg.cbfontstyleitalic.caption"
 msgid "Italic"
-msgstr ""
+msgstr "Itálico"
 
 #: toptionsdlg.cbgroupundo.caption
 msgctxt "toptionsdlg.cbgroupundo.caption"
 msgid "Group undo"
-msgstr ""
+msgstr "Grupo deshacer"
 
 #: toptionsdlg.cbshowaddress.caption
 msgctxt "toptionsdlg.cbshowaddress.caption"
 msgid "Show address area"
-msgstr ""
+msgstr "Mostrar área de dirección"
 
 #: toptionsdlg.cbshowdigits.caption
 msgctxt "toptionsdlg.cbshowdigits.caption"
 msgid "Show digit area"
-msgstr ""
+msgstr "Mostrar área de dígitos"
 
 #: toptionsdlg.cbshowhorzlines.caption
 msgctxt "toptionsdlg.cbshowhorzlines.caption"
 msgid "Show horizontal lines"
-msgstr ""
+msgstr "Mostrar líneas horizontales"
 
 #: toptionsdlg.cbshowinactivecaret.caption
 msgctxt "toptionsdlg.cbshowinactivecaret.caption"
 msgid "Show inactive caret"
-msgstr ""
+msgstr "Mostrar carete inactivo"
 
 #: toptionsdlg.cbshowseparators.caption
 msgctxt "toptionsdlg.cbshowseparators.caption"
 msgid "Show area separators"
-msgstr ""
+msgstr "Mostrar separadores de área"
 
 #: toptionsdlg.cbshowtext.caption
 msgctxt "toptionsdlg.cbshowtext.caption"
 msgid "Show text area"
-msgstr ""
+msgstr "Mostrar área de texto"
 
 #: toptionsdlg.cbshowvertlines.caption
 msgctxt "toptionsdlg.cbshowvertlines.caption"
 msgid "Show vertical lines"
-msgstr ""
+msgstr "Mostrar líneas verticales"
 
 #: toptionsdlg.cbundoaftersave.caption
 msgctxt "toptionsdlg.cbundoaftersave.caption"
 msgid "Undo after save"
-msgstr ""
+msgstr "Deshacer después de guardar"
 
 #: toptionsdlg.compilertabsheet.caption
 msgctxt "toptionsdlg.compilertabsheet.caption"
 msgid "Compiler"
-msgstr ""
+msgstr "Compilador"
 
 #: toptionsdlg.gbappearance.caption
 msgctxt "toptionsdlg.gbappearance.caption"
 msgid "Appearance"
-msgstr ""
+msgstr "Apariencia"
 
 #: toptionsdlg.gbcolors.caption
 msgctxt "toptionsdlg.gbcolors.caption"
 msgid "Color assignment"
-msgstr ""
+msgstr "Asignación de color"
 
 #: toptionsdlg.gbgeneral.caption
 msgctxt "toptionsdlg.gbgeneral.caption"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: toptionsdlg.generaltabsheet.caption
 msgctxt "toptionsdlg.generaltabsheet.caption"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: toptionsdlg.hexeditorcolorstabsheet.caption
 msgctxt "toptionsdlg.hexeditorcolorstabsheet.caption"
 msgid "Hex editor colors"
-msgstr ""
+msgstr "Colores del editor hexadecimal"
 
 #: toptionsdlg.hexeditorfonttabsheet.caption
 msgctxt "toptionsdlg.hexeditorfonttabsheet.caption"
 msgid "Hex editor font"
-msgstr ""
+msgstr "Fuente editor hexadecimal"
 
 #: toptionsdlg.hexeditortabsheet.caption
 msgctxt "toptionsdlg.hexeditortabsheet.caption"
 msgid "Hex editor"
-msgstr ""
+msgstr "Editor hexadecimal"
 
 #: toptionsdlg.lbaddressprefix.caption
 msgctxt "toptionsdlg.lbaddressprefix.caption"
 msgid "Address prefix:"
-msgstr ""
+msgstr "Prefijo de dirección:"
 
 #: toptionsdlg.lbaddresssize.caption
 msgctxt "toptionsdlg.lbaddresssize.caption"
 msgid "Address size:"
-msgstr ""
+msgstr "Tamaño de dirección:"
 
 #: toptionsdlg.lbattributes.caption
 msgctxt "toptionsdlg.lbattributes.caption"
 msgid "Color item:"
-msgstr ""
+msgstr "Artículo de color:"
 
 #: toptionsdlg.lbbytes.caption
 msgctxt "toptionsdlg.lbbytes.caption"
 msgid "bytes"
-msgstr ""
+msgstr "bytes"
 
 #: toptionsdlg.lbbytes2.caption
 msgctxt "toptionsdlg.lbbytes2.caption"
 msgid "bytes"
-msgstr ""
+msgstr "bytes"
 
 #: toptionsdlg.lbcharspacing.caption
 msgctxt "toptionsdlg.lbcharspacing.caption"
 msgid "Inter-character spacing:"
-msgstr ""
+msgstr "Espaciado entre caracteres:"
 
 #: toptionsdlg.lbdigitgrouping.caption
 msgctxt "toptionsdlg.lbdigitgrouping.caption"
 msgid "Digit grouping:"
-msgstr ""
+msgstr "Agrupación de dígitos:"
 
 #: toptionsdlg.lbfontname.caption
 msgctxt "toptionsdlg.lbfontname.caption"
 msgid "&Font name:"
-msgstr ""
+msgstr "&Nombre de la fuente:"
 
 #: toptionsdlg.lbfontsize.caption
 msgctxt "toptionsdlg.lbfontsize.caption"
 msgid "Font size:"
-msgstr ""
+msgstr "Tamaño de fuente:"
 
 #: toptionsdlg.lbhighfg.caption
 msgctxt "toptionsdlg.lbhighfg.caption"
 msgid "Current color:"
-msgstr ""
+msgstr "Color actual:"
 
 #: toptionsdlg.lblineheightpercent.caption
 msgctxt "toptionsdlg.lblineheightpercent.caption"
 msgid "Line height percentage:"
-msgstr ""
+msgstr "Porcentaje de altura de línea:"
 
 #: toptionsdlg.lblinesize.caption
 msgctxt "toptionsdlg.lblinesize.caption"
 msgid "Line size:"
-msgstr ""
+msgstr "Tamaño de línea:"
 
 #: toptionsdlg.lbpercent.caption
 msgctxt "toptionsdlg.lbpercent.caption"
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: toptionsdlg.lbpoints.caption
 msgctxt "toptionsdlg.lbpoints.caption"
 msgid "points"
-msgstr ""
+msgstr "puntos"
 
 #: toptionsdlg.lbsample.caption
 msgctxt "toptionsdlg.lbsample.caption"
 msgid "Sample:"
-msgstr ""
+msgstr "Muestra:"
 
 #: toptionsdlg.lbundolimit.caption
 msgctxt "toptionsdlg.lbundolimit.caption"
 msgid "Undo limit:"
-msgstr ""
+msgstr "Deshacer límite:"
 
 #: toptionsdlg.localecombobox.text
 msgctxt "toptionsdlg.localecombobox.text"
 msgid "LocaleComboBox"
-msgstr ""
+msgstr "LocaleComboBox"
 
 #: toptionsdlg.localelabel.caption
 msgctxt "toptionsdlg.localelabel.caption"
 msgid "Language:"
-msgstr ""
+msgstr "Idioma:"
 
 #: toptionsdlg.pnfontsample.caption
 msgctxt "toptionsdlg.pnfontsample.caption"
 msgid "AaBbCcXxYyZz"
-msgstr ""
+msgstr "AaBbCcXxYyZz"
 
 #: toptionsdlg.reopencheckbox.caption
 msgctxt "toptionsdlg.reopencheckbox.caption"
 msgid "Open last project folder at startup"
-msgstr ""
+msgstr "Abra la última carpeta del proyecto al inicio"
 
 #: toptionsdlg.rgaddressmode.caption
 msgctxt "toptionsdlg.rgaddressmode.caption"
 msgid "Address mode"
-msgstr ""
+msgstr "Modo de dirección"
 
 #: toptionsdlg.rgdisableddrawstyle.caption
 msgctxt "toptionsdlg.rgdisableddrawstyle.caption"
 msgid "Draw style when disabled"
-msgstr ""
+msgstr "Dibujar estilo cuando está deshabilitado"
 
 #: tsettingsframe.asmverbosecheckbox.caption
 msgid "Be verbose"
-msgstr ""
+msgstr "Sea detallado"
 
 #: tsettingsframe.assemblertabsheet.caption
 msgctxt "tsettingsframe.assemblertabsheet.caption"
 msgid "Assembler"
-msgstr ""
+msgstr "Ensamblador"
 
 #: tsettingsframe.compilertabsheet.caption
 msgctxt "tsettingsframe.compilertabsheet.caption"
 msgid "Compiler"
-msgstr ""
+msgstr "Compilador"
 
 #: tsettingsframe.fontnamelabel.caption
 msgctxt "tsettingsframe.fontnamelabel.caption"
 msgid "&Font name:"
-msgstr ""
+msgstr "&Nombre de la fuente:"
 
 #: tsettingsframe.fontsizelabel.caption
 msgctxt "tsettingsframe.fontsizelabel.caption"
 msgid "Font size:"
-msgstr ""
+msgstr "Tamaño de fuente:"
 
 #: tsettingsframe.generaltabsheet.caption
 msgctxt "tsettingsframe.generaltabsheet.caption"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: tsettingsframe.hexeditorfonttabsheet.caption
 msgctxt "tsettingsframe.hexeditorfonttabsheet.caption"
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: tsettingsframe.localelabel.caption
 msgctxt "tsettingsframe.localelabel.caption"
 msgid "Language:"
-msgstr ""
+msgstr "Idioma:"
 
 #: tsettingsframe.reopencheckbox.caption
 msgctxt "tsettingsframe.reopencheckbox.caption"
 msgid "Open last project folder at startup"
-msgstr ""
+msgstr "Abra la última carpeta del proyecto al inicio"
 
 #: tsplash.becreativelabel.caption
 msgctxt "tsplash.becreativelabel.caption"
 msgid "Be creative and share!"
-msgstr ""
+msgstr "¡Se creativo y comparte!"
 
 #: tsplash.builddatelabel.caption
 msgid "BuildDateLabel"
-msgstr ""
+msgstr "BuildDateLabel"
 
 #: tsplash.compilerversionlabel.caption
 msgid "CompilerVersionLabel"
-msgstr ""
+msgstr "CompilerVersionLabel"
 
 #: tsplash.descriptionlabel.caption
 msgctxt "tsplash.descriptionlabel.caption"
 msgid "Welcome to this release of Easy80-IDE. A developer platform for the Z80 based single board computer."
-msgstr ""
+msgstr "Bienvenido a este lanzamiento de Easy80-IDE. Una plataforma de desarrollo para la computadora de una sola placa basada en Z80."
 
 #: tsplash.easy80label.caption
 msgctxt "tsplash.easy80label.caption"
 msgid "Easy80-IDE"
-msgstr ""
+msgstr "Easy80-IDE"
 
 #: tsplash.hashlabel.caption
 msgid "HashLabel"
-msgstr ""
+msgstr "HashLabel"
 
 #: tsplash.label2.caption
 msgid "This project is hosted on"
-msgstr ""
+msgstr "Este proyecto está alojado en"
 
 #: tsplash.versionlabel.caption
 msgid "VersionLabel"
-msgstr ""
+msgstr "VersionLabel"
 
