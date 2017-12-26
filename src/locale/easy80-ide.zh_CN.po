@@ -1,201 +1,196 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Project-Id-Version: Easy80-IDE\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Darius Blaszyk <dhkblaszyk@gmail.com>\n"
-"Language-Team: \n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.0beta1\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: easy80-ide\n"
+"Language: zh-CN\n"
 
 #: resourcestrings.rsabout
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #: resourcestrings.rsareyousuretopermanen
 msgid "Are you sure to permanently delete this file?"
-msgstr ""
+msgstr "你确定要永久删除这个文件吗？"
 
 #: resourcestrings.rscannotdeletefiles
 msgid "Cannot delete file: %s."
-msgstr ""
+msgstr "无法删除文件：％s。"
 
 #: resourcestrings.rschinesezh_cn
 msgid "Chinese (zh_CN)"
-msgstr ""
+msgstr "中文（zh_CN）"
 
 #: resourcestrings.rscouldnotdeletefiles
 msgid "Could not delete file: %s"
-msgstr ""
+msgstr "无法删除文件：％s"
 
 #: resourcestrings.rscreatenewfolder
 msgid "Create new folder"
-msgstr ""
+msgstr "创建新的文件夹"
 
 #: resourcestrings.rsdates
 msgid "Date: %s"
-msgstr ""
+msgstr "日期"
 
 #: resourcestrings.rsdeletefile
 msgctxt "resourcestrings.rsdeletefile"
 msgid "Delete file"
-msgstr ""
+msgstr "删除文件"
 
 #: resourcestrings.rsdeleteoldfile
 msgid "Delete old file?"
-msgstr ""
+msgstr "删除旧文件？"
 
 #: resourcestrings.rsdeleteoldfiles
 msgid "Delete old file \"%s\"?"
-msgstr ""
+msgstr "删除旧文件“％s”？"
 
 #: resourcestrings.rsdestinationfilename
 msgid "Destination filename"
-msgstr ""
+msgstr "目标文件名"
 
 #: resourcestrings.rsditems0f
 msgid "%d items (%.0f%%)"
-msgstr ""
+msgstr "％d个项目（％.0f %%）"
 
 #: resourcestrings.rsdutchnl_nl
 msgid "Dutch (nl_NL)"
-msgstr ""
+msgstr "荷兰语（nl_NL）"
 
 #: resourcestrings.rseasy80idevs
 msgid "Easy80-IDE v%s"
-msgstr ""
+msgstr "Easy80-IDE v％s"
 
 #: resourcestrings.rsenglishen_us
 msgid "English (en_US)"
-msgstr ""
+msgstr "英语（en_US）"
 
 #: resourcestrings.rsenterthepathforthene
 msgid "Enter the path for the new folder"
-msgstr ""
+msgstr "输入新文件夹的路径"
 
 #: resourcestrings.rserrorcouldnotcreated
 msgid "error: could not create directory (%s)"
-msgstr ""
+msgstr "错误：无法创建目录（％s）"
 
 #: resourcestrings.rserrorcouldnotdulicat
 msgid "error: could not dulicate file (%s)"
-msgstr ""
+msgstr "错误：无法达到文件（％s）"
 
 #: resourcestrings.rserrorcouldnotrenamef
 msgid "error: could not rename file (%s)"
-msgstr ""
+msgstr "错误：无法重命名文件（％s）"
 
 #: resourcestrings.rsfrenchfr_fr
 msgid "French (fr_FR)"
-msgstr ""
+msgstr "法语（fr_FR）"
 
 #: resourcestrings.rsgermande_de
 msgid "German (de_DE)"
-msgstr ""
+msgstr "德语（de_DE）"
 
 #: resourcestrings.rsitalianit_it
 msgid "Italian (it_IT)"
-msgstr ""
+msgstr "意大利语（it_IT）"
 
 #: resourcestrings.rsnewfilename
 msgid "New filename"
-msgstr ""
+msgstr "新的文件名"
 
 #: resourcestrings.rspleaseenterthedestin
 msgid "Please enter the destination filename"
-msgstr ""
+msgstr "请输入目标文件名"
 
 #: resourcestrings.rspleaseenterthenewfil
 msgid "Please enter the new filename"
-msgstr ""
+msgstr "请输入新的文件名"
 
 #: resourcestrings.rspolishpl_pl
 msgid "Polish (pl_PL)"
-msgstr ""
+msgstr "波兰语（pl_PL）"
 
 #: resourcestrings.rsreadonly
 msgid "%s [readonly]"
-msgstr ""
+msgstr "％s [只读]"
 
 #: resourcestrings.rssettings
 msgctxt "resourcestrings.rssettings"
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: resourcestrings.rsspanishes_es
 msgid "Spanish (es_ES)"
-msgstr ""
+msgstr "西班牙语（es_ES）"
 
 #: resourcestrings.rssystemlanguage
 msgid "System language"
-msgstr ""
+msgstr "系统语言"
 
 #: tmainform.actcopy.caption
 msgctxt "tmainform.actcopy.caption"
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: tmainform.actcopyfullpath.caption
 msgctxt "tmainform.actcopyfullpath.caption"
 msgid "Copy Full Path"
-msgstr ""
+msgstr "复制完整路径"
 
 #: tmainform.actcopyprojectpath.caption
 msgctxt "tmainform.actcopyprojectpath.caption"
 msgid "Copy Project Path"
-msgstr ""
+msgstr "复制项目路径"
 
 #: tmainform.actcut.caption
 msgctxt "tmainform.actcut.caption"
 msgid "Cut"
-msgstr ""
+msgstr "切"
 
 #: tmainform.actdelete.caption
 msgctxt "tmainform.actdelete.caption"
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: tmainform.actduplicate.caption
 msgctxt "tmainform.actduplicate.caption"
 msgid "Duplicate"
-msgstr ""
+msgstr "重复"
 
 #: tmainform.actnewfile.caption
 msgctxt "tmainform.actnewfile.caption"
 msgid "New File"
-msgstr ""
+msgstr "新文件"
 
 #: tmainform.actnewfolder.caption
 msgctxt "tmainform.actnewfolder.caption"
 msgid "New Folder"
-msgstr ""
+msgstr "新建文件夹"
 
 #: tmainform.actopeninnewwindow.caption
 msgctxt "tmainform.actopeninnewwindow.caption"
 msgid "Open In New Window"
-msgstr ""
+msgstr "在新窗口中打开"
 
 #: tmainform.actpaste.caption
 msgctxt "tmainform.actpaste.caption"
 msgid "Paste"
-msgstr ""
+msgstr "糊"
 
 #: tmainform.actrename.caption
 msgctxt "tmainform.actrename.caption"
 msgid "Rename"
-msgstr ""
+msgstr "改名"
 
 #: tmainform.actsearchindirectory.caption
 msgid "Search In Directory"
-msgstr ""
+msgstr "在目录中搜索"
 
 #: tmainform.actshowinexplorer.caption
 msgid "Show In Explorer"
-msgstr ""
+msgstr "在资源管理器里显示"
 
 #: tmainform.caption
 msgid "Easy 80 IDE"
@@ -204,480 +199,480 @@ msgstr "Easy 80 IDE"
 #: tmainform.menuitem12.caption
 msgctxt "tmainform.menuitem12.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.menuitem16.caption
 msgctxt "tmainform.menuitem16.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.menuitem2.caption
 msgctxt "tmainform.menuitem2.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.menuitem21.caption
 msgctxt "tmainform.menuitem21.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.menuitem3.caption
 msgid "Move page"
-msgstr ""
+msgstr "移动页面"
 
 #: tmainform.menuitem5.caption
 msgctxt "tmainform.menuitem5.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.menuitem7.caption
 msgctxt "tmainform.menuitem7.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.messagestabsheet.caption
 msgctxt "tmainform.messagestabsheet.caption"
 msgid "Messages"
-msgstr ""
+msgstr "消息"
 
 #: tmainform.miabout.caption
 msgctxt "tmainform.miabout.caption"
 msgid "&About"
-msgstr ""
+msgstr "＆关于"
 
 #: tmainform.miaddprojectfolder.caption
 msgctxt "tmainform.miaddprojectfolder.caption"
 msgid "Add Project Folder"
-msgstr ""
+msgstr "添加项目文件夹"
 
 #: tmainform.miassemble.caption
 msgctxt "tmainform.miassemble.caption"
 msgid "Assemble"
-msgstr ""
+msgstr "集合"
 
 #: tmainform.micloseallother.caption
 msgid "Close all other pages"
-msgstr ""
+msgstr "关闭所有其他页面"
 
 #: tmainform.miclosepage.caption
 msgid "Close page"
-msgstr ""
+msgstr "关闭页面"
 
 #: tmainform.micompile.caption
 msgctxt "tmainform.micompile.caption"
 msgid "Compile"
-msgstr ""
+msgstr "编"
 
 #: tmainform.miedit.caption
 msgid "&Edit"
-msgstr ""
+msgstr "＆编辑"
 
 #: tmainform.mifile.caption
 msgctxt "tmainform.mifile.caption"
 msgid "&File"
-msgstr ""
+msgstr "＆文件"
 
 #: tmainform.mifilesep1.caption
 msgctxt "tmainform.mifilesep1.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.mifilesep2.caption
 msgctxt "tmainform.mifilesep2.caption"
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #: tmainform.mihelp.caption
 msgctxt "tmainform.mihelp.caption"
 msgid "&Help"
-msgstr ""
+msgstr "＆帮帮我"
 
 #: tmainform.mimessagesmemoclearall.caption
 msgid "Clear all"
-msgstr ""
+msgstr "全部清除"
 
 #: tmainform.mimessagesmemocopy.caption
 msgctxt "tmainform.mimessagesmemocopy.caption"
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: tmainform.mimessagesmemoselectall.caption
 msgid "Select all"
-msgstr ""
+msgstr "全选"
 
 #: tmainform.mimoveleft.caption
 msgid "Move page left"
-msgstr ""
+msgstr "向左移动页面"
 
 #: tmainform.mimoveright.caption
 msgid "Move page right"
-msgstr ""
+msgstr "向右移动页面"
 
 #: tmainform.mimoverightmost.caption
 msgid "Move page rightmost"
-msgstr ""
+msgstr "将页面移到最右边"
 
 #: tmainform.minew.caption
 msgid "New"
-msgstr ""
+msgstr "新"
 
 #: tmainform.miopenprojectfolder.caption
 msgctxt "tmainform.miopenprojectfolder.caption"
 msgid "&Open project folder"
-msgstr ""
+msgstr "打开项目文件夹"
 
 #: tmainform.miproject.caption
 msgctxt "tmainform.miproject.caption"
 msgid "Project"
-msgstr ""
+msgstr "项目"
 
 #: tmainform.miquit.caption
 msgctxt "tmainform.miquit.caption"
 msgid "&Quit"
-msgstr ""
+msgstr "＆放弃"
 
 #: tmainform.miremoveprojectfolder.caption
 msgctxt "tmainform.miremoveprojectfolder.caption"
 msgid "Remove Project Folder"
-msgstr ""
+msgstr "删除项目文件夹"
 
 #: tmainform.misave.caption
 msgctxt "tmainform.misave.caption"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: tmainform.misaveall.caption
 msgid "Save all"
-msgstr ""
+msgstr "保存全部"
 
 #: tmainform.misaveas.caption
 msgid "Save as ..."
-msgstr ""
+msgstr "另存为 ..."
 
 #: tmainform.misaveastab.caption
 msgctxt "tmainform.misaveastab.caption"
 msgid "Save as..."
-msgstr ""
+msgstr "另存为..."
 
 #: tmainform.misavetab.caption
 msgctxt "tmainform.misavetab.caption"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: tmainform.misettings.caption
 msgctxt "tmainform.misettings.caption"
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: tmainform.mitools.caption
 msgctxt "tmainform.mitools.caption"
 msgid "&Tools"
-msgstr ""
+msgstr "与工具"
 
 #: tmainform.momoveleftmost.caption
 msgid "Move page leftmost"
-msgstr ""
+msgstr "移动最左边的页面"
 
 #: toptionsdlg.assemblertabsheet.caption
 msgctxt "toptionsdlg.assemblertabsheet.caption"
 msgid "Assembler"
-msgstr ""
+msgstr "汇编"
 
 #: toptionsdlg.bucolorchange.caption
 msgctxt "toptionsdlg.bucolorchange.caption"
 msgid "Change..."
-msgstr ""
+msgstr "更改..."
 
 #: toptionsdlg.caption
 msgid "Options"
-msgstr ""
+msgstr "选项"
 
 #: toptionsdlg.cbdropfiles.caption
 msgctxt "toptionsdlg.cbdropfiles.caption"
 msgid "Drop files"
-msgstr ""
+msgstr "删除文件"
 
 #: toptionsdlg.cbfontstylebold.caption
 msgctxt "toptionsdlg.cbfontstylebold.caption"
 msgid "Bold"
-msgstr ""
+msgstr "胆大"
 
 #: toptionsdlg.cbfontstyleitalic.caption
 msgctxt "toptionsdlg.cbfontstyleitalic.caption"
 msgid "Italic"
-msgstr ""
+msgstr "斜体"
 
 #: toptionsdlg.cbgroupundo.caption
 msgctxt "toptionsdlg.cbgroupundo.caption"
 msgid "Group undo"
-msgstr ""
+msgstr "组撤消"
 
 #: toptionsdlg.cbshowaddress.caption
 msgctxt "toptionsdlg.cbshowaddress.caption"
 msgid "Show address area"
-msgstr ""
+msgstr "显示地址区域"
 
 #: toptionsdlg.cbshowdigits.caption
 msgctxt "toptionsdlg.cbshowdigits.caption"
 msgid "Show digit area"
-msgstr ""
+msgstr "显示数字区域"
 
 #: toptionsdlg.cbshowhorzlines.caption
 msgctxt "toptionsdlg.cbshowhorzlines.caption"
 msgid "Show horizontal lines"
-msgstr ""
+msgstr "显示水平线"
 
 #: toptionsdlg.cbshowinactivecaret.caption
 msgctxt "toptionsdlg.cbshowinactivecaret.caption"
 msgid "Show inactive caret"
-msgstr ""
+msgstr "显示不活动的插入符号"
 
 #: toptionsdlg.cbshowseparators.caption
 msgctxt "toptionsdlg.cbshowseparators.caption"
 msgid "Show area separators"
-msgstr ""
+msgstr "显示区域分隔符"
 
 #: toptionsdlg.cbshowtext.caption
 msgctxt "toptionsdlg.cbshowtext.caption"
 msgid "Show text area"
-msgstr ""
+msgstr "显示文本区域"
 
 #: toptionsdlg.cbshowvertlines.caption
 msgctxt "toptionsdlg.cbshowvertlines.caption"
 msgid "Show vertical lines"
-msgstr ""
+msgstr "显示垂直线"
 
 #: toptionsdlg.cbundoaftersave.caption
 msgctxt "toptionsdlg.cbundoaftersave.caption"
 msgid "Undo after save"
-msgstr ""
+msgstr "保存后撤消"
 
 #: toptionsdlg.compilertabsheet.caption
 msgctxt "toptionsdlg.compilertabsheet.caption"
 msgid "Compiler"
-msgstr ""
+msgstr "编译器"
 
 #: toptionsdlg.gbappearance.caption
 msgctxt "toptionsdlg.gbappearance.caption"
 msgid "Appearance"
-msgstr ""
+msgstr "出现"
 
 #: toptionsdlg.gbcolors.caption
 msgctxt "toptionsdlg.gbcolors.caption"
 msgid "Color assignment"
-msgstr ""
+msgstr "颜色分配"
 
 #: toptionsdlg.gbgeneral.caption
 msgctxt "toptionsdlg.gbgeneral.caption"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: toptionsdlg.generaltabsheet.caption
 msgctxt "toptionsdlg.generaltabsheet.caption"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: toptionsdlg.hexeditorcolorstabsheet.caption
 msgctxt "toptionsdlg.hexeditorcolorstabsheet.caption"
 msgid "Hex editor colors"
-msgstr ""
+msgstr "十六进制编辑颜色"
 
 #: toptionsdlg.hexeditorfonttabsheet.caption
 msgctxt "toptionsdlg.hexeditorfonttabsheet.caption"
 msgid "Hex editor font"
-msgstr ""
+msgstr "十六进制编辑字体"
 
 #: toptionsdlg.hexeditortabsheet.caption
 msgctxt "toptionsdlg.hexeditortabsheet.caption"
 msgid "Hex editor"
-msgstr ""
+msgstr "十六进制编辑"
 
 #: toptionsdlg.lbaddressprefix.caption
 msgctxt "toptionsdlg.lbaddressprefix.caption"
 msgid "Address prefix:"
-msgstr ""
+msgstr "地址前缀："
 
 #: toptionsdlg.lbaddresssize.caption
 msgctxt "toptionsdlg.lbaddresssize.caption"
 msgid "Address size:"
-msgstr ""
+msgstr "地址大小："
 
 #: toptionsdlg.lbattributes.caption
 msgctxt "toptionsdlg.lbattributes.caption"
 msgid "Color item:"
-msgstr ""
+msgstr "颜色项目："
 
 #: toptionsdlg.lbbytes.caption
 msgctxt "toptionsdlg.lbbytes.caption"
 msgid "bytes"
-msgstr ""
+msgstr "字节"
 
 #: toptionsdlg.lbbytes2.caption
 msgctxt "toptionsdlg.lbbytes2.caption"
 msgid "bytes"
-msgstr ""
+msgstr "字节"
 
 #: toptionsdlg.lbcharspacing.caption
 msgctxt "toptionsdlg.lbcharspacing.caption"
 msgid "Inter-character spacing:"
-msgstr ""
+msgstr "字符间距："
 
 #: toptionsdlg.lbdigitgrouping.caption
 msgctxt "toptionsdlg.lbdigitgrouping.caption"
 msgid "Digit grouping:"
-msgstr ""
+msgstr "数字分组："
 
 #: toptionsdlg.lbfontname.caption
 msgctxt "toptionsdlg.lbfontname.caption"
 msgid "&Font name:"
-msgstr ""
+msgstr "＆字体名称："
 
 #: toptionsdlg.lbfontsize.caption
 msgctxt "toptionsdlg.lbfontsize.caption"
 msgid "Font size:"
-msgstr ""
+msgstr "字体大小："
 
 #: toptionsdlg.lbhighfg.caption
 msgctxt "toptionsdlg.lbhighfg.caption"
 msgid "Current color:"
-msgstr ""
+msgstr "当前颜色："
 
 #: toptionsdlg.lblineheightpercent.caption
 msgctxt "toptionsdlg.lblineheightpercent.caption"
 msgid "Line height percentage:"
-msgstr ""
+msgstr "线高百分比："
 
 #: toptionsdlg.lblinesize.caption
 msgctxt "toptionsdlg.lblinesize.caption"
 msgid "Line size:"
-msgstr ""
+msgstr "线路大小："
 
 #: toptionsdlg.lbpercent.caption
 msgctxt "toptionsdlg.lbpercent.caption"
 msgid "%"
-msgstr ""
+msgstr "％"
 
 #: toptionsdlg.lbpoints.caption
 msgctxt "toptionsdlg.lbpoints.caption"
 msgid "points"
-msgstr ""
+msgstr "点"
 
 #: toptionsdlg.lbsample.caption
 msgctxt "toptionsdlg.lbsample.caption"
 msgid "Sample:"
-msgstr ""
+msgstr "样品："
 
 #: toptionsdlg.lbundolimit.caption
 msgctxt "toptionsdlg.lbundolimit.caption"
 msgid "Undo limit:"
-msgstr ""
+msgstr "撤消限制："
 
 #: toptionsdlg.localecombobox.text
 msgctxt "toptionsdlg.localecombobox.text"
 msgid "LocaleComboBox"
-msgstr ""
+msgstr "LocaleComboBox"
 
 #: toptionsdlg.localelabel.caption
 msgctxt "toptionsdlg.localelabel.caption"
 msgid "Language:"
-msgstr ""
+msgstr "语言："
 
 #: toptionsdlg.pnfontsample.caption
 msgctxt "toptionsdlg.pnfontsample.caption"
 msgid "AaBbCcXxYyZz"
-msgstr ""
+msgstr "AaBbCcXxYyZz"
 
 #: toptionsdlg.reopencheckbox.caption
 msgctxt "toptionsdlg.reopencheckbox.caption"
 msgid "Open last project folder at startup"
-msgstr ""
+msgstr "在启动时打开上个项目文件夹"
 
 #: toptionsdlg.rgaddressmode.caption
 msgctxt "toptionsdlg.rgaddressmode.caption"
 msgid "Address mode"
-msgstr ""
+msgstr "地址模式"
 
 #: toptionsdlg.rgdisableddrawstyle.caption
 msgctxt "toptionsdlg.rgdisableddrawstyle.caption"
 msgid "Draw style when disabled"
-msgstr ""
+msgstr "当禁用时绘制样式"
 
 #: tsettingsframe.asmverbosecheckbox.caption
 msgid "Be verbose"
-msgstr ""
+msgstr "详细"
 
 #: tsettingsframe.assemblertabsheet.caption
 msgctxt "tsettingsframe.assemblertabsheet.caption"
 msgid "Assembler"
-msgstr ""
+msgstr "汇编"
 
 #: tsettingsframe.compilertabsheet.caption
 msgctxt "tsettingsframe.compilertabsheet.caption"
 msgid "Compiler"
-msgstr ""
+msgstr "编译器"
 
 #: tsettingsframe.fontnamelabel.caption
 msgctxt "tsettingsframe.fontnamelabel.caption"
 msgid "&Font name:"
-msgstr ""
+msgstr "＆字体名称："
 
 #: tsettingsframe.fontsizelabel.caption
 msgctxt "tsettingsframe.fontsizelabel.caption"
 msgid "Font size:"
-msgstr ""
+msgstr "字体大小："
 
 #: tsettingsframe.generaltabsheet.caption
 msgctxt "tsettingsframe.generaltabsheet.caption"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: tsettingsframe.hexeditorfonttabsheet.caption
 msgctxt "tsettingsframe.hexeditorfonttabsheet.caption"
 msgid "Editor"
-msgstr ""
+msgstr "编辑"
 
 #: tsettingsframe.localelabel.caption
 msgctxt "tsettingsframe.localelabel.caption"
 msgid "Language:"
-msgstr ""
+msgstr "语言："
 
 #: tsettingsframe.reopencheckbox.caption
 msgctxt "tsettingsframe.reopencheckbox.caption"
 msgid "Open last project folder at startup"
-msgstr ""
+msgstr "在启动时打开上个项目文件夹"
 
 #: tsplash.becreativelabel.caption
 msgctxt "tsplash.becreativelabel.caption"
 msgid "Be creative and share!"
-msgstr ""
+msgstr "有创意，分享！"
 
 #: tsplash.builddatelabel.caption
 msgid "BuildDateLabel"
-msgstr ""
+msgstr "BuildDateLabel"
 
 #: tsplash.compilerversionlabel.caption
 msgid "CompilerVersionLabel"
-msgstr ""
+msgstr "CompilerVersionLabel"
 
 #: tsplash.descriptionlabel.caption
 msgctxt "tsplash.descriptionlabel.caption"
 msgid "Welcome to this release of Easy80-IDE. A developer platform for the Z80 based single board computer."
-msgstr ""
+msgstr "欢迎使用Easy80-IDE的这个版本。基于Z80的单板计算机的开发者平台。"
 
 #: tsplash.easy80label.caption
 msgctxt "tsplash.easy80label.caption"
 msgid "Easy80-IDE"
-msgstr ""
+msgstr "Easy80-IDE"
 
 #: tsplash.hashlabel.caption
 msgid "HashLabel"
-msgstr ""
+msgstr "HashLabel"
 
 #: tsplash.label2.caption
 msgid "This project is hosted on"
-msgstr ""
+msgstr "这个项目是托管在"
 
 #: tsplash.versionlabel.caption
 msgid "VersionLabel"
-msgstr ""
+msgstr "VersionLabel"
 
