@@ -1,0 +1,173 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0082)http://www.ecstaticlyrics.com/pinnwand/messages/source_code_for_my_pcb_editor.html -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>Source Code for my PCB Editor -- Ekstatische Lyriken Pinnwand</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"><LINK href="Source%20Code%20for%20my%20PCB%20Editor%20--%20Ekstatische%20Lyriken%20Pinnwand_files/style.css" 
+rel="stylesheet" type="text/css">
+<META name="robots" content="nofollow">
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY> <!-- start title -->   
+<DIV class="header"><IMG class="title" alt="Ekstatische Lyriken Pinnwand" src="Source%20Code%20for%20my%20PCB%20Editor%20--%20Ekstatische%20Lyriken%20Pinnwand_files/image.png"> 
+  </DIV><!-- finish title --> <!-- start content --> 
+<DIV class="postheader">
+<H1>Source Code for my PCB Editor</H1>  written by Pj on Saturday December 19th, 
+2015 -- 3:25 p.m.<BR>in reply to <A href="http://www.ecstaticlyrics.com/pinnwand/messages/new_pcbs.html">New 
+PCBs</A>   <BR><BR><A href="http://www.ecstaticlyrics.com/pinnwand/edit/source_code_for_my_pcb_editor.html">edit 
+this message</A>  -   <A href="http://www.ecstaticlyrics.com/pinnwand/">return 
+to message index</A>   <BR><SMALL>(only moderators may edit messages)</SMALL> 
+</DIV>
+<DIV class="message">I was going to keep my PCB editor to myself, using the 
+distinctive design as my personal "trademark" for my own PCBs that I might sell, 
+but honestly, when have I ever been so motivated to do anything?<BR><BR>I'm far 
+more concerned that a hard drive failure might cause me to lose the code.&nbsp; 
+It took me months to get the algorithms that move the tracks around to behave 
+reasonably.&nbsp; I'd hate to have to do all of that shit over again.<BR><BR>So 
+here's the code:  <A href="http://www.ecstaticlyrics.com/pinnwand/messages/stuff/2015-12-19_PCB_Editor.tgz">2015-12-19_PCB_Editor.tgz</A><BR><BR>If 
+anyone wants to modify it, we'll say it's released under my <A href="http://www.ecstaticlyrics.com/antiviral/">antiviral 
+license</A>, except for the stb_image.c within the archive whose own license I 
+obviously have no desire to modify.<BR><BR>As for how it works, prepare to be 
+horrified:<BR><BR>PCB data is saved in "save.c" as C source code.&nbsp; This is 
+#include into the main "pcb.c" such that, when you recompile the executable, you 
+create an executable that just has your PCB in it to begin with when you start 
+the program.&nbsp; It's presently compiled with the FT240X board above, in case 
+anyone wants to play with it.<BR><BR>The user interface is such that even I 
+can't use it without a cheat-sheet:<BR><BR>The arrow keys scroll the screen 
+around.&nbsp; Page up and page down change the zoom level.&nbsp; Number keys 1 
+through 4 change the current layer.&nbsp; The - and = keys change the current 
+pad or track size, depending on which mode it is in.&nbsp; It has four modes of 
+operation, switched by pressing F1 through F4.&nbsp; <BR><BR>F1 is "Pad Mode," 
+in which left click will create a new pad, and right click will select an 
+existing pad for editing purposes.&nbsp; When creating a pad, it is created with 
+the current pad radius (press - or = to adjust) and on the current layer (press 
+1 through 4 to adjust).&nbsp; You can type some text to label it, but this text 
+is just a label, it won't appear on the final PCB, and it's only visible when 
+the current layer is 1 or 2, it disappears when set to layers 3 or 4 so that it 
+doesn't interfere with viewing the silkscreen layers.&nbsp; You can rotate the 
+text with the "home" and "end" keys.&nbsp; You can delete the pad by pressing 
+the "delete" key while it is in editing mode.&nbsp; Pressing enter removes the 
+pad from editing mode.<BR><BR>F2 is "unanimated track mode", where you can 
+simply draw lines with the mouse.&nbsp; This is intended for drawing the 
+silkscreen layer.&nbsp; Holding the left mouse button allows you to draw a 
+track.&nbsp; Clicking the right mouse button deletes the closest track to the 
+mouse pointer that is in the current layer.&nbsp; <BR><BR>F3 is "pad move 
+mode".&nbsp; You start by click-and-drag to form a box around a bunch of 
+pads.&nbsp; Then use WASD to move those pads around.&nbsp; Holding shift will 
+move them faster.&nbsp; Q and E will rotate them as a group.&nbsp; Pressing G 
+will align them to the current grid.&nbsp; Another left click, for seemingly no 
+reason, will de-select the pads, causing nothing more to happen when you press 
+WASD until you draw another box.&nbsp; This is quite confusing, so I'll probably 
+make it so that another left click just lets you draw another box to select new 
+pads, or perhaps to add to the current selection.<BR><BR>F4 is "animated track 
+mode."  You start by left-clicking on a pad, then slowly move the mouse towards 
+another pad, and then left-click on it.&nbsp; The track will slowly move to find 
+the shortest path between those two pads.&nbsp; <BR><BR>Pressing "." will toggle 
+the visibility of the individual track points, which are constantly moving from 
+source pad to destination pad.&nbsp; In doing so, each point inevitably ends up 
+taking a shortcut towards the next point, which is what causes the tracks to 
+become shorter.&nbsp; They are then repulsed by other tracks in the same layer 
+and by pads in the same layer or on all layers.&nbsp; (the smallest pads are on 
+a specific layer, intended for making surface mount pads)  Animated tracks on 
+the silkscreen layers will repulse the board outline (the blue track you can't 
+interact with), whereas unanimated tracks do not.<BR><BR>F5 toggles grid snap 
+mode.&nbsp; When in F1 mode, when grid snap mode is enabled, the arrow keys will 
+move the screen by one grid unit, making it easy to create a lot of pads with 
+just the keyboard.&nbsp; Grid size is changed by [ and ] keys.&nbsp; <BR><BR>F6 
+saves the current PCB to "save.c".&nbsp; The entire program must then be 
+recompiled in order to "load" this saved file.&nbsp; Simply restarting the 
+program will obviously leave you with the last version of the PCB that was 
+compiled into it.<BR><BR>F7 through F12 control the animation of the 
+tracks.&nbsp; F7 &amp; F8 control how much distance is between each animated 
+point in the tracks.&nbsp; F9 &amp; F10 control the speed of the points.&nbsp; 
+F11 &amp; F12 control the strength of the repulsive force that pads and other 
+track points create.&nbsp; Also, O and P control the clearance between tracks 
+and pads that the program aims for.&nbsp; I tried to make these controls "safe", 
+but it is entirely possible that changing them will cause the track points to 
+move in such a way that they all (literally all of them, not just a couple of 
+them) tangle up within each other, so you should never play with these controls 
+without saving the PCB first so that you can restore it if that happens.&nbsp; 
+<BR><BR>Pressing "M" causes the entire PCB to be mirrored.&nbsp; This is so that 
+you can draw silkscreen text on the back of the board without having to learn to 
+draw text backwards.&nbsp; Similarly, pressing "R" causes it to rotate 90 
+degrees so that you can write at other angles.&nbsp; I suppose that 
+mathematically this may slightly disturb the position of pads, but as all of the 
+math is done with "float" variables, I can't imagine the error ever becomming 
+sufficient that components no longer fit their pads.<BR><BR>Finally, IJKL work 
+like arrow keys to shift the entire design on the screen.&nbsp; This is because 
+the darker black on the screen (whose size is compiled into the code) is the 
+maximum size of the PCB that DirtyPCBs will create, and so to ensure that the 
+design still fits, it needs to be arranged within that square.&nbsp; As I would 
+work on designs, I'd find them move out of that square, but still have plenty of 
+space on the other side.&nbsp; IJKL allwws the whole design to be shifted in the 
+coordinate space easily.<BR><BR>Oh, and the Gerber files are created when you 
+press F6 to save, in a subdirectory named "Gerbers."  <BR><BR>Also, I'm pretty 
+sure I just explained all of that for absolutely no one but maybe myself in the 
+future.&nbsp; If anyone actually ends up using this software, I'd love to hear 
+about it.&nbsp; Indeed, if I don't, then I probably won't bother to keep it 
+up-to-date if I make future changes.<BR></DIV>
+<DIV class="postfooter" id="replies">
+<H2>Replies</H2>
+<DIV class="replies"><!-- begin --> <!-- end --> </DIV>
+<CENTER><A 
+href="http://www.ecstaticlyrics.com/pinnwand/messages/new_pcbs.html">return to 
+previous message</A> - <A href="http://www.ecstaticlyrics.com/pinnwand/">return 
+to message index</A></CENTER></DIV>
+<DIV class="replybox">
+<H2>Your Reply</H2>
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <FORM action="/pinnwand/pinnwand.pl" 
+method="post"><INPUT name="action" type="hidden" value="post">   
+<INPUT name="parent" type="hidden" value="source_code_for_my_pcb_editor">  
+ <INPUT name="presubject" type="hidden" value="Source Code for my PCB Editor"> 
+        <INPUT name="thirteen" type="hidden" value="yes">   
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><B>Name:</B>       </TD>
+          <TD><INPUT name="login" type="text" size="24" maxlength="24" value="anonymous"> 
+                  </TD>
+          <TD rowspan="2"><SMALL><B>No registration necessary.</B>  Simply 
+            choose<BR>a name and password and type them in.</SMALL>       </TD></TR>
+        <TR>
+          <TD><B>Password:</B>       </TD>
+          <TD><INPUT name="password" type="password" size="24" maxlength="24"> 
+                  </TD></TR>
+        <TR>
+          <TD><B>Subject:</B>       </TD>
+          <TD 
+colspan="2"><INPUT name="subject" type="text" size="64" maxlength="64"> 
+                  </TD></TR>
+        <TR>
+          <TD></TD>
+          <TD colspan="2"><SMALL>          You may want to read <A href="http://www.ecstaticlyrics.com/pinnwand/rules">the 
+            rules</A>          before you spend a lot of time writing something. 
+                    </SMALL>       </TD></TR>
+        <TR>
+          <TD valign="top"><B>Message:</B>       </TD>
+          <TD colspan="2"><TEXTAREA name="message" rows="16" cols="60" wrap="virtual"></TEXTAREA> 
+                  </TD></TR>
+        <TR>
+          <TD align="right"><INPUT name="type" type="radio" value="text">      
+           </TD>
+          <TD colspan="2"><B>Plain Text</B> - What you type is what you will 
+            see.<BR></TD></TR>
+        <TR>
+          <TD align="right"><INPUT name="type" type="radio" checked="" value="html"> 
+                  </TD>
+          <TD colspan="2"><B>Some HTML</B> - Use this if you are including 
+            HTML tags.<BR></TD></TR>
+        <TR>
+          <TD align="right"><INPUT name="type" type="radio" value="pure">      
+           </TD>
+          <TD colspan="2"><B>Pure HTML</B> - Copies your post directly into 
+            the web page.       </TD></TR>
+        <TR>
+          <TD align="center" 
+colspan="3"><INPUT name="preview" type="submit" value="Preview"> 
+            first,        then <INPUT name="submit" type="submit" value="Submit for Review"> 
+                  </TD></TR></TBODY></TABLE></FORM></TD></TR></TBODY></TABLE></CENTER></DIV><!-- finish content --> <!-- start footer --> 
+  
+<DIV class="footer"></DIV><!-- finish footer --> </BODY></HTML>

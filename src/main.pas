@@ -724,7 +724,7 @@ begin
 
   pf := AddProjectFile(FProjectFolder, node);
 
-  pf^.TabSheet.ImageIndex := ICON_INFO;
+  pf^.TabSheet.ImageIndex := ICON_EASY80;
   pf^.TabSheet.Caption := rsAbout;
 
   pf^.Editor := TSplash.Create(pf^.TabSheet);

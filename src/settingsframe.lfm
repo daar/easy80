@@ -1,10 +1,10 @@
 object SettingsFrame: TSettingsFrame
   Left = 0
-  Height = 344
+  Height = 351
   Top = 0
-  Width = 713
-  ClientHeight = 344
-  ClientWidth = 713
+  Width = 718
+  ClientHeight = 351
+  ClientWidth = 718
   Font.CharSet = ANSI_CHARSET
   Font.Height = -13
   Font.Name = 'Consolas'
@@ -12,27 +12,25 @@ object SettingsFrame: TSettingsFrame
   Font.Quality = fqDraft
   ParentFont = False
   TabOrder = 0
-  DesignLeft = 182
-  DesignTop = 243
+  DesignLeft = 190
+  DesignTop = 238
   object Panel1: TPanel
     Left = 0
-    Height = 344
+    Height = 351
     Top = 0
     Width = 232
     Align = alLeft
     BevelOuter = bvNone
-    ClientHeight = 344
+    ClientHeight = 351
     ClientWidth = 232
     TabOrder = 0
     object OptionsTreeView: TTreeView
       Left = 6
-      Height = 303
+      Height = 310
       Top = 35
       Width = 220
       Align = alClient
       BorderSpacing.Around = 6
-      DefaultItemHeight = 18
-      ExpandSignSize = 16
       ReadOnly = True
       TabOrder = 0
       OnClick = OptionsTreeViewClick
@@ -61,9 +59,9 @@ object SettingsFrame: TSettingsFrame
   end
   object OptionsPageControl: TPageControl
     Left = 237
-    Height = 344
+    Height = 351
     Top = 0
-    Width = 476
+    Width = 481
     ActivePage = CompilerTabSheet
     Align = alClient
     TabIndex = 2
@@ -204,7 +202,7 @@ object SettingsFrame: TSettingsFrame
   end
   object Splitter1: TSplitter
     Left = 232
-    Height = 344
+    Height = 351
     Top = 0
     Width = 5
   end

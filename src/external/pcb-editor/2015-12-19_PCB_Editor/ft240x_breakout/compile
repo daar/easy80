@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#gcc -O3 -o stb_image.o stb_image.c -lm
+#gcc -O3 -std=gnu99 -funsigned-char -Werror -g -o pcb pcb.c stb_image.c -lm -lglfw -lGLU -lGL
+
+#gcc -O3 -c -std=gnu99 -funsigned-char -Werror -o buffer.o buffer.c
+#gcc -O3 -c -std=gnu99 -funsigned-char -Werror -o memory.o memory.c
+#gcc -O3 -c -std=gnu99 -funsigned-char -Werror -o lag.o lag.c
+
+gcc -O3 -std=gnu99 --fast-math -funsigned-char -Werror -o pcb pcb.c buffer.o memory.o stb_image.o lag.o -lm -lglfw -lGLU -lGL

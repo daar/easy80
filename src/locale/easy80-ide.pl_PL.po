@@ -201,8 +201,38 @@ msgstr ""
 msgid "Easy 80 IDE"
 msgstr "Easy 80 IDE"
 
+#: tmainform.menuitem12.caption
+msgctxt "tmainform.menuitem12.caption"
+msgid "-"
+msgstr ""
+
+#: tmainform.menuitem16.caption
+msgctxt "tmainform.menuitem16.caption"
+msgid "-"
+msgstr ""
+
+#: tmainform.menuitem2.caption
+msgctxt "tmainform.menuitem2.caption"
+msgid "-"
+msgstr ""
+
+#: tmainform.menuitem21.caption
+msgctxt "tmainform.menuitem21.caption"
+msgid "-"
+msgstr ""
+
 #: tmainform.menuitem3.caption
 msgid "Move page"
+msgstr ""
+
+#: tmainform.menuitem5.caption
+msgctxt "tmainform.menuitem5.caption"
+msgid "-"
+msgstr ""
+
+#: tmainform.menuitem7.caption
+msgctxt "tmainform.menuitem7.caption"
+msgid "-"
 msgstr ""
 
 #: tmainform.messagestabsheet.caption
@@ -247,6 +277,16 @@ msgstr ""
 msgctxt "tmainform.mifile.caption"
 msgid "&File"
 msgstr "&Plik"
+
+#: tmainform.mifilesep1.caption
+msgctxt "tmainform.mifilesep1.caption"
+msgid "-"
+msgstr ""
+
+#: tmainform.mifilesep2.caption
+msgctxt "tmainform.mifilesep2.caption"
+msgid "-"
+msgstr ""
 
 #: tmainform.mihelp.caption
 msgctxt "tmainform.mihelp.caption"

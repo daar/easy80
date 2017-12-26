@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 429
+  Left = 423
   Height = 461
-  Top = 209
+  Top = 204
   Width = 722
   Caption = 'Easy 80 IDE'
   ClientHeight = 441
@@ -17,7 +17,7 @@ object MainForm: TMainForm
   OnShow = FormShow
   PopupMode = pmAuto
   Position = poScreenCenter
-  LCLVersion = '1.7'
+  LCLVersion = '1.8.0.6'
   WindowState = wsMaximized
   object ProjectTreeView: TTreeView
     Left = 0
@@ -25,8 +25,6 @@ object MainForm: TMainForm
     Top = 0
     Width = 225
     Align = alLeft
-    DefaultItemHeight = 18
-    ExpandSignSize = 16
     Images = ImageList16
     PopupMenu = ProjectPopupMenu
     ReadOnly = True

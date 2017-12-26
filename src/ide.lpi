@@ -8,7 +8,6 @@
       <Title Value="easy80-ide"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
-      <Icon Value="0"/>
     </General>
     <i18n>
       <EnableI18N Value="True"/>
@@ -95,7 +94,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="datafiles;locale;asm;external/SynFacilSyn"/>
+      <OtherUnitFiles Value="datafiles;locale;asm;external/SynFacilSyn;external/z80-pascal/src/compiler"/>
       <UnitOutputDirectory Value="bin/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

@@ -2938,7 +2938,7 @@ type
     procedure DeleteSelection(Index: Integer); virtual;
     {$IF lcl_fullversion >= 1080000}
     procedure DoAutoAdjustLayout(const AMode: TLayoutAdjustmentPolicy;
-      const AXProportion, AYProportion: Double; const AScale0Fonts: Boolean); override;
+      const AXProportion, AYProportion: Double); override;
     {$IFEND}
     { Retrieves the base cell if the cell given by ACol and ARow belongs to a merged cell
       or returns ACol and ARow if it is a non-merged cell. }
@@ -7534,12 +7534,12 @@ end;
 
 {$IF lcl_fullversion >= 1080000}
 procedure TKCustomGrid.DoAutoAdjustLayout(const AMode: TLayoutAdjustmentPolicy;
-  const AXProportion, AYProportion: Double; const AScale0Fonts: Boolean);
+  const AXProportion, AYProportion: Double);
 var
   I: Integer;
   C: TKGridCol;
 begin
-  inherited DoAutoAdjustLayout(AMode, AXProportion, AYProportion, AScale0Fonts);
+  inherited DoAutoAdjustLayout(AMode, AXProportion, AYProportion);
 
   if AMode in [lapAutoAdjustWithoutHorizontalScrolling, lapAutoAdjustForDPI] then
   begin

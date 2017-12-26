@@ -1,24 +1,24 @@
 object Splash: TSplash
   Left = 0
-  Height = 431
+  Height = 439
   Top = 0
   Width = 672
-  ClientHeight = 431
+  ClientHeight = 439
   ClientWidth = 672
   Color = clWhite
   ParentColor = False
   TabOrder = 0
-  DesignLeft = 612
-  DesignTop = 123
+  DesignLeft = 611
+  DesignTop = 130
   object ScrollBox1: TScrollBox
     Left = 0
-    Height = 431
+    Height = 439
     Top = 0
     Width = 672
     HorzScrollBar.Page = 500
     VertScrollBar.Page = 339
     Align = alClient
-    ClientHeight = 427
+    ClientHeight = 435
     ClientWidth = 668
     Font.CharSet = ANSI_CHARSET
     Font.Height = -12
@@ -2149,6 +2149,7 @@ object Splash: TSplash
       BorderSpacing.Around = 6
       Caption = 'CompilerVersionLabel'
       Color = clWhite
+      ParentColor = False
       Transparent = False
     end
     object BuildDateLabel: TLabel
@@ -2165,6 +2166,7 @@ object Splash: TSplash
       BorderSpacing.Around = 6
       Caption = 'BuildDateLabel'
       Color = clWhite
+      ParentColor = False
       Transparent = False
     end
     object HashLabel: TLabel
@@ -2180,6 +2182,7 @@ object Splash: TSplash
       BorderSpacing.Around = 6
       Caption = 'HashLabel'
       Color = clWhite
+      ParentColor = False
       Transparent = False
     end
     object GitHubImage: TImage

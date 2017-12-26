@@ -1,0 +1,15 @@
+G04 Bottom Silkscreen*
+%FSLAX23Y23*%
+%MOIN*%
+G01*
+%ADD10C,0.010*%
+%ADD11C,0.015*%
+%ADD12C,0.035*%
+%ADD13C,0.065*%
+%ADD14C,0.150*%
+D10*
+D11*
+D12*
+D13*
+D14*
+M02*
